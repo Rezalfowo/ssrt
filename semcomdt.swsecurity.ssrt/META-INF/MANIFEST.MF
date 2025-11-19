@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: semcomdt.swsecurity.ssrt;singleton:=true
+Automatic-Module-Name: semcomdt.swsecurity.ssrt
+Bundle-Version: 0.1.0.qualifier
+Bundle-ClassPath: .
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Export-Package: semcomdt.swsecurity.ssrt,
+ semcomdt.swsecurity.ssrt.impl,
+ semcomdt.swsecurity.ssrt.util
+Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport,
+ org.eclipse.core.runtime
+Bundle-ActivationPolicy: lazy

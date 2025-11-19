@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/semcomdt.swsecurity.ssrt/src-gen" creationIcons="false"
+    editDirectory="/semcomdt.swsecurity.ssrt.edit/src-gen" editorDirectory="/semcomdt.swsecurity.ssrt.editor/src-gen"
+    modelPluginID="semcomdt.swsecurity.ssrt" modelName="Ssrt" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0"
+    copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>ssrt.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="Ssrt" basePackage="semcomdt.swsecurity" disposableProviderFactory="true"
+      ecorePackage="ssrt.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ssrt.ecore#//SolutionType">
+      <genEnumLiterals ecoreEnumLiteral="ssrt.ecore#//SolutionType/SecurityPattern"/>
+      <genEnumLiterals ecoreEnumLiteral="ssrt.ecore#//SolutionType/SecurityTactic"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ssrt.ecore#//Level">
+      <genEnumLiterals ecoreEnumLiteral="ssrt.ecore#//Level/Conceptual"/>
+      <genEnumLiterals ecoreEnumLiteral="ssrt.ecore#//Level/Design"/>
+      <genEnumLiterals ecoreEnumLiteral="ssrt.ecore#//Level/Realization"/>
+    </genEnums>
+    <genClasses ecoreClass="ssrt.ecore#//Solution">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssrt.ecore#//Solution/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssrt.ecore#//Solution/SolutionType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssrt.ecore#//Solution/SolutionLevel"/>
+      <genFeatures property="None" children="true" createChild="true" propertySortChoices="true"
+          ecoreFeature="ecore:EReference ssrt.ecore#//Solution/isDescribedWith"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ssrt.ecore#//Solution/refines"/>
+    </genClasses>
+    <genClasses ecoreClass="ssrt.ecore#//SolutionElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssrt.ecore#//SolutionElement/definition"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ssrt.ecore#//SolutionElement/refines"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssrt.ecore#//SolutionElement/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ssrt.ecore#//SolutionElement/source"/>
+    </genClasses>
+    <genClasses ecoreClass="ssrt.ecore#//Library">
+      <genFeatures property="None" children="true" createChild="true" propertySortChoices="true"
+          ecoreFeature="ecore:EReference ssrt.ecore#//Library/provides"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssrt.ecore#//Library/name"/>
+    </genClasses>
+    <genClasses ecoreClass="ssrt.ecore#//Relation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssrt.ecore#//Relation/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ssrt.ecore#//Relation/target"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

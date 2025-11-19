@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:properties="http://www.eclipse.org/sirius/properties/1.0.0" xmlns:properties-ext-widgets-reference="http://www.eclipse.org/sirius/properties/1.0.0/ext/widgets/reference" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="ssrt" version="12.0.0.2017041100">
+  <ownedViewpoints name="SSRT Design">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="SSRT Library" domainClass="ssrt::Library" enablePopupBars="true">
+      <metamodel href="../../semcomdt.swsecurity.ssrt/model/ssrt.ecore#/"/>
+      <defaultLayer name="Default">
+        <edgeMappings name="SolElemRelationSolElem" labelDirectEdit="//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@toolSections.0/@ownedTools[name='editName']" sourceMapping="//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@containerMappings[name='Conceptual%20Solution%20']/@subNodeMappings[name='SolutionElement'] //@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@containerMappings[name='Design%20Solution']/@subNodeMappings[name='SolutionElement'] //@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@containerMappings[name='Realization%20Solution']/@subNodeMappings[name='SolutionElement']" targetMapping="//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@containerMappings[name='Conceptual%20Solution%20']/@subNodeMappings[name='SolutionElement'] //@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@containerMappings[name='Design%20Solution']/@subNodeMappings[name='SolutionElement'] //@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@containerMappings[name='Realization%20Solution']/@subNodeMappings[name='SolutionElement']" targetFinderExpression="feature:target" sourceFinderExpression="feature:eContainer" domainClass="ssrt::Relation" useDomainElement="true">
+          <style routingStyle="manhattan">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <centerLabelStyleDescription labelSize="12" showIcon="false" labelExpression="feature:name">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="SolutionRefinesSolution" deletionDescription="//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@toolSections.1/@ownedTools[name='remove%20solution%20refinement']" sourceMapping="//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@containerMappings[name='Conceptual%20Solution%20'] //@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@containerMappings[name='Design%20Solution'] //@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@containerMappings[name='Realization%20Solution']" targetMapping="//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@containerMappings[name='Conceptual%20Solution%20'] //@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@containerMappings[name='Design%20Solution']" targetFinderExpression="feature:refines">
+          <style lineStyle="dot" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12" showIcon="false" labelExpression="refines">
+              <labelFormat>italic</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <containerMappings name="Design Solution" labelDirectEdit="//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@toolSections.0/@ownedTools[name='editName']" semanticCandidatesExpression="aql:self.provides->select(solution | solution.SolutionLevel = ssrt::Level::Design)" domainClass="ssrt::Solution">
+          <subNodeMappings name="SolutionElement" semanticCandidatesExpression="feature:isDescribedWith" domainClass="ssrt::SolutionElement">
+            <style xsi:type="style:SquareDescription" borderSizeComputationExpression="2" labelSize="12" showIcon="false" labelPosition="node" resizeKind="NSEW" width="14" height="5">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+            <conditionnalStyles predicateExpression="aql:self.refines.eContainer().isDescribedWith->indexOf(self.refines).equals(1)">
+              <style xsi:type="style:SquareDescription" borderSizeComputationExpression="2" labelSize="12" showIcon="false" labelPosition="node" resizeKind="NSEW" width="14" height="5">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_green']"/>
+              </style>
+            </conditionnalStyles>
+            <conditionnalStyles predicateExpression="aql:self.refines.eContainer().isDescribedWith->indexOf(self.refines).equals(2)">
+              <style xsi:type="style:SquareDescription" borderSizeComputationExpression="2" labelSize="12" showIcon="false" labelPosition="node" resizeKind="NSEW" width="14" height="5">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_purple']"/>
+              </style>
+            </conditionnalStyles>
+            <conditionnalStyles predicateExpression="aql:self.refines.eContainer().isDescribedWith->indexOf(self.refines).equals(3)">
+              <style xsi:type="style:SquareDescription" borderSizeComputationExpression="2" labelSize="12" showIcon="false" labelPosition="node" resizeKind="NSEW" width="14" height="5">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
+              </style>
+            </conditionnalStyles>
+            <conditionnalStyles predicateExpression="aql:self.refines.eContainer().isDescribedWith->indexOf(self.refines).equals(4)">
+              <style xsi:type="style:SquareDescription" borderSizeComputationExpression="2" labelSize="12" showIcon="false" labelPosition="node" resizeKind="NSEW" width="14" height="5">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_red']"/>
+              </style>
+            </conditionnalStyles>
+            <conditionnalStyles predicateExpression="aql:self.refines.eContainer().isDescribedWith->indexOf(self.refines).equals(5)">
+              <style xsi:type="style:SquareDescription" borderSizeComputationExpression="2" labelSize="12" showIcon="false" labelPosition="node" resizeKind="NSEW" width="14" height="5">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_yellow']"/>
+              </style>
+            </conditionnalStyles>
+          </subNodeMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" labelExpression="aql:self.SolutionLevel.toString().concat(' Solution ').concat(' - ').concat(self.name)">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_orange']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="Conceptual Solution " labelDirectEdit="//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@toolSections.0/@ownedTools[name='editName']" semanticCandidatesExpression="aql:self.provides->select(solution | solution.SolutionLevel = ssrt::Level::Conceptual)" domainClass="ssrt::Solution">
+          <subNodeMappings name="SolutionElement" labelDirectEdit="//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@toolSections.0/@ownedTools[name='editName']" semanticCandidatesExpression="feature:isDescribedWith" synchronizationLock="true" domainClass="ssrt::SolutionElement">
+            <style xsi:type="style:SquareDescription" borderSizeComputationExpression="2" labelSize="12" showIcon="false" sizeComputationExpression="" labelPosition="node" resizeKind="NSEW" width="14" height="5">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+            <conditionnalStyles predicateExpression="aql:self.eContainer().isDescribedWith->at(1).name.equalsIgnoreCase(self.name)">
+              <style xsi:type="style:SquareDescription" borderSizeComputationExpression="2" labelSize="12" showIcon="false" labelPosition="node" resizeKind="NSEW" width="14" height="5">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_green']"/>
+              </style>
+            </conditionnalStyles>
+            <conditionnalStyles predicateExpression="aql:self.eContainer().isDescribedWith->at(2).name.equalsIgnoreCase(self.name)">
+              <style xsi:type="style:SquareDescription" borderSizeComputationExpression="2" labelSize="12" showIcon="false" labelPosition="node" resizeKind="NSEW" width="14" height="5">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_purple']"/>
+              </style>
+            </conditionnalStyles>
+            <conditionnalStyles predicateExpression="aql:self.eContainer().isDescribedWith->at(3).name.equalsIgnoreCase(self.name)">
+              <style xsi:type="style:SquareDescription" borderSizeComputationExpression="2" labelSize="12" showIcon="false" labelPosition="node" resizeKind="NSEW" width="14" height="5">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
+              </style>
+            </conditionnalStyles>
+            <conditionnalStyles predicateExpression="aql:self.eContainer().isDescribedWith->at(4).name.equalsIgnoreCase(self.name)">
+              <style xsi:type="style:SquareDescription" borderSizeComputationExpression="2" labelSize="12" showIcon="false" labelPosition="node" resizeKind="NSEW" width="14" height="5">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_red']"/>
+              </style>
+            </conditionnalStyles>
+            <conditionnalStyles predicateExpression="aql:self.eContainer().isDescribedWith->at(5).name.equalsIgnoreCase(self.name)">
+              <style xsi:type="style:SquareDescription" borderSizeComputationExpression="2" labelSize="12" showIcon="false" labelPosition="node" resizeKind="NSEW" width="14" height="5">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_yellow']"/>
+              </style>
+            </conditionnalStyles>
+          </subNodeMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" labelExpression="aql:self.SolutionLevel.toString().concat(' Solution ').concat(' - ').concat(self.name)" roundedCorner="true">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_green']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="Realization Solution" labelDirectEdit="//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@toolSections.0/@ownedTools[name='editName']" semanticCandidatesExpression="aql:self.provides->select(solution | solution.SolutionLevel = ssrt::Level::Realization)" domainClass="ssrt::Solution">
+          <subNodeMappings name="SolutionElement" semanticCandidatesExpression="feature:isDescribedWith" domainClass="ssrt::SolutionElement">
+            <style xsi:type="style:SquareDescription" borderSizeComputationExpression="2" labelSize="12" labelPosition="node" resizeKind="NSEW" width="14" height="5">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+            <conditionnalStyles predicateExpression="aql:self.refines.eContainer().refines.isDescribedWith->indexOf(self.refines.refines).equals(1)">
+              <style xsi:type="style:SquareDescription" borderSizeComputationExpression="2" labelSize="12" showIcon="false" labelPosition="node" resizeKind="NSEW" width="14" height="5">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_green']"/>
+              </style>
+            </conditionnalStyles>
+            <conditionnalStyles predicateExpression="aql:self.refines.eContainer().refines.isDescribedWith->indexOf(self.refines.refines).equals(2)">
+              <style xsi:type="style:SquareDescription" borderSizeComputationExpression="2" labelSize="12" showIcon="false" labelPosition="node" resizeKind="NSEW" width="14" height="5">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_purple']"/>
+              </style>
+            </conditionnalStyles>
+            <conditionnalStyles predicateExpression="aql:self.refines.eContainer().refines.isDescribedWith->indexOf(self.refines.refines).equals(3)">
+              <style xsi:type="style:SquareDescription" borderSizeComputationExpression="2" labelSize="12" showIcon="false" labelPosition="node" resizeKind="NSEW" width="14" height="5">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
+              </style>
+            </conditionnalStyles>
+            <conditionnalStyles predicateExpression="aql:self.refines.eContainer().refines.isDescribedWith->indexOf(self.refines.refines).equals(4)">
+              <style xsi:type="style:SquareDescription" borderSizeComputationExpression="2" labelSize="12" showIcon="false" labelPosition="node" resizeKind="NSEW" width="14" height="5">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_red']"/>
+              </style>
+            </conditionnalStyles>
+            <conditionnalStyles predicateExpression="aql:self.refines.eContainer().refines.isDescribedWith->indexOf(self.refines.refines).equals(5)">
+              <style xsi:type="style:SquareDescription" borderSizeComputationExpression="2" labelSize="12" showIcon="false" labelPosition="node" resizeKind="NSEW" width="14" height="5">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_yellow']"/>
+              </style>
+            </conditionnalStyles>
+          </subNodeMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" labelExpression="aql:self.SolutionLevel.toString().concat(' Solution ').concat(' - ').concat(self.name)" roundedCorner="true">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_red']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style>
+        </containerMappings>
+        <toolSections name="Solution instantiation">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Solution" containerMappings="//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@containerMappings[name='Conceptual%20Solution%20'] //@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@containerMappings[name='Design%20Solution'] //@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@containerMappings[name='Realization%20Solution']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ssrt::Solution" referenceName="provides">
+                  <subModelOperations xsi:type="properties:DialogModelOperation" titleExpression="Solution Creation">
+                    <buttons labelExpression="Cancel" closeDialogOnClick="true" rollbackChangesOnClose="true">
+                      <initialOperation/>
+                    </buttons>
+                    <buttons labelExpression="OK" default="true" closeDialogOnClick="true">
+                      <initialOperation/>
+                    </buttons>
+                    <page name="Solution Page" labelExpression="Solution Creation" domainClass="ssrt::Solution" semanticCandidateExpression="var:self" groups="//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@toolSections.0/@ownedTools[name='Solution']/@initialOperation/@firstModelOperations/@subModelOperations.0/@subModelOperations.0/@groups.0"/>
+                    <groups name="Solution Group" labelExpression="Solution Group" domainClass="ssrt::Solution" semanticCandidateExpression="var:self">
+                      <controls xsi:type="properties:TextDescription" name="ssrt::Solution name" labelExpression="aql:input.emfEditServices(self).getText(self.eClass().getEStructuralFeature('name')) + ':'" helpExpression="aql:input.emfEditServices(self).getDescription(self.eClass().getEStructuralFeature('name'))" isEnabledExpression="aql:self.eClass().getEStructuralFeature('name').changeable" valueExpression="aql:self.name">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="var:newValue"/>
+                        </initialOperation>
+                      </controls>
+                      <controls xsi:type="properties:RadioDescription" name="ssrt::Solution SolutionLevel" labelExpression="aql:input.emfEditServices(self).getText(self.eClass().getEStructuralFeature('SolutionLevel')) + ':'" helpExpression="aql:input.emfEditServices(self).getDescription(self.eClass().getEStructuralFeature('SolutionLevel'))" isEnabledExpression="aql:self.eClass().getEStructuralFeature('SolutionLevel').changeable" valueExpression="aql:self.eClass().getEStructuralFeature('SolutionLevel').eType.getEEnumLiteralByLiteral(self.SolutionLevel.toString())" candidatesExpression="aql:self.eClass().getEStructuralFeature('SolutionLevel').eType.eLiterals" candidateDisplayExpression="aql:candidate.name" numberOfColumns="5">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:SetValue" featureName="SolutionLevel" valueExpression="aql:newValue.instance"/>
+                        </initialOperation>
+                        <conditionalStyles preconditionExpression="aql:self.eClass().getEStructuralFeature('SolutionLevel').lowerBound = 1">
+                          <style>
+                            <labelFontFormat>bold</labelFontFormat>
+                          </style>
+                        </conditionalStyles>
+                      </controls>
+                      <controls xsi:type="properties:RadioDescription" name="ssrt::Solution SolutionType" labelExpression="aql:input.emfEditServices(self).getText(self.eClass().getEStructuralFeature('SolutionType')) + ':'" helpExpression="aql:input.emfEditServices(self).getDescription(self.eClass().getEStructuralFeature('SolutionType'))" isEnabledExpression="aql:self.eClass().getEStructuralFeature('SolutionType').changeable" valueExpression="aql:self.eClass().getEStructuralFeature('SolutionType').eType.getEEnumLiteralByLiteral(self.SolutionType.toString())" candidatesExpression="aql:self.eClass().getEStructuralFeature('SolutionType').eType.eLiterals" candidateDisplayExpression="aql:candidate.name" numberOfColumns="5">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:SetValue" featureName="SolutionType" valueExpression="aql:newValue.instance"/>
+                        </initialOperation>
+                        <conditionalStyles preconditionExpression="aql:self.eClass().getEStructuralFeature('SolutionType').lowerBound = 1">
+                          <style>
+                            <labelFontFormat>bold</labelFontFormat>
+                          </style>
+                        </conditionalStyles>
+                      </controls>
+                      <controls xsi:type="properties-ext-widgets-reference:ExtReferenceDescription" name="ssrt::Solution refines" referenceNameExpression="aql:'refines'"/>
+                    </groups>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Solution Element" nodeMappings="//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@containerMappings[name='Conceptual%20Solution%20']/@subNodeMappings[name='SolutionElement'] //@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@containerMappings[name='Design%20Solution']/@subNodeMappings[name='SolutionElement'] //@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@containerMappings[name='Realization%20Solution']/@subNodeMappings[name='SolutionElement']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ssrt::SolutionElement" referenceName="isDescribedWith">
+                  <subModelOperations xsi:type="properties:DialogModelOperation" titleExpression="Concept Creation">
+                    <buttons labelExpression="Cancel" closeDialogOnClick="true" rollbackChangesOnClose="true">
+                      <initialOperation/>
+                    </buttons>
+                    <buttons labelExpression="OK" default="true" closeDialogOnClick="true">
+                      <initialOperation/>
+                    </buttons>
+                    <page name="Concept Page" labelExpression="Concept Creation" domainClass="ssrt::Concept" semanticCandidateExpression="var:self" groups="//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@toolSections.0/@ownedTools[name='Solution%20Element']/@initialOperation/@firstModelOperations/@subModelOperations.0/@subModelOperations.0/@groups.0"/>
+                    <groups name="Concept Group" labelExpression="Concept" domainClass="ssrt::Concept" semanticCandidateExpression="var:self">
+                      <controls xsi:type="properties:TextDescription" name="ssrt::Concept name" labelExpression="aql:input.emfEditServices(self).getText(self.eClass().getEStructuralFeature('name')) + ':'" helpExpression="aql:input.emfEditServices(self).getDescription(self.eClass().getEStructuralFeature('name'))" isEnabledExpression="aql:self.eClass().getEStructuralFeature('name').changeable" valueExpression="aql:self.name">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="var:newValue"/>
+                        </initialOperation>
+                      </controls>
+                      <controls xsi:type="properties-ext-widgets-reference:ExtReferenceDescription" name="ssrt::Concept refines" referenceNameExpression="aql:'refines'"/>
+                      <controls xsi:type="properties:TextDescription" name="ssrt::Concept definition" labelExpression="aql:input.emfEditServices(self).getText(self.eClass().getEStructuralFeature('definition')) + ':'" helpExpression="aql:input.emfEditServices(self).getDescription(self.eClass().getEStructuralFeature('definition'))" isEnabledExpression="aql:self.eClass().getEStructuralFeature('definition').changeable" valueExpression="aql:self.definition">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:SetValue" featureName="definition" valueExpression="var:newValue"/>
+                        </initialOperation>
+                      </controls>
+                    </groups>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Concept Relation" edgeMappings="//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@edgeMappings[name='SolElemRelationSolElem']" iconPath="/semcomdt.swsecurity.ssrt.edit/icons/full/obj16/Relation.gif">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ssrt::Relation" referenceName="source">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="relation"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="target" valueExpression="var:target"/>
+                  <subModelOperations xsi:type="tool_1:Let" valueExpression="feature:name"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="editName">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="var:0"/>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="Solution Refinement">
+          <ownedTools xsi:type="tool:DeleteElementDescription" name="remove solution refinement">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[elementView.oclAsType(DEdge).sourceNode.oclAsType(DSemanticDecorator).target/]">
+                <subModelOperations xsi:type="tool_1:Unset" featureName="refines" elementExpression="[elementView.oclAsType(DEdge).sourceNode.oclAsType(DSemanticDecorator).target/]"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Solution Refinement" edgeMappings="//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@edgeMappings[name='SolutionRefinesSolution']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="refines" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+      <additionalLayers name="Show concept refinement" reusedMappings="//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@containerMappings[name='Conceptual%20Solution%20'] //@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@containerMappings[name='Conceptual%20Solution%20']/@subNodeMappings[name='SolutionElement'] //@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@containerMappings[name='Design%20Solution'] //@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@edgeMappings[name='SolutionRefinesSolution'] //@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@containerMappings[name='Design%20Solution']/@subNodeMappings[name='SolutionElement'] //@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@containerMappings[name='Realization%20Solution'] //@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@containerMappings[name='Realization%20Solution']/@subNodeMappings[name='SolutionElement'] //@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@edgeMappings[name='SolElemRelationSolElem'] //@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@additionalLayers[name='Show%20concept%20refinement']/@edgeMappings[name='RefinesSolElem']" reusedTools="//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@toolSections.0/@ownedTools[name='Solution%20Element'] //@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@toolSections.0/@ownedTools[name='Solution'] //@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@toolSections.0/@ownedTools[name='Concept%20Relation'] //@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@toolSections.0/@ownedTools[name='editName'] //@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@toolSections.1/@ownedTools[name='remove%20solution%20refinement'] //@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@toolSections.1/@ownedTools[name='Solution%20Refinement']">
+        <edgeMappings name="RefinesSolElem" sourceMapping="//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@containerMappings[name='Conceptual%20Solution%20']/@subNodeMappings[name='SolutionElement'] //@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@containerMappings[name='Design%20Solution']/@subNodeMappings[name='SolutionElement'] //@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@containerMappings[name='Realization%20Solution']/@subNodeMappings[name='SolutionElement']" targetMapping="//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@containerMappings[name='Conceptual%20Solution%20']/@subNodeMappings[name='SolutionElement'] //@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@containerMappings[name='Design%20Solution']/@subNodeMappings[name='SolutionElement'] //@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@containerMappings[name='Realization%20Solution']/@subNodeMappings[name='SolutionElement']" targetFinderExpression="feature:refines">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+          <conditionnalStyles predicateExpression="aql:not self.name.equals(self.refines.name) and not self.eContainer().SolutionLevel.toString().equals(ssrt::Level::Conceptual)">
+            <style lineStyle="dash" sizeComputationExpression="2" routingStyle="manhattan">
+              <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_red']"/>
+              <centerLabelStyleDescription labelSize="12">
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </centerLabelStyleDescription>
+            </style>
+          </conditionnalStyles>
+        </edgeMappings>
+      </additionalLayers>
+    </ownedRepresentations>
+    <ownedJavaExtensions qualifiedClassName="semcomdt.swsecurity.ssrt.design.Services"/>
+  </ownedViewpoints>
+</description:Group>

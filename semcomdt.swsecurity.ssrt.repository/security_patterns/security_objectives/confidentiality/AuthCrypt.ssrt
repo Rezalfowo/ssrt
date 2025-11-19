@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ssrt:Library xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ssrt="http://www.example.org/ssrt" name="Authentication">
+  <provides name="Authenticator">
+    <isDescribedWith name="Subject">
+      <source name="Request Authentication" target="//@provides.0/@isDescribedWith.3"/>
+      <source name="Composed Of" target="//@provides.0/@isDescribedWith.2"/>
+      <source name="Composed Of" target="//@provides.0/@isDescribedWith.1"/>
+    </isDescribedWith>
+    <isDescribedWith name="Proof of Identity"/>
+    <isDescribedWith name="Proof of Authentication"/>
+    <isDescribedWith name="Authenticator">
+      <source name="create" target="//@provides.0/@isDescribedWith.2"/>
+      <source name="verifies" target="//@provides.0/@isDescribedWith.4"/>
+    </isDescribedWith>
+    <isDescribedWith name="Authentication Information"/>
+  </provides>
+  <provides name="Cryptographic-based Authentication" SolutionLevel="Design" refines="//@provides.0">
+    <isDescribedWith refines="//@provides.0/@isDescribedWith.0" name="Subject">
+      <source name="exchange" target="//@provides.1/@isDescribedWith.1"/>
+      <source name="connects To" target="//@provides.1/@isDescribedWith.5"/>
+      <source name="has" target="//@provides.1/@isDescribedWith.6"/>
+    </isDescribedWith>
+    <isDescribedWith refines="//@provides.0/@isDescribedWith.3" name="Challenge-Response protocol"/>
+    <isDescribedWith refines="//@provides.0/@isDescribedWith.3" name="Authenticator">
+      <source name="creates" target="//@provides.1/@isDescribedWith.4"/>
+      <source name="verifies" target="//@provides.1/@isDescribedWith.3"/>
+    </isDescribedWith>
+    <isDescribedWith refines="//@provides.0/@isDescribedWith.4" name="Cryptographic Information"/>
+    <isDescribedWith refines="//@provides.0/@isDescribedWith.2" name="Cryptographic Session-Key">
+      <source name="usedFor" target="//@provides.1/@isDescribedWith.5"/>
+    </isDescribedWith>
+    <isDescribedWith refines="//@provides.0/@isDescribedWith.2" name="Session"/>
+    <isDescribedWith refines="//@provides.0/@isDescribedWith.1" name="Unforgeable proof of identity"/>
+  </provides>
+  <provides name="Symmetric Key with Encryption algorithm" SolutionLevel="Realization" refines="//@provides.1">
+    <isDescribedWith refines="//@provides.1/@isDescribedWith.0" name="Subject">
+      <source name="exchange" target="//@provides.2/@isDescribedWith.2"/>
+      <source name="isConnectedTo" target="//@provides.2/@isDescribedWith.1"/>
+      <source name="has" target="//@provides.2/@isDescribedWith.6"/>
+    </isDescribedWith>
+    <isDescribedWith refines="//@provides.1/@isDescribedWith.5" name="Session"/>
+    <isDescribedWith refines="//@provides.1/@isDescribedWith.1" name="Encryption Algorithm">
+      <source name="exchange With" target="//@provides.2/@isDescribedWith.3"/>
+    </isDescribedWith>
+    <isDescribedWith refines="//@provides.1/@isDescribedWith.2" name="Authenticator">
+      <source name="verifies" target="//@provides.2/@isDescribedWith.4"/>
+      <source name="creates" target="//@provides.2/@isDescribedWith.5"/>
+    </isDescribedWith>
+    <isDescribedWith refines="//@provides.1/@isDescribedWith.3" name="Cryptographic information"/>
+    <isDescribedWith refines="//@provides.1/@isDescribedWith.4" name="Cryptographic Session-key">
+      <source name="usedFor" target="//@provides.2/@isDescribedWith.1"/>
+    </isDescribedWith>
+    <isDescribedWith refines="//@provides.1/@isDescribedWith.6" name="Symmetric Key"/>
+  </provides>
+</ssrt:Library>

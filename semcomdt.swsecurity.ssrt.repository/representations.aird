@@ -1,0 +1,941 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:ssrt="http://www.example.org/ssrt" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
+  <viewpoint:DAnalysis uid="_kItvoMVTEfCx4r9elAV38A" selectedViews="_ISFKgMVUEfCwOtMBvT8wYw" version="15.4.1.202403191723">
+    <semanticResources>security_patterns/security_objectives/confidentiality/AuthCrypt.ssrt</semanticResources>
+    <ownedViews xmi:type="viewpoint:DView" uid="_ISFKgMVUEfCwOtMBvT8wYw">
+      <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']"/>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_I5ZCIMVUEfCwOtMBvT8wYw" name="Authentication" repPath="#_I5X0AMVUEfCwOtMBvT8wYw" changeId="1763562562050">
+        <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']"/>
+        <target xmi:type="ssrt:Library" href="security_patterns/security_objectives/confidentiality/AuthCrypt.ssrt#/"/>
+      </ownedRepresentationDescriptors>
+    </ownedViews>
+  </viewpoint:DAnalysis>
+  <diagram:DSemanticDiagram uid="_I5X0AMVUEfCwOtMBvT8wYw">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_I5cFcMVUEfCwOtMBvT8wYw" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_I5cFccVUEfCwOtMBvT8wYw" type="Sirius" element="_I5X0AMVUEfCwOtMBvT8wYw" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_I5vncMVUEfCwOtMBvT8wYw" type="2002" element="_I5fv0MVUEfCwOtMBvT8wYw">
+          <children xmi:type="notation:Node" xmi:id="_I5vnc8VUEfCwOtMBvT8wYw" type="5006"/>
+          <children xmi:type="notation:Node" xmi:id="_I5wOgMVUEfCwOtMBvT8wYw" type="7001">
+            <children xmi:type="notation:Node" xmi:id="_I5w1kMVUEfCwOtMBvT8wYw" type="3007" element="_I5hlAMVUEfCwOtMBvT8wYw">
+              <children xmi:type="notation:Node" xmi:id="_I5w1k8VUEfCwOtMBvT8wYw" type="5003">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_I5w1lMVUEfCwOtMBvT8wYw" y="5"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_I5xcqcVUEfCwOtMBvT8wYw" type="3003" element="_I5hlAcVUEfCwOtMBvT8wYw">
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_I5xcqsVUEfCwOtMBvT8wYw" fontName="Ubuntu Sans"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I5xcq8VUEfCwOtMBvT8wYw"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_I5w1kcVUEfCwOtMBvT8wYw" fontName="Ubuntu Sans" fontHeight="12"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I5w1ksVUEfCwOtMBvT8wYw" x="187" y="222" width="140" height="50"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_I5w1lcVUEfCwOtMBvT8wYw" type="3007" element="_I5iMEcVUEfCwOtMBvT8wYw">
+              <children xmi:type="notation:Node" xmi:id="_I5w1mMVUEfCwOtMBvT8wYw" type="5003">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_I5w1mcVUEfCwOtMBvT8wYw" y="5"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_I5xcrMVUEfCwOtMBvT8wYw" type="3003" element="_I5iMEsVUEfCwOtMBvT8wYw">
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_I5xcrcVUEfCwOtMBvT8wYw" fontName="Ubuntu Sans"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I5xcrsVUEfCwOtMBvT8wYw"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_I5w1lsVUEfCwOtMBvT8wYw" fontName="Ubuntu Sans" fontHeight="12"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I5w1l8VUEfCwOtMBvT8wYw" x="31" y="114" width="140" height="50"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_I5w1msVUEfCwOtMBvT8wYw" type="3007" element="_I5izIMVUEfCwOtMBvT8wYw">
+              <children xmi:type="notation:Node" xmi:id="_I5w1ncVUEfCwOtMBvT8wYw" type="5003">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_I5w1nsVUEfCwOtMBvT8wYw" y="5"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_I5xcr8VUEfCwOtMBvT8wYw" type="3003" element="_I5izIcVUEfCwOtMBvT8wYw">
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_I5xcsMVUEfCwOtMBvT8wYw" fontName="Ubuntu Sans"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I5xcscVUEfCwOtMBvT8wYw"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_I5w1m8VUEfCwOtMBvT8wYw" fontName="Ubuntu Sans" fontHeight="12"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I5w1nMVUEfCwOtMBvT8wYw" x="187" y="30" width="140" height="50"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_I5w1n8VUEfCwOtMBvT8wYw" type="3007" element="_I5izI8VUEfCwOtMBvT8wYw">
+              <children xmi:type="notation:Node" xmi:id="_I5xcosVUEfCwOtMBvT8wYw" type="5003">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_I5xco8VUEfCwOtMBvT8wYw" y="5"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_I5yDsMVUEfCwOtMBvT8wYw" type="3003" element="_I5jaMMVUEfCwOtMBvT8wYw">
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_I5yDscVUEfCwOtMBvT8wYw" fontName="Ubuntu Sans"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I5yDssVUEfCwOtMBvT8wYw"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_I5xcoMVUEfCwOtMBvT8wYw" fontName="Ubuntu Sans" fontHeight="12"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I5xcocVUEfCwOtMBvT8wYw" x="379" y="114" width="140" height="50"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_I5xcpMVUEfCwOtMBvT8wYw" type="3007" element="_I5jaMsVUEfCwOtMBvT8wYw">
+              <children xmi:type="notation:Node" xmi:id="_I5xcp8VUEfCwOtMBvT8wYw" type="5003">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_I5xcqMVUEfCwOtMBvT8wYw" y="5"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_I5yDs8VUEfCwOtMBvT8wYw" type="3003" element="_I5kBQMVUEfCwOtMBvT8wYw">
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_I5yDtMVUEfCwOtMBvT8wYw" fontName="Ubuntu Sans"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I5yDtcVUEfCwOtMBvT8wYw"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_I5xcpcVUEfCwOtMBvT8wYw" fontName="Ubuntu Sans" fontHeight="12"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I5xcpsVUEfCwOtMBvT8wYw" x="391" y="30" width="140" height="50"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_I5wOgcVUEfCwOtMBvT8wYw"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_I5wOgsVUEfCwOtMBvT8wYw"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_I5vnccVUEfCwOtMBvT8wYw" fontName="Ubuntu Sans" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I5vncsVUEfCwOtMBvT8wYw"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_I5wOg8VUEfCwOtMBvT8wYw" type="2002" element="_I5kBQsVUEfCwOtMBvT8wYw">
+          <children xmi:type="notation:Node" xmi:id="_I5wOhsVUEfCwOtMBvT8wYw" type="5006"/>
+          <children xmi:type="notation:Node" xmi:id="_I5wOh8VUEfCwOtMBvT8wYw" type="7001">
+            <children xmi:type="notation:Node" xmi:id="_I5yDtsVUEfCwOtMBvT8wYw" type="3007" element="_I5koUsVUEfCwOtMBvT8wYw">
+              <children xmi:type="notation:Node" xmi:id="_I5yDucVUEfCwOtMBvT8wYw" type="5003">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_I5yDusVUEfCwOtMBvT8wYw" y="5"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_I5z44MVUEfCwOtMBvT8wYw" type="3003" element="_I5lPYMVUEfCwOtMBvT8wYw">
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_I5z44cVUEfCwOtMBvT8wYw" fontName="Ubuntu Sans"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I5z44sVUEfCwOtMBvT8wYw"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_I5yDt8VUEfCwOtMBvT8wYw" fontName="Ubuntu Sans" fontHeight="12"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I5yDuMVUEfCwOtMBvT8wYw" x="31" y="114" width="140" height="50"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_I5yDu8VUEfCwOtMBvT8wYw" type="3007" element="_I5lPYsVUEfCwOtMBvT8wYw">
+              <children xmi:type="notation:Node" xmi:id="_I5yDvsVUEfCwOtMBvT8wYw" type="5003">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_I5yDv8VUEfCwOtMBvT8wYw" y="5"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_I5z448VUEfCwOtMBvT8wYw" type="3003" element="_I5l2cMVUEfCwOtMBvT8wYw">
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_I5z45MVUEfCwOtMBvT8wYw" fontName="Ubuntu Sans"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I5z45cVUEfCwOtMBvT8wYw"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_I5yDvMVUEfCwOtMBvT8wYw" fontName="Ubuntu Sans" fontHeight="12"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I5yDvcVUEfCwOtMBvT8wYw" x="31" y="30" width="140" height="50"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_I5yqwMVUEfCwOtMBvT8wYw" type="3007" element="_I5mdgcVUEfCwOtMBvT8wYw">
+              <children xmi:type="notation:Node" xmi:id="_I5yqw8VUEfCwOtMBvT8wYw" type="5003">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_I5yqxMVUEfCwOtMBvT8wYw" y="5"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_I5z45sVUEfCwOtMBvT8wYw" type="3003" element="_I5mdgsVUEfCwOtMBvT8wYw">
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_I5z458VUEfCwOtMBvT8wYw" fontName="Ubuntu Sans"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I5z46MVUEfCwOtMBvT8wYw"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_I5yqwcVUEfCwOtMBvT8wYw" fontName="Ubuntu Sans" fontHeight="12"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I5yqwsVUEfCwOtMBvT8wYw" x="295" y="222" width="140" height="50"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_I5yqxcVUEfCwOtMBvT8wYw" type="3007" element="_I5nEkMVUEfCwOtMBvT8wYw">
+              <children xmi:type="notation:Node" xmi:id="_I5yqyMVUEfCwOtMBvT8wYw" type="5003">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_I5yqycVUEfCwOtMBvT8wYw" y="5"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_I5z46cVUEfCwOtMBvT8wYw" type="3003" element="_I5nEkcVUEfCwOtMBvT8wYw">
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_I5z46sVUEfCwOtMBvT8wYw" fontName="Ubuntu Sans"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I5z468VUEfCwOtMBvT8wYw"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_I5yqxsVUEfCwOtMBvT8wYw" fontName="Ubuntu Sans" fontHeight="12"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I5yqx8VUEfCwOtMBvT8wYw" x="199" y="114" width="140" height="50"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_I5yqysVUEfCwOtMBvT8wYw" type="3007" element="_I5nrocVUEfCwOtMBvT8wYw">
+              <children xmi:type="notation:Node" xmi:id="_I5zR0MVUEfCwOtMBvT8wYw" type="5003">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_I5zR0cVUEfCwOtMBvT8wYw" y="5"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_I5z47MVUEfCwOtMBvT8wYw" type="3003" element="_I5nrosVUEfCwOtMBvT8wYw">
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_I5z47cVUEfCwOtMBvT8wYw" fontName="Ubuntu Sans"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I5z47sVUEfCwOtMBvT8wYw"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_I5yqy8VUEfCwOtMBvT8wYw" fontName="Ubuntu Sans" fontHeight="12"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I5yqzMVUEfCwOtMBvT8wYw" x="403" y="114" width="140" height="50"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_I5zR0sVUEfCwOtMBvT8wYw" type="3007" element="_I5nrpMVUEfCwOtMBvT8wYw">
+              <children xmi:type="notation:Node" xmi:id="_I5zR1cVUEfCwOtMBvT8wYw" type="5003">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_I5zR1sVUEfCwOtMBvT8wYw" y="5"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_I50f8MVUEfCwOtMBvT8wYw" type="3003" element="_I5oSsMVUEfCwOtMBvT8wYw">
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_I50f8cVUEfCwOtMBvT8wYw" fontName="Ubuntu Sans"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I50f8sVUEfCwOtMBvT8wYw"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_I5zR08VUEfCwOtMBvT8wYw" fontName="Ubuntu Sans" fontHeight="12"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I5zR1MVUEfCwOtMBvT8wYw" x="403" y="30" width="140" height="50"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_I5zR18VUEfCwOtMBvT8wYw" type="3007" element="_I5oSssVUEfCwOtMBvT8wYw">
+              <children xmi:type="notation:Node" xmi:id="_I5zR2sVUEfCwOtMBvT8wYw" type="5003">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_I5zR28VUEfCwOtMBvT8wYw" y="5"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_I50f88VUEfCwOtMBvT8wYw" type="3003" element="_I5oSs8VUEfCwOtMBvT8wYw">
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_I50f9MVUEfCwOtMBvT8wYw" fontName="Ubuntu Sans"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I50f9cVUEfCwOtMBvT8wYw"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_I5zR2MVUEfCwOtMBvT8wYw" fontName="Ubuntu Sans" fontHeight="12"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I5zR2cVUEfCwOtMBvT8wYw" x="199" y="30" width="140" height="50"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_I5wOiMVUEfCwOtMBvT8wYw"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_I5wOicVUEfCwOtMBvT8wYw"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_I5wOhMVUEfCwOtMBvT8wYw" fontName="Ubuntu Sans" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I5wOhcVUEfCwOtMBvT8wYw" y="360"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_I5wOisVUEfCwOtMBvT8wYw" type="2002" element="_I5oStcVUEfCwOtMBvT8wYw">
+          <children xmi:type="notation:Node" xmi:id="_I5wOjcVUEfCwOtMBvT8wYw" type="5006"/>
+          <children xmi:type="notation:Node" xmi:id="_I5wOjsVUEfCwOtMBvT8wYw" type="7001">
+            <children xmi:type="notation:Node" xmi:id="_I50f9sVUEfCwOtMBvT8wYw" type="3007" element="_I5o5wcVUEfCwOtMBvT8wYw">
+              <children xmi:type="notation:Node" xmi:id="_I50f-cVUEfCwOtMBvT8wYw" type="5003">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_I50f-sVUEfCwOtMBvT8wYw" y="5"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_I51uFcVUEfCwOtMBvT8wYw" type="3003" element="_I5pg0MVUEfCwOtMBvT8wYw">
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_I51uFsVUEfCwOtMBvT8wYw" fontName="Ubuntu Sans"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I51uF8VUEfCwOtMBvT8wYw"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_I50f98VUEfCwOtMBvT8wYw" fontName="Ubuntu Sans" fontHeight="12"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I50f-MVUEfCwOtMBvT8wYw" x="247" y="438" width="140" height="50"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_I50f-8VUEfCwOtMBvT8wYw" type="3007" element="_I5pg0sVUEfCwOtMBvT8wYw">
+              <children xmi:type="notation:Node" xmi:id="_I50f_sVUEfCwOtMBvT8wYw" type="5003">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_I50f_8VUEfCwOtMBvT8wYw" y="5"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_I51uGMVUEfCwOtMBvT8wYw" type="3003" element="_I5pg08VUEfCwOtMBvT8wYw">
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_I51uGcVUEfCwOtMBvT8wYw" fontName="Ubuntu Sans"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I51uGsVUEfCwOtMBvT8wYw"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_I50f_MVUEfCwOtMBvT8wYw" fontName="Ubuntu Sans" fontHeight="12"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I50f_cVUEfCwOtMBvT8wYw" x="391" y="30" width="140" height="50"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_I51HAMVUEfCwOtMBvT8wYw" type="3007" element="_I5qH4cVUEfCwOtMBvT8wYw">
+              <children xmi:type="notation:Node" xmi:id="_I51HA8VUEfCwOtMBvT8wYw" type="5003">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_I51HBMVUEfCwOtMBvT8wYw" y="5"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_I51uG8VUEfCwOtMBvT8wYw" type="3003" element="_I5qH4sVUEfCwOtMBvT8wYw">
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_I51uHMVUEfCwOtMBvT8wYw" fontName="Ubuntu Sans"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I51uHcVUEfCwOtMBvT8wYw"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_I51HAcVUEfCwOtMBvT8wYw" fontName="Ubuntu Sans" fontHeight="12"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I51HAsVUEfCwOtMBvT8wYw" x="31" y="330" width="140" height="50"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_I51HBcVUEfCwOtMBvT8wYw" type="3007" element="_I5qH5MVUEfCwOtMBvT8wYw">
+              <children xmi:type="notation:Node" xmi:id="_I51HCMVUEfCwOtMBvT8wYw" type="5003">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_I51HCcVUEfCwOtMBvT8wYw" y="5"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_I51uHsVUEfCwOtMBvT8wYw" type="3003" element="_I5qH5cVUEfCwOtMBvT8wYw">
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_I51uH8VUEfCwOtMBvT8wYw" fontName="Ubuntu Sans"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I51uIMVUEfCwOtMBvT8wYw"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_I51HBsVUEfCwOtMBvT8wYw" fontName="Ubuntu Sans" fontHeight="12"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I51HB8VUEfCwOtMBvT8wYw" x="31" y="222" width="140" height="50"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_I51HCsVUEfCwOtMBvT8wYw" type="3007" element="_I5qu8MVUEfCwOtMBvT8wYw">
+              <children xmi:type="notation:Node" xmi:id="_I51HDcVUEfCwOtMBvT8wYw" type="5003">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_I51HDsVUEfCwOtMBvT8wYw" y="5"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_I51uIcVUEfCwOtMBvT8wYw" type="3003" element="_I5qu8cVUEfCwOtMBvT8wYw">
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_I51uIsVUEfCwOtMBvT8wYw" fontName="Ubuntu Sans"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I51uI8VUEfCwOtMBvT8wYw"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_I51HC8VUEfCwOtMBvT8wYw" fontName="Ubuntu Sans" fontHeight="12"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I51HDMVUEfCwOtMBvT8wYw" x="199" y="114" width="140" height="50"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_I51HD8VUEfCwOtMBvT8wYw" type="3007" element="_I5qu88VUEfCwOtMBvT8wYw">
+              <children xmi:type="notation:Node" xmi:id="_I51HEsVUEfCwOtMBvT8wYw" type="5003">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_I51HE8VUEfCwOtMBvT8wYw" y="5"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_I52VIMVUEfCwOtMBvT8wYw" type="3003" element="_I5qu9MVUEfCwOtMBvT8wYw">
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_I52VIcVUEfCwOtMBvT8wYw" fontName="Ubuntu Sans"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I52VIsVUEfCwOtMBvT8wYw"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_I51HEMVUEfCwOtMBvT8wYw" fontName="Ubuntu Sans" fontHeight="12"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I51HEcVUEfCwOtMBvT8wYw" x="31" y="114" width="140" height="50"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_I51uEMVUEfCwOtMBvT8wYw" type="3007" element="_I5qu9sVUEfCwOtMBvT8wYw">
+              <children xmi:type="notation:Node" xmi:id="_I51uE8VUEfCwOtMBvT8wYw" type="5003">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_I51uFMVUEfCwOtMBvT8wYw" y="5"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_I52VI8VUEfCwOtMBvT8wYw" type="3003" element="_I5rWAMVUEfCwOtMBvT8wYw">
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_I52VJMVUEfCwOtMBvT8wYw" fontName="Ubuntu Sans"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I52VJcVUEfCwOtMBvT8wYw"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_I51uEcVUEfCwOtMBvT8wYw" fontName="Ubuntu Sans" fontHeight="12"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I51uEsVUEfCwOtMBvT8wYw" x="199" y="330" width="140" height="50"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_I5wOj8VUEfCwOtMBvT8wYw"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_I5wOkMVUEfCwOtMBvT8wYw"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_I5wOi8VUEfCwOtMBvT8wYw" fontName="Ubuntu Sans" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I5wOjMVUEfCwOtMBvT8wYw" y="720"/>
+        </children>
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_I5cFcsVUEfCwOtMBvT8wYw"/>
+        <edges xmi:type="notation:Edge" xmi:id="_I52VJsVUEfCwOtMBvT8wYw" type="4001" element="_I5rWAsVUEfCwOtMBvT8wYw" source="_I5wOg8VUEfCwOtMBvT8wYw" target="_I5vncMVUEfCwOtMBvT8wYw">
+          <children xmi:type="notation:Node" xmi:id="_I52VKsVUEfCwOtMBvT8wYw" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I52VK8VUEfCwOtMBvT8wYw" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_I52VLMVUEfCwOtMBvT8wYw" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I52VLcVUEfCwOtMBvT8wYw" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_I528MMVUEfCwOtMBvT8wYw" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I528McVUEfCwOtMBvT8wYw" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_I52VJ8VUEfCwOtMBvT8wYw"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_I52VKMVUEfCwOtMBvT8wYw" fontName="Ubuntu Sans" fontHeight="12" italic="true"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_I52VKcVUEfCwOtMBvT8wYw" points="[-1, 0, -2, 60]$[-1, -60, -2, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_I53jQMVUEfCwOtMBvT8wYw" id="(0.5024691358024691,0.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_I53jQcVUEfCwOtMBvT8wYw" id="(0.5035971223021583,1.0)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_I53jQsVUEfCwOtMBvT8wYw" type="4001" element="_I5r9EMVUEfCwOtMBvT8wYw" source="_I5wOisVUEfCwOtMBvT8wYw" target="_I5wOg8VUEfCwOtMBvT8wYw">
+          <children xmi:type="notation:Node" xmi:id="_I53jRsVUEfCwOtMBvT8wYw" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I53jR8VUEfCwOtMBvT8wYw" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_I54KUMVUEfCwOtMBvT8wYw" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I54KUcVUEfCwOtMBvT8wYw" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_I54KUsVUEfCwOtMBvT8wYw" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I54KU8VUEfCwOtMBvT8wYw" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_I53jQ8VUEfCwOtMBvT8wYw"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_I53jRMVUEfCwOtMBvT8wYw" fontName="Ubuntu Sans" fontHeight="12" italic="true"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_I53jRcVUEfCwOtMBvT8wYw" points="[-1, 0, -1, 60]$[-1, -60, -1, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_I54KVMVUEfCwOtMBvT8wYw" id="(0.5021141649048626,0.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_I54KVcVUEfCwOtMBvT8wYw" id="(0.5024691358024691,1.0)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_I54KVsVUEfCwOtMBvT8wYw" type="4001" element="_I5r9FcVUEfCwOtMBvT8wYw" source="_I5w1kMVUEfCwOtMBvT8wYw" target="_I5w1n8VUEfCwOtMBvT8wYw">
+          <children xmi:type="notation:Node" xmi:id="_I54KWsVUEfCwOtMBvT8wYw" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I54KW8VUEfCwOtMBvT8wYw" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_I54KXMVUEfCwOtMBvT8wYw" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I54KXcVUEfCwOtMBvT8wYw" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_I54KXsVUEfCwOtMBvT8wYw" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I54KX8VUEfCwOtMBvT8wYw" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_I54KV8VUEfCwOtMBvT8wYw" routing="Rectilinear"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_I54KWMVUEfCwOtMBvT8wYw" fontName="Ubuntu Sans" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_I54KWcVUEfCwOtMBvT8wYw" points="[0, 0, -191, 60]$[191, -60, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_I54KYMVUEfCwOtMBvT8wYw" id="(0.5,0.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_I54KYcVUEfCwOtMBvT8wYw" id="(0.5,1.0)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_I54KYsVUEfCwOtMBvT8wYw" type="4001" element="_I5skIMVUEfCwOtMBvT8wYw" source="_I5w1kMVUEfCwOtMBvT8wYw" target="_I5w1msVUEfCwOtMBvT8wYw">
+          <children xmi:type="notation:Node" xmi:id="_I54KZsVUEfCwOtMBvT8wYw" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I54KZ8VUEfCwOtMBvT8wYw" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_I54xYMVUEfCwOtMBvT8wYw" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I54xYcVUEfCwOtMBvT8wYw" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_I54xYsVUEfCwOtMBvT8wYw" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I54xY8VUEfCwOtMBvT8wYw" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_I54KY8VUEfCwOtMBvT8wYw" routing="Rectilinear"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_I54KZMVUEfCwOtMBvT8wYw" fontName="Ubuntu Sans" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_I54KZcVUEfCwOtMBvT8wYw" points="[0, 0, 0, 170]$[0, -170, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_I54xZMVUEfCwOtMBvT8wYw" id="(0.5,0.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_I54xZcVUEfCwOtMBvT8wYw" id="(0.5,1.0)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_I54xZsVUEfCwOtMBvT8wYw" type="4001" element="_I5skJcVUEfCwOtMBvT8wYw" source="_I5w1kMVUEfCwOtMBvT8wYw" target="_I5w1lcVUEfCwOtMBvT8wYw">
+          <children xmi:type="notation:Node" xmi:id="_I54xasVUEfCwOtMBvT8wYw" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I54xa8VUEfCwOtMBvT8wYw" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_I54xbMVUEfCwOtMBvT8wYw" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I54xbcVUEfCwOtMBvT8wYw" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_I54xbsVUEfCwOtMBvT8wYw" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I54xb8VUEfCwOtMBvT8wYw" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_I54xZ8VUEfCwOtMBvT8wYw" routing="Rectilinear"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_I54xaMVUEfCwOtMBvT8wYw" fontName="Ubuntu Sans" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_I54xacVUEfCwOtMBvT8wYw" points="[0, 0, 190, 60]$[-190, -60, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_I54xcMVUEfCwOtMBvT8wYw" id="(0.5,0.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_I54xccVUEfCwOtMBvT8wYw" id="(0.5,1.0)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_I54xcsVUEfCwOtMBvT8wYw" type="4001" element="_I5skKsVUEfCwOtMBvT8wYw" source="_I5w1n8VUEfCwOtMBvT8wYw" target="_I5w1msVUEfCwOtMBvT8wYw">
+          <children xmi:type="notation:Node" xmi:id="_I54xdsVUEfCwOtMBvT8wYw" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I54xd8VUEfCwOtMBvT8wYw" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_I54xeMVUEfCwOtMBvT8wYw" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I54xecVUEfCwOtMBvT8wYw" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_I54xesVUEfCwOtMBvT8wYw" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I54xe8VUEfCwOtMBvT8wYw" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_I54xc8VUEfCwOtMBvT8wYw" routing="Rectilinear"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_I54xdMVUEfCwOtMBvT8wYw" fontName="Ubuntu Sans" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_I54xdcVUEfCwOtMBvT8wYw" points="[0, 0, 191, 60]$[-191, -60, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_I54xfMVUEfCwOtMBvT8wYw" id="(0.5,0.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_I54xfcVUEfCwOtMBvT8wYw" id="(0.5,1.0)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_I54xfsVUEfCwOtMBvT8wYw" type="4001" element="_I5skL8VUEfCwOtMBvT8wYw" source="_I5w1n8VUEfCwOtMBvT8wYw" target="_I5xcpMVUEfCwOtMBvT8wYw">
+          <children xmi:type="notation:Node" xmi:id="_I55YcMVUEfCwOtMBvT8wYw" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I55YccVUEfCwOtMBvT8wYw" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_I55YcsVUEfCwOtMBvT8wYw" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I55Yc8VUEfCwOtMBvT8wYw" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_I55YdMVUEfCwOtMBvT8wYw" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I55YdcVUEfCwOtMBvT8wYw" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_I54xf8VUEfCwOtMBvT8wYw" routing="Rectilinear"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_I54xgMVUEfCwOtMBvT8wYw" fontName="Ubuntu Sans" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_I54xgcVUEfCwOtMBvT8wYw" points="[0, 0, -9, 60]$[9, -60, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_I55YdsVUEfCwOtMBvT8wYw" id="(0.5,0.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_I55Yd8VUEfCwOtMBvT8wYw" id="(0.5,1.0)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_I55YeMVUEfCwOtMBvT8wYw" type="4001" element="_I5skNMVUEfCwOtMBvT8wYw" source="_I5yDtsVUEfCwOtMBvT8wYw" target="_I5yDu8VUEfCwOtMBvT8wYw">
+          <children xmi:type="notation:Node" xmi:id="_I55YfMVUEfCwOtMBvT8wYw" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I55YfcVUEfCwOtMBvT8wYw" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_I55YfsVUEfCwOtMBvT8wYw" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I55Yf8VUEfCwOtMBvT8wYw" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_I55YgMVUEfCwOtMBvT8wYw" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I55YgcVUEfCwOtMBvT8wYw" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_I55YecVUEfCwOtMBvT8wYw" routing="Rectilinear"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_I55YesVUEfCwOtMBvT8wYw" fontName="Ubuntu Sans" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_I55Ye8VUEfCwOtMBvT8wYw" points="[0, 0, 0, 60]$[0, -60, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_I55YgsVUEfCwOtMBvT8wYw" id="(0.5,0.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_I55Yg8VUEfCwOtMBvT8wYw" id="(0.5,1.0)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_I55YhMVUEfCwOtMBvT8wYw" type="4001" element="_I5skOcVUEfCwOtMBvT8wYw" source="_I5yDtsVUEfCwOtMBvT8wYw" target="_I5zR0sVUEfCwOtMBvT8wYw">
+          <children xmi:type="notation:Node" xmi:id="_I55YiMVUEfCwOtMBvT8wYw" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I55YicVUEfCwOtMBvT8wYw" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_I55YisVUEfCwOtMBvT8wYw" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I55Yi8VUEfCwOtMBvT8wYw" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_I55_gMVUEfCwOtMBvT8wYw" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I55_gcVUEfCwOtMBvT8wYw" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_I55YhcVUEfCwOtMBvT8wYw" routing="Rectilinear"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_I55YhsVUEfCwOtMBvT8wYw" fontName="Ubuntu Sans" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_I55Yh8VUEfCwOtMBvT8wYw" points="[0, 0, -400, 60]$[400, -60, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_I55_gsVUEfCwOtMBvT8wYw" id="(0.5,0.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_I55_g8VUEfCwOtMBvT8wYw" id="(0.5,1.0)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_I55_hMVUEfCwOtMBvT8wYw" type="4001" element="_I5tLNMVUEfCwOtMBvT8wYw" source="_I5yDtsVUEfCwOtMBvT8wYw" target="_I5zR18VUEfCwOtMBvT8wYw">
+          <children xmi:type="notation:Node" xmi:id="_I55_iMVUEfCwOtMBvT8wYw" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I55_icVUEfCwOtMBvT8wYw" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_I55_isVUEfCwOtMBvT8wYw" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I55_i8VUEfCwOtMBvT8wYw" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_I55_jMVUEfCwOtMBvT8wYw" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I55_jcVUEfCwOtMBvT8wYw" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_I55_hcVUEfCwOtMBvT8wYw" routing="Rectilinear"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_I55_hsVUEfCwOtMBvT8wYw" fontName="Ubuntu Sans" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_I55_h8VUEfCwOtMBvT8wYw" points="[0, 0, -200, 60]$[200, -60, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_I55_jsVUEfCwOtMBvT8wYw" id="(0.5,0.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_I55_j8VUEfCwOtMBvT8wYw" id="(0.5,1.0)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_I55_kMVUEfCwOtMBvT8wYw" type="4001" element="_I5tLOcVUEfCwOtMBvT8wYw" source="_I5yqwMVUEfCwOtMBvT8wYw" target="_I5yqysVUEfCwOtMBvT8wYw">
+          <children xmi:type="notation:Node" xmi:id="_I55_lMVUEfCwOtMBvT8wYw" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I55_lcVUEfCwOtMBvT8wYw" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_I55_lsVUEfCwOtMBvT8wYw" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I55_l8VUEfCwOtMBvT8wYw" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_I55_mMVUEfCwOtMBvT8wYw" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I55_mcVUEfCwOtMBvT8wYw" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_I55_kcVUEfCwOtMBvT8wYw" routing="Rectilinear"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_I55_ksVUEfCwOtMBvT8wYw" fontName="Ubuntu Sans" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_I55_k8VUEfCwOtMBvT8wYw" points="[0, 0, -100, 60]$[100, -60, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_I56mkMVUEfCwOtMBvT8wYw" id="(0.5,0.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_I56mkcVUEfCwOtMBvT8wYw" id="(0.5,1.0)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_I56mksVUEfCwOtMBvT8wYw" type="4001" element="_I5tLPsVUEfCwOtMBvT8wYw" source="_I5yqwMVUEfCwOtMBvT8wYw" target="_I5yqxcVUEfCwOtMBvT8wYw">
+          <children xmi:type="notation:Node" xmi:id="_I56mlsVUEfCwOtMBvT8wYw" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I56ml8VUEfCwOtMBvT8wYw" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_I56mmMVUEfCwOtMBvT8wYw" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I56mmcVUEfCwOtMBvT8wYw" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_I56mmsVUEfCwOtMBvT8wYw" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I56mm8VUEfCwOtMBvT8wYw" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_I56mk8VUEfCwOtMBvT8wYw" routing="Rectilinear"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_I56mlMVUEfCwOtMBvT8wYw" fontName="Ubuntu Sans" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_I56mlcVUEfCwOtMBvT8wYw" points="[0, 0, 100, 60]$[-100, -60, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_I56mnMVUEfCwOtMBvT8wYw" id="(0.5,0.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_I56mncVUEfCwOtMBvT8wYw" id="(0.5,1.0)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_I56mnsVUEfCwOtMBvT8wYw" type="4001" element="_I5tLQ8VUEfCwOtMBvT8wYw" source="_I5yqysVUEfCwOtMBvT8wYw" target="_I5zR0sVUEfCwOtMBvT8wYw">
+          <children xmi:type="notation:Node" xmi:id="_I56mosVUEfCwOtMBvT8wYw" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I56mo8VUEfCwOtMBvT8wYw" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_I56mpMVUEfCwOtMBvT8wYw" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I56mpcVUEfCwOtMBvT8wYw" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_I56mpsVUEfCwOtMBvT8wYw" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I56mp8VUEfCwOtMBvT8wYw" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_I56mn8VUEfCwOtMBvT8wYw" routing="Rectilinear"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_I56moMVUEfCwOtMBvT8wYw" fontName="Ubuntu Sans" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_I56mocVUEfCwOtMBvT8wYw" points="[0, 0, 0, 60]$[0, -60, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_I56mqMVUEfCwOtMBvT8wYw" id="(0.5,0.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_I56mqcVUEfCwOtMBvT8wYw" id="(0.5,1.0)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_I57NoMVUEfCwOtMBvT8wYw" type="4001" element="_I5tLSMVUEfCwOtMBvT8wYw" source="_I50f9sVUEfCwOtMBvT8wYw" target="_I51HAMVUEfCwOtMBvT8wYw">
+          <children xmi:type="notation:Node" xmi:id="_I57NpMVUEfCwOtMBvT8wYw" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I57NpcVUEfCwOtMBvT8wYw" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_I57NpsVUEfCwOtMBvT8wYw" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I57Np8VUEfCwOtMBvT8wYw" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_I57NqMVUEfCwOtMBvT8wYw" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I57NqcVUEfCwOtMBvT8wYw" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_I57NocVUEfCwOtMBvT8wYw" routing="Rectilinear"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_I57NosVUEfCwOtMBvT8wYw" fontName="Ubuntu Sans" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_I57No8VUEfCwOtMBvT8wYw" points="[0, 0, 245, 60]$[-245, -60, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_I57NqsVUEfCwOtMBvT8wYw" id="(0.5,0.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_I57Nq8VUEfCwOtMBvT8wYw" id="(0.5,1.0)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_I57NrMVUEfCwOtMBvT8wYw" type="4001" element="_I5tyQsVUEfCwOtMBvT8wYw" source="_I50f9sVUEfCwOtMBvT8wYw" target="_I50f-8VUEfCwOtMBvT8wYw">
+          <children xmi:type="notation:Node" xmi:id="_I57NsMVUEfCwOtMBvT8wYw" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I57NscVUEfCwOtMBvT8wYw" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_I57NssVUEfCwOtMBvT8wYw" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I57Ns8VUEfCwOtMBvT8wYw" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_I57NtMVUEfCwOtMBvT8wYw" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I57NtcVUEfCwOtMBvT8wYw" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_I57NrcVUEfCwOtMBvT8wYw" routing="Rectilinear"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_I57NrsVUEfCwOtMBvT8wYw" fontName="Ubuntu Sans" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_I57Nr8VUEfCwOtMBvT8wYw" points="[0, 0, -145, 390]$[144, -61, -1, 329]$[145, -390, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_I570sMVUEfCwOtMBvT8wYw" id="(0.5,0.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_I570scVUEfCwOtMBvT8wYw" id="(0.5,1.0)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_I570ssVUEfCwOtMBvT8wYw" type="4001" element="_I5tyR8VUEfCwOtMBvT8wYw" source="_I50f9sVUEfCwOtMBvT8wYw" target="_I51uEMVUEfCwOtMBvT8wYw">
+          <children xmi:type="notation:Node" xmi:id="_I570tsVUEfCwOtMBvT8wYw" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I570t8VUEfCwOtMBvT8wYw" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_I570uMVUEfCwOtMBvT8wYw" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I570ucVUEfCwOtMBvT8wYw" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_I570usVUEfCwOtMBvT8wYw" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I570u8VUEfCwOtMBvT8wYw" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_I570s8VUEfCwOtMBvT8wYw" routing="Rectilinear"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_I570tMVUEfCwOtMBvT8wYw" fontName="Ubuntu Sans" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_I570tcVUEfCwOtMBvT8wYw" points="[0, 0, 45, 60]$[-45, -60, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_I570vMVUEfCwOtMBvT8wYw" id="(0.5,0.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_I570vcVUEfCwOtMBvT8wYw" id="(0.5,1.0)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_I570vsVUEfCwOtMBvT8wYw" type="4001" element="_I5tyTMVUEfCwOtMBvT8wYw" source="_I51HAMVUEfCwOtMBvT8wYw" target="_I51HBcVUEfCwOtMBvT8wYw">
+          <children xmi:type="notation:Node" xmi:id="_I570wsVUEfCwOtMBvT8wYw" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I570w8VUEfCwOtMBvT8wYw" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_I570xMVUEfCwOtMBvT8wYw" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I570xcVUEfCwOtMBvT8wYw" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_I570xsVUEfCwOtMBvT8wYw" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I570x8VUEfCwOtMBvT8wYw" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_I570v8VUEfCwOtMBvT8wYw" routing="Rectilinear"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_I570wMVUEfCwOtMBvT8wYw" fontName="Ubuntu Sans" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_I570wcVUEfCwOtMBvT8wYw" points="[0, 0, 0, 60]$[0, -60, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_I58bwMVUEfCwOtMBvT8wYw" id="(0.5,0.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_I58bwcVUEfCwOtMBvT8wYw" id="(0.5,1.0)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_I58bwsVUEfCwOtMBvT8wYw" type="4001" element="_I5tyUcVUEfCwOtMBvT8wYw" source="_I51HBcVUEfCwOtMBvT8wYw" target="_I51HCsVUEfCwOtMBvT8wYw">
+          <children xmi:type="notation:Node" xmi:id="_I58bxsVUEfCwOtMBvT8wYw" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I58bx8VUEfCwOtMBvT8wYw" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_I58byMVUEfCwOtMBvT8wYw" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I58bycVUEfCwOtMBvT8wYw" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_I58bysVUEfCwOtMBvT8wYw" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I58by8VUEfCwOtMBvT8wYw" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_I58bw8VUEfCwOtMBvT8wYw" routing="Rectilinear"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_I58bxMVUEfCwOtMBvT8wYw" fontName="Ubuntu Sans" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_I58bxcVUEfCwOtMBvT8wYw" points="[0, 0, -200, 60]$[200, -60, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_I58bzMVUEfCwOtMBvT8wYw" id="(0.5,0.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_I58bzcVUEfCwOtMBvT8wYw" id="(0.5,1.0)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_I58bzsVUEfCwOtMBvT8wYw" type="4001" element="_I5tyVsVUEfCwOtMBvT8wYw" source="_I51HBcVUEfCwOtMBvT8wYw" target="_I51HD8VUEfCwOtMBvT8wYw">
+          <children xmi:type="notation:Node" xmi:id="_I58b0sVUEfCwOtMBvT8wYw" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I58b08VUEfCwOtMBvT8wYw" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_I58b1MVUEfCwOtMBvT8wYw" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I58b1cVUEfCwOtMBvT8wYw" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_I58b1sVUEfCwOtMBvT8wYw" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I58b18VUEfCwOtMBvT8wYw" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_I58bz8VUEfCwOtMBvT8wYw" routing="Rectilinear"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_I58b0MVUEfCwOtMBvT8wYw" fontName="Ubuntu Sans" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_I58b0cVUEfCwOtMBvT8wYw" points="[0, 0, 0, 60]$[0, -60, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_I58b2MVUEfCwOtMBvT8wYw" id="(0.5,0.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_I59C0MVUEfCwOtMBvT8wYw" id="(0.5,1.0)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_I59C0cVUEfCwOtMBvT8wYw" type="4001" element="_I5tyW8VUEfCwOtMBvT8wYw" source="_I51HD8VUEfCwOtMBvT8wYw" target="_I50f-8VUEfCwOtMBvT8wYw">
+          <children xmi:type="notation:Node" xmi:id="_I59C1cVUEfCwOtMBvT8wYw" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I59C1sVUEfCwOtMBvT8wYw" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_I59C18VUEfCwOtMBvT8wYw" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I59C2MVUEfCwOtMBvT8wYw" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_I59C2cVUEfCwOtMBvT8wYw" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I59C2sVUEfCwOtMBvT8wYw" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_I59C0sVUEfCwOtMBvT8wYw" routing="Rectilinear"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_I59C08VUEfCwOtMBvT8wYw" fontName="Ubuntu Sans" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_I59C1MVUEfCwOtMBvT8wYw" points="[0, 0, -390, 60]$[390, -60, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_I59C28VUEfCwOtMBvT8wYw" id="(0.5,0.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_I59C3MVUEfCwOtMBvT8wYw" id="(0.5,1.0)"/>
+        </edges>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_I5uZVMVUEfCwOtMBvT8wYw" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_I5uZVcVUEfCwOtMBvT8wYw"/>
+    </ownedAnnotationEntries>
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_I5fv0MVUEfCwOtMBvT8wYw" name="Conceptual Solution  - Authenticator" incomingEdges="_I5rWAsVUEfCwOtMBvT8wYw">
+      <target xmi:type="ssrt:Solution" href="security_patterns/security_objectives/confidentiality/AuthCrypt.ssrt#//@provides.0"/>
+      <semanticElements xmi:type="ssrt:Solution" href="security_patterns/security_objectives/confidentiality/AuthCrypt.ssrt#//@provides.0"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_I5gW4MVUEfCwOtMBvT8wYw" labelSize="12" borderSize="1" borderSizeComputationExpression="1" backgroundColor="204,242,166">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@containerMappings[name='Conceptual%20Solution%20']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@containerMappings[name='Conceptual%20Solution%20']"/>
+      <ownedDiagramElements xmi:type="diagram:DNode" uid="_I5hlAMVUEfCwOtMBvT8wYw" name="Subject" outgoingEdges="_I5r9FcVUEfCwOtMBvT8wYw _I5skIMVUEfCwOtMBvT8wYw _I5skJcVUEfCwOtMBvT8wYw" width="14" height="5" resizeKind="NSEW">
+        <target xmi:type="ssrt:SolutionElement" href="security_patterns/security_objectives/confidentiality/AuthCrypt.ssrt#//@provides.0/@isDescribedWith.0"/>
+        <semanticElements xmi:type="ssrt:SolutionElement" href="security_patterns/security_objectives/confidentiality/AuthCrypt.ssrt#//@provides.0/@isDescribedWith.0"/>
+        <ownedStyle xmi:type="diagram:Square" uid="_I5hlAcVUEfCwOtMBvT8wYw" labelSize="12" showIcon="false" borderSize="2" borderSizeComputationExpression="2" labelPosition="node" width="14" height="5" color="204,242,166">
+          <description xmi:type="style:SquareDescription" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@containerMappings[name='Conceptual%20Solution%20']/@subNodeMappings[name='SolutionElement']/@conditionnalStyles.0/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@containerMappings[name='Conceptual%20Solution%20']/@subNodeMappings[name='SolutionElement']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNode" uid="_I5iMEcVUEfCwOtMBvT8wYw" name="Proof of Identity" incomingEdges="_I5skJcVUEfCwOtMBvT8wYw" width="14" height="5" resizeKind="NSEW">
+        <target xmi:type="ssrt:SolutionElement" href="security_patterns/security_objectives/confidentiality/AuthCrypt.ssrt#//@provides.0/@isDescribedWith.1"/>
+        <semanticElements xmi:type="ssrt:SolutionElement" href="security_patterns/security_objectives/confidentiality/AuthCrypt.ssrt#//@provides.0/@isDescribedWith.1"/>
+        <ownedStyle xmi:type="diagram:Square" uid="_I5iMEsVUEfCwOtMBvT8wYw" labelSize="12" showIcon="false" borderSize="2" borderSizeComputationExpression="2" labelPosition="node" width="14" height="5" color="217,196,215">
+          <description xmi:type="style:SquareDescription" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@containerMappings[name='Conceptual%20Solution%20']/@subNodeMappings[name='SolutionElement']/@conditionnalStyles.1/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@containerMappings[name='Conceptual%20Solution%20']/@subNodeMappings[name='SolutionElement']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNode" uid="_I5izIMVUEfCwOtMBvT8wYw" name="Proof of Authentication" incomingEdges="_I5skIMVUEfCwOtMBvT8wYw _I5skKsVUEfCwOtMBvT8wYw" width="14" height="5" resizeKind="NSEW">
+        <target xmi:type="ssrt:SolutionElement" href="security_patterns/security_objectives/confidentiality/AuthCrypt.ssrt#//@provides.0/@isDescribedWith.2"/>
+        <semanticElements xmi:type="ssrt:SolutionElement" href="security_patterns/security_objectives/confidentiality/AuthCrypt.ssrt#//@provides.0/@isDescribedWith.2"/>
+        <ownedStyle xmi:type="diagram:Square" uid="_I5izIcVUEfCwOtMBvT8wYw" labelSize="12" showIcon="false" borderSize="2" borderSizeComputationExpression="2" labelPosition="node" width="14" height="5" color="194,239,255">
+          <description xmi:type="style:SquareDescription" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@containerMappings[name='Conceptual%20Solution%20']/@subNodeMappings[name='SolutionElement']/@conditionnalStyles.2/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@containerMappings[name='Conceptual%20Solution%20']/@subNodeMappings[name='SolutionElement']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNode" uid="_I5izI8VUEfCwOtMBvT8wYw" name="Authenticator" outgoingEdges="_I5skKsVUEfCwOtMBvT8wYw _I5skL8VUEfCwOtMBvT8wYw" incomingEdges="_I5r9FcVUEfCwOtMBvT8wYw" width="14" height="5" resizeKind="NSEW">
+        <target xmi:type="ssrt:SolutionElement" href="security_patterns/security_objectives/confidentiality/AuthCrypt.ssrt#//@provides.0/@isDescribedWith.3"/>
+        <semanticElements xmi:type="ssrt:SolutionElement" href="security_patterns/security_objectives/confidentiality/AuthCrypt.ssrt#//@provides.0/@isDescribedWith.3"/>
+        <ownedStyle xmi:type="diagram:Square" uid="_I5jaMMVUEfCwOtMBvT8wYw" labelSize="12" showIcon="false" borderSize="2" borderSizeComputationExpression="2" labelPosition="node" width="14" height="5" color="246,139,139">
+          <description xmi:type="style:SquareDescription" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@containerMappings[name='Conceptual%20Solution%20']/@subNodeMappings[name='SolutionElement']/@conditionnalStyles.3/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@containerMappings[name='Conceptual%20Solution%20']/@subNodeMappings[name='SolutionElement']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNode" uid="_I5jaMsVUEfCwOtMBvT8wYw" name="Authentication Information" incomingEdges="_I5skL8VUEfCwOtMBvT8wYw" width="14" height="5" resizeKind="NSEW">
+        <target xmi:type="ssrt:SolutionElement" href="security_patterns/security_objectives/confidentiality/AuthCrypt.ssrt#//@provides.0/@isDescribedWith.4"/>
+        <semanticElements xmi:type="ssrt:SolutionElement" href="security_patterns/security_objectives/confidentiality/AuthCrypt.ssrt#//@provides.0/@isDescribedWith.4"/>
+        <ownedStyle xmi:type="diagram:Square" uid="_I5kBQMVUEfCwOtMBvT8wYw" labelSize="12" showIcon="false" borderSize="2" borderSizeComputationExpression="2" labelPosition="node" width="14" height="5" color="255,245,181">
+          <description xmi:type="style:SquareDescription" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@containerMappings[name='Conceptual%20Solution%20']/@subNodeMappings[name='SolutionElement']/@conditionnalStyles.4/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@containerMappings[name='Conceptual%20Solution%20']/@subNodeMappings[name='SolutionElement']"/>
+      </ownedDiagramElements>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_I5kBQsVUEfCwOtMBvT8wYw" name="Design Solution  - Cryptographic-based Authentication" outgoingEdges="_I5rWAsVUEfCwOtMBvT8wYw" incomingEdges="_I5r9EMVUEfCwOtMBvT8wYw">
+      <target xmi:type="ssrt:Solution" href="security_patterns/security_objectives/confidentiality/AuthCrypt.ssrt#//@provides.1"/>
+      <semanticElements xmi:type="ssrt:Solution" href="security_patterns/security_objectives/confidentiality/AuthCrypt.ssrt#//@provides.1"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_I5koUMVUEfCwOtMBvT8wYw" labelSize="12" borderSize="1" borderSizeComputationExpression="1" backgroundColor="253,206,137">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@containerMappings[name='Design%20Solution']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@containerMappings[name='Design%20Solution']"/>
+      <ownedDiagramElements xmi:type="diagram:DNode" uid="_I5koUsVUEfCwOtMBvT8wYw" name="Subject" outgoingEdges="_I5skNMVUEfCwOtMBvT8wYw _I5skOcVUEfCwOtMBvT8wYw _I5tLNMVUEfCwOtMBvT8wYw" width="14" height="5" resizeKind="NSEW">
+        <target xmi:type="ssrt:SolutionElement" href="security_patterns/security_objectives/confidentiality/AuthCrypt.ssrt#//@provides.1/@isDescribedWith.0"/>
+        <semanticElements xmi:type="ssrt:SolutionElement" href="security_patterns/security_objectives/confidentiality/AuthCrypt.ssrt#//@provides.1/@isDescribedWith.0"/>
+        <ownedStyle xmi:type="diagram:Square" uid="_I5lPYMVUEfCwOtMBvT8wYw" labelSize="12" showIcon="false" borderSize="2" borderSizeComputationExpression="2" labelPosition="node" width="14" height="5" color="204,242,166">
+          <description xmi:type="style:SquareDescription" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@containerMappings[name='Design%20Solution']/@subNodeMappings[name='SolutionElement']/@conditionnalStyles.0/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@containerMappings[name='Design%20Solution']/@subNodeMappings[name='SolutionElement']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNode" uid="_I5lPYsVUEfCwOtMBvT8wYw" name="Challenge-Response protocol" incomingEdges="_I5skNMVUEfCwOtMBvT8wYw" width="14" height="5" resizeKind="NSEW">
+        <target xmi:type="ssrt:SolutionElement" href="security_patterns/security_objectives/confidentiality/AuthCrypt.ssrt#//@provides.1/@isDescribedWith.1"/>
+        <semanticElements xmi:type="ssrt:SolutionElement" href="security_patterns/security_objectives/confidentiality/AuthCrypt.ssrt#//@provides.1/@isDescribedWith.1"/>
+        <ownedStyle xmi:type="diagram:Square" uid="_I5l2cMVUEfCwOtMBvT8wYw" labelSize="12" showIcon="false" borderSize="2" borderSizeComputationExpression="2" labelPosition="node" width="14" height="5" color="246,139,139">
+          <description xmi:type="style:SquareDescription" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@containerMappings[name='Design%20Solution']/@subNodeMappings[name='SolutionElement']/@conditionnalStyles.3/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@containerMappings[name='Design%20Solution']/@subNodeMappings[name='SolutionElement']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNode" uid="_I5mdgcVUEfCwOtMBvT8wYw" name="Authenticator" outgoingEdges="_I5tLOcVUEfCwOtMBvT8wYw _I5tLPsVUEfCwOtMBvT8wYw" width="14" height="5" resizeKind="NSEW">
+        <target xmi:type="ssrt:SolutionElement" href="security_patterns/security_objectives/confidentiality/AuthCrypt.ssrt#//@provides.1/@isDescribedWith.2"/>
+        <semanticElements xmi:type="ssrt:SolutionElement" href="security_patterns/security_objectives/confidentiality/AuthCrypt.ssrt#//@provides.1/@isDescribedWith.2"/>
+        <ownedStyle xmi:type="diagram:Square" uid="_I5mdgsVUEfCwOtMBvT8wYw" labelSize="12" showIcon="false" borderSize="2" borderSizeComputationExpression="2" labelPosition="node" width="14" height="5" color="246,139,139">
+          <description xmi:type="style:SquareDescription" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@containerMappings[name='Design%20Solution']/@subNodeMappings[name='SolutionElement']/@conditionnalStyles.3/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@containerMappings[name='Design%20Solution']/@subNodeMappings[name='SolutionElement']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNode" uid="_I5nEkMVUEfCwOtMBvT8wYw" name="Cryptographic Information" incomingEdges="_I5tLPsVUEfCwOtMBvT8wYw" width="14" height="5" resizeKind="NSEW">
+        <target xmi:type="ssrt:SolutionElement" href="security_patterns/security_objectives/confidentiality/AuthCrypt.ssrt#//@provides.1/@isDescribedWith.3"/>
+        <semanticElements xmi:type="ssrt:SolutionElement" href="security_patterns/security_objectives/confidentiality/AuthCrypt.ssrt#//@provides.1/@isDescribedWith.3"/>
+        <ownedStyle xmi:type="diagram:Square" uid="_I5nEkcVUEfCwOtMBvT8wYw" labelSize="12" showIcon="false" borderSize="2" borderSizeComputationExpression="2" labelPosition="node" width="14" height="5" color="255,245,181">
+          <description xmi:type="style:SquareDescription" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@containerMappings[name='Design%20Solution']/@subNodeMappings[name='SolutionElement']/@conditionnalStyles.4/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@containerMappings[name='Design%20Solution']/@subNodeMappings[name='SolutionElement']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNode" uid="_I5nrocVUEfCwOtMBvT8wYw" name="Cryptographic Session-Key" outgoingEdges="_I5tLQ8VUEfCwOtMBvT8wYw" incomingEdges="_I5tLOcVUEfCwOtMBvT8wYw" width="14" height="5" resizeKind="NSEW">
+        <target xmi:type="ssrt:SolutionElement" href="security_patterns/security_objectives/confidentiality/AuthCrypt.ssrt#//@provides.1/@isDescribedWith.4"/>
+        <semanticElements xmi:type="ssrt:SolutionElement" href="security_patterns/security_objectives/confidentiality/AuthCrypt.ssrt#//@provides.1/@isDescribedWith.4"/>
+        <ownedStyle xmi:type="diagram:Square" uid="_I5nrosVUEfCwOtMBvT8wYw" labelSize="12" showIcon="false" borderSize="2" borderSizeComputationExpression="2" labelPosition="node" width="14" height="5" color="194,239,255">
+          <description xmi:type="style:SquareDescription" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@containerMappings[name='Design%20Solution']/@subNodeMappings[name='SolutionElement']/@conditionnalStyles.2/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@containerMappings[name='Design%20Solution']/@subNodeMappings[name='SolutionElement']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNode" uid="_I5nrpMVUEfCwOtMBvT8wYw" name="Session" incomingEdges="_I5skOcVUEfCwOtMBvT8wYw _I5tLQ8VUEfCwOtMBvT8wYw" width="14" height="5" resizeKind="NSEW">
+        <target xmi:type="ssrt:SolutionElement" href="security_patterns/security_objectives/confidentiality/AuthCrypt.ssrt#//@provides.1/@isDescribedWith.5"/>
+        <semanticElements xmi:type="ssrt:SolutionElement" href="security_patterns/security_objectives/confidentiality/AuthCrypt.ssrt#//@provides.1/@isDescribedWith.5"/>
+        <ownedStyle xmi:type="diagram:Square" uid="_I5oSsMVUEfCwOtMBvT8wYw" labelSize="12" showIcon="false" borderSize="2" borderSizeComputationExpression="2" labelPosition="node" width="14" height="5" color="194,239,255">
+          <description xmi:type="style:SquareDescription" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@containerMappings[name='Design%20Solution']/@subNodeMappings[name='SolutionElement']/@conditionnalStyles.2/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@containerMappings[name='Design%20Solution']/@subNodeMappings[name='SolutionElement']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNode" uid="_I5oSssVUEfCwOtMBvT8wYw" name="Unforgeable proof of identity" incomingEdges="_I5tLNMVUEfCwOtMBvT8wYw" width="14" height="5" resizeKind="NSEW">
+        <target xmi:type="ssrt:SolutionElement" href="security_patterns/security_objectives/confidentiality/AuthCrypt.ssrt#//@provides.1/@isDescribedWith.6"/>
+        <semanticElements xmi:type="ssrt:SolutionElement" href="security_patterns/security_objectives/confidentiality/AuthCrypt.ssrt#//@provides.1/@isDescribedWith.6"/>
+        <ownedStyle xmi:type="diagram:Square" uid="_I5oSs8VUEfCwOtMBvT8wYw" labelSize="12" showIcon="false" borderSize="2" borderSizeComputationExpression="2" labelPosition="node" width="14" height="5" color="217,196,215">
+          <description xmi:type="style:SquareDescription" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@containerMappings[name='Design%20Solution']/@subNodeMappings[name='SolutionElement']/@conditionnalStyles.1/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@containerMappings[name='Design%20Solution']/@subNodeMappings[name='SolutionElement']"/>
+      </ownedDiagramElements>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_I5oStcVUEfCwOtMBvT8wYw" name="Realization Solution  - Symmetric Key with Encryption algorithm" outgoingEdges="_I5r9EMVUEfCwOtMBvT8wYw">
+      <target xmi:type="ssrt:Solution" href="security_patterns/security_objectives/confidentiality/AuthCrypt.ssrt#//@provides.2"/>
+      <semanticElements xmi:type="ssrt:Solution" href="security_patterns/security_objectives/confidentiality/AuthCrypt.ssrt#//@provides.2"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_I5oStsVUEfCwOtMBvT8wYw" labelSize="12" borderSize="1" borderSizeComputationExpression="1" backgroundColor="246,139,139">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@containerMappings[name='Realization%20Solution']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@containerMappings[name='Realization%20Solution']"/>
+      <ownedDiagramElements xmi:type="diagram:DNode" uid="_I5o5wcVUEfCwOtMBvT8wYw" name="Subject" outgoingEdges="_I5tLSMVUEfCwOtMBvT8wYw _I5tyQsVUEfCwOtMBvT8wYw _I5tyR8VUEfCwOtMBvT8wYw" width="14" height="5" resizeKind="NSEW">
+        <target xmi:type="ssrt:SolutionElement" href="security_patterns/security_objectives/confidentiality/AuthCrypt.ssrt#//@provides.2/@isDescribedWith.0"/>
+        <semanticElements xmi:type="ssrt:SolutionElement" href="security_patterns/security_objectives/confidentiality/AuthCrypt.ssrt#//@provides.2/@isDescribedWith.0"/>
+        <ownedStyle xmi:type="diagram:Square" uid="_I5pg0MVUEfCwOtMBvT8wYw" labelSize="12" showIcon="false" borderSize="2" borderSizeComputationExpression="2" labelPosition="node" width="14" height="5" color="204,242,166">
+          <description xmi:type="style:SquareDescription" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@containerMappings[name='Realization%20Solution']/@subNodeMappings[name='SolutionElement']/@conditionnalStyles.0/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@containerMappings[name='Realization%20Solution']/@subNodeMappings[name='SolutionElement']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNode" uid="_I5pg0sVUEfCwOtMBvT8wYw" name="Session" incomingEdges="_I5tyQsVUEfCwOtMBvT8wYw _I5tyW8VUEfCwOtMBvT8wYw" width="14" height="5" resizeKind="NSEW">
+        <target xmi:type="ssrt:SolutionElement" href="security_patterns/security_objectives/confidentiality/AuthCrypt.ssrt#//@provides.2/@isDescribedWith.1"/>
+        <semanticElements xmi:type="ssrt:SolutionElement" href="security_patterns/security_objectives/confidentiality/AuthCrypt.ssrt#//@provides.2/@isDescribedWith.1"/>
+        <ownedStyle xmi:type="diagram:Square" uid="_I5pg08VUEfCwOtMBvT8wYw" labelSize="12" showIcon="false" borderSize="2" borderSizeComputationExpression="2" labelPosition="node" width="14" height="5" color="194,239,255">
+          <description xmi:type="style:SquareDescription" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@containerMappings[name='Realization%20Solution']/@subNodeMappings[name='SolutionElement']/@conditionnalStyles.2/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@containerMappings[name='Realization%20Solution']/@subNodeMappings[name='SolutionElement']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNode" uid="_I5qH4cVUEfCwOtMBvT8wYw" name="Encryption Algorithm" outgoingEdges="_I5tyTMVUEfCwOtMBvT8wYw" incomingEdges="_I5tLSMVUEfCwOtMBvT8wYw" width="14" height="5" resizeKind="NSEW">
+        <target xmi:type="ssrt:SolutionElement" href="security_patterns/security_objectives/confidentiality/AuthCrypt.ssrt#//@provides.2/@isDescribedWith.2"/>
+        <semanticElements xmi:type="ssrt:SolutionElement" href="security_patterns/security_objectives/confidentiality/AuthCrypt.ssrt#//@provides.2/@isDescribedWith.2"/>
+        <ownedStyle xmi:type="diagram:Square" uid="_I5qH4sVUEfCwOtMBvT8wYw" labelSize="12" showIcon="false" borderSize="2" borderSizeComputationExpression="2" labelPosition="node" width="14" height="5" color="246,139,139">
+          <description xmi:type="style:SquareDescription" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@containerMappings[name='Realization%20Solution']/@subNodeMappings[name='SolutionElement']/@conditionnalStyles.3/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@containerMappings[name='Realization%20Solution']/@subNodeMappings[name='SolutionElement']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNode" uid="_I5qH5MVUEfCwOtMBvT8wYw" name="Authenticator" outgoingEdges="_I5tyUcVUEfCwOtMBvT8wYw _I5tyVsVUEfCwOtMBvT8wYw" incomingEdges="_I5tyTMVUEfCwOtMBvT8wYw" width="14" height="5" resizeKind="NSEW">
+        <target xmi:type="ssrt:SolutionElement" href="security_patterns/security_objectives/confidentiality/AuthCrypt.ssrt#//@provides.2/@isDescribedWith.3"/>
+        <semanticElements xmi:type="ssrt:SolutionElement" href="security_patterns/security_objectives/confidentiality/AuthCrypt.ssrt#//@provides.2/@isDescribedWith.3"/>
+        <ownedStyle xmi:type="diagram:Square" uid="_I5qH5cVUEfCwOtMBvT8wYw" labelSize="12" showIcon="false" borderSize="2" borderSizeComputationExpression="2" labelPosition="node" width="14" height="5" color="246,139,139">
+          <description xmi:type="style:SquareDescription" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@containerMappings[name='Realization%20Solution']/@subNodeMappings[name='SolutionElement']/@conditionnalStyles.3/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@containerMappings[name='Realization%20Solution']/@subNodeMappings[name='SolutionElement']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNode" uid="_I5qu8MVUEfCwOtMBvT8wYw" name="Cryptographic information" incomingEdges="_I5tyUcVUEfCwOtMBvT8wYw" width="14" height="5" resizeKind="NSEW">
+        <target xmi:type="ssrt:SolutionElement" href="security_patterns/security_objectives/confidentiality/AuthCrypt.ssrt#//@provides.2/@isDescribedWith.4"/>
+        <semanticElements xmi:type="ssrt:SolutionElement" href="security_patterns/security_objectives/confidentiality/AuthCrypt.ssrt#//@provides.2/@isDescribedWith.4"/>
+        <ownedStyle xmi:type="diagram:Square" uid="_I5qu8cVUEfCwOtMBvT8wYw" labelSize="12" showIcon="false" borderSize="2" borderSizeComputationExpression="2" labelPosition="node" width="14" height="5" color="255,245,181">
+          <description xmi:type="style:SquareDescription" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@containerMappings[name='Realization%20Solution']/@subNodeMappings[name='SolutionElement']/@conditionnalStyles.4/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@containerMappings[name='Realization%20Solution']/@subNodeMappings[name='SolutionElement']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNode" uid="_I5qu88VUEfCwOtMBvT8wYw" name="Cryptographic Session-key" outgoingEdges="_I5tyW8VUEfCwOtMBvT8wYw" incomingEdges="_I5tyVsVUEfCwOtMBvT8wYw" width="14" height="5" resizeKind="NSEW">
+        <target xmi:type="ssrt:SolutionElement" href="security_patterns/security_objectives/confidentiality/AuthCrypt.ssrt#//@provides.2/@isDescribedWith.5"/>
+        <semanticElements xmi:type="ssrt:SolutionElement" href="security_patterns/security_objectives/confidentiality/AuthCrypt.ssrt#//@provides.2/@isDescribedWith.5"/>
+        <ownedStyle xmi:type="diagram:Square" uid="_I5qu9MVUEfCwOtMBvT8wYw" labelSize="12" showIcon="false" borderSize="2" borderSizeComputationExpression="2" labelPosition="node" width="14" height="5" color="194,239,255">
+          <description xmi:type="style:SquareDescription" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@containerMappings[name='Realization%20Solution']/@subNodeMappings[name='SolutionElement']/@conditionnalStyles.2/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@containerMappings[name='Realization%20Solution']/@subNodeMappings[name='SolutionElement']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNode" uid="_I5qu9sVUEfCwOtMBvT8wYw" name="Symmetric Key" incomingEdges="_I5tyR8VUEfCwOtMBvT8wYw" width="14" height="5" resizeKind="NSEW">
+        <target xmi:type="ssrt:SolutionElement" href="security_patterns/security_objectives/confidentiality/AuthCrypt.ssrt#//@provides.2/@isDescribedWith.6"/>
+        <semanticElements xmi:type="ssrt:SolutionElement" href="security_patterns/security_objectives/confidentiality/AuthCrypt.ssrt#//@provides.2/@isDescribedWith.6"/>
+        <ownedStyle xmi:type="diagram:Square" uid="_I5rWAMVUEfCwOtMBvT8wYw" labelSize="12" showIcon="false" borderSize="2" borderSizeComputationExpression="2" labelPosition="node" width="14" height="5" color="217,196,215">
+          <description xmi:type="style:SquareDescription" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@containerMappings[name='Realization%20Solution']/@subNodeMappings[name='SolutionElement']/@conditionnalStyles.1/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@containerMappings[name='Realization%20Solution']/@subNodeMappings[name='SolutionElement']"/>
+      </ownedDiagramElements>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_I5rWAsVUEfCwOtMBvT8wYw" name="refines" sourceNode="_I5kBQsVUEfCwOtMBvT8wYw" targetNode="_I5fv0MVUEfCwOtMBvT8wYw">
+      <target xmi:type="ssrt:Solution" href="security_patterns/security_objectives/confidentiality/AuthCrypt.ssrt#//@provides.1"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_I5rWA8VUEfCwOtMBvT8wYw" lineStyle="dot" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@edgeMappings[name='SolutionRefinesSolution']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_I5rWBMVUEfCwOtMBvT8wYw" labelSize="12" showIcon="false">
+          <labelFormat>italic</labelFormat>
+        </centerLabelStyle>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@edgeMappings[name='SolutionRefinesSolution']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_I5r9EMVUEfCwOtMBvT8wYw" name="refines" sourceNode="_I5oStcVUEfCwOtMBvT8wYw" targetNode="_I5kBQsVUEfCwOtMBvT8wYw">
+      <target xmi:type="ssrt:Solution" href="security_patterns/security_objectives/confidentiality/AuthCrypt.ssrt#//@provides.2"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_I5r9EcVUEfCwOtMBvT8wYw" lineStyle="dot" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@edgeMappings[name='SolutionRefinesSolution']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_I5r9EsVUEfCwOtMBvT8wYw" labelSize="12" showIcon="false">
+          <labelFormat>italic</labelFormat>
+        </centerLabelStyle>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@edgeMappings[name='SolutionRefinesSolution']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_I5r9FcVUEfCwOtMBvT8wYw" name="Request Authentication" sourceNode="_I5hlAMVUEfCwOtMBvT8wYw" targetNode="_I5izI8VUEfCwOtMBvT8wYw">
+      <target xmi:type="ssrt:Relation" href="security_patterns/security_objectives/confidentiality/AuthCrypt.ssrt#//@provides.0/@isDescribedWith.0/@source.0"/>
+      <semanticElements xmi:type="ssrt:Relation" href="security_patterns/security_objectives/confidentiality/AuthCrypt.ssrt#//@provides.0/@isDescribedWith.0/@source.0"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_I5r9FsVUEfCwOtMBvT8wYw" routingStyle="manhattan" strokeColor="0,0,0">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@edgeMappings[name='SolElemRelationSolElem']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_I5r9F8VUEfCwOtMBvT8wYw" labelSize="12" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@edgeMappings[name='SolElemRelationSolElem']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_I5skIMVUEfCwOtMBvT8wYw" name="Composed Of" sourceNode="_I5hlAMVUEfCwOtMBvT8wYw" targetNode="_I5izIMVUEfCwOtMBvT8wYw">
+      <target xmi:type="ssrt:Relation" href="security_patterns/security_objectives/confidentiality/AuthCrypt.ssrt#//@provides.0/@isDescribedWith.0/@source.1"/>
+      <semanticElements xmi:type="ssrt:Relation" href="security_patterns/security_objectives/confidentiality/AuthCrypt.ssrt#//@provides.0/@isDescribedWith.0/@source.1"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_I5skIcVUEfCwOtMBvT8wYw" routingStyle="manhattan" strokeColor="0,0,0">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@edgeMappings[name='SolElemRelationSolElem']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_I5skIsVUEfCwOtMBvT8wYw" labelSize="12" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@edgeMappings[name='SolElemRelationSolElem']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_I5skJcVUEfCwOtMBvT8wYw" name="Composed Of" sourceNode="_I5hlAMVUEfCwOtMBvT8wYw" targetNode="_I5iMEcVUEfCwOtMBvT8wYw">
+      <target xmi:type="ssrt:Relation" href="security_patterns/security_objectives/confidentiality/AuthCrypt.ssrt#//@provides.0/@isDescribedWith.0/@source.2"/>
+      <semanticElements xmi:type="ssrt:Relation" href="security_patterns/security_objectives/confidentiality/AuthCrypt.ssrt#//@provides.0/@isDescribedWith.0/@source.2"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_I5skJsVUEfCwOtMBvT8wYw" routingStyle="manhattan" strokeColor="0,0,0">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@edgeMappings[name='SolElemRelationSolElem']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_I5skJ8VUEfCwOtMBvT8wYw" labelSize="12" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@edgeMappings[name='SolElemRelationSolElem']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_I5skKsVUEfCwOtMBvT8wYw" name="create" sourceNode="_I5izI8VUEfCwOtMBvT8wYw" targetNode="_I5izIMVUEfCwOtMBvT8wYw">
+      <target xmi:type="ssrt:Relation" href="security_patterns/security_objectives/confidentiality/AuthCrypt.ssrt#//@provides.0/@isDescribedWith.3/@source.0"/>
+      <semanticElements xmi:type="ssrt:Relation" href="security_patterns/security_objectives/confidentiality/AuthCrypt.ssrt#//@provides.0/@isDescribedWith.3/@source.0"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_I5skK8VUEfCwOtMBvT8wYw" routingStyle="manhattan" strokeColor="0,0,0">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@edgeMappings[name='SolElemRelationSolElem']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_I5skLMVUEfCwOtMBvT8wYw" labelSize="12" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@edgeMappings[name='SolElemRelationSolElem']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_I5skL8VUEfCwOtMBvT8wYw" name="verifies" sourceNode="_I5izI8VUEfCwOtMBvT8wYw" targetNode="_I5jaMsVUEfCwOtMBvT8wYw">
+      <target xmi:type="ssrt:Relation" href="security_patterns/security_objectives/confidentiality/AuthCrypt.ssrt#//@provides.0/@isDescribedWith.3/@source.1"/>
+      <semanticElements xmi:type="ssrt:Relation" href="security_patterns/security_objectives/confidentiality/AuthCrypt.ssrt#//@provides.0/@isDescribedWith.3/@source.1"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_I5skMMVUEfCwOtMBvT8wYw" routingStyle="manhattan" strokeColor="0,0,0">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@edgeMappings[name='SolElemRelationSolElem']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_I5skMcVUEfCwOtMBvT8wYw" labelSize="12" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@edgeMappings[name='SolElemRelationSolElem']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_I5skNMVUEfCwOtMBvT8wYw" name="exchange" sourceNode="_I5koUsVUEfCwOtMBvT8wYw" targetNode="_I5lPYsVUEfCwOtMBvT8wYw">
+      <target xmi:type="ssrt:Relation" href="security_patterns/security_objectives/confidentiality/AuthCrypt.ssrt#//@provides.1/@isDescribedWith.0/@source.0"/>
+      <semanticElements xmi:type="ssrt:Relation" href="security_patterns/security_objectives/confidentiality/AuthCrypt.ssrt#//@provides.1/@isDescribedWith.0/@source.0"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_I5skNcVUEfCwOtMBvT8wYw" routingStyle="manhattan" strokeColor="0,0,0">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@edgeMappings[name='SolElemRelationSolElem']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_I5skNsVUEfCwOtMBvT8wYw" labelSize="12" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@edgeMappings[name='SolElemRelationSolElem']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_I5skOcVUEfCwOtMBvT8wYw" name="connects To" sourceNode="_I5koUsVUEfCwOtMBvT8wYw" targetNode="_I5nrpMVUEfCwOtMBvT8wYw">
+      <target xmi:type="ssrt:Relation" href="security_patterns/security_objectives/confidentiality/AuthCrypt.ssrt#//@provides.1/@isDescribedWith.0/@source.1"/>
+      <semanticElements xmi:type="ssrt:Relation" href="security_patterns/security_objectives/confidentiality/AuthCrypt.ssrt#//@provides.1/@isDescribedWith.0/@source.1"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_I5tLMMVUEfCwOtMBvT8wYw" routingStyle="manhattan" strokeColor="0,0,0">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@edgeMappings[name='SolElemRelationSolElem']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_I5tLMcVUEfCwOtMBvT8wYw" labelSize="12" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@edgeMappings[name='SolElemRelationSolElem']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_I5tLNMVUEfCwOtMBvT8wYw" name="has" sourceNode="_I5koUsVUEfCwOtMBvT8wYw" targetNode="_I5oSssVUEfCwOtMBvT8wYw">
+      <target xmi:type="ssrt:Relation" href="security_patterns/security_objectives/confidentiality/AuthCrypt.ssrt#//@provides.1/@isDescribedWith.0/@source.2"/>
+      <semanticElements xmi:type="ssrt:Relation" href="security_patterns/security_objectives/confidentiality/AuthCrypt.ssrt#//@provides.1/@isDescribedWith.0/@source.2"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_I5tLNcVUEfCwOtMBvT8wYw" routingStyle="manhattan" strokeColor="0,0,0">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@edgeMappings[name='SolElemRelationSolElem']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_I5tLNsVUEfCwOtMBvT8wYw" labelSize="12" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@edgeMappings[name='SolElemRelationSolElem']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_I5tLOcVUEfCwOtMBvT8wYw" name="creates" sourceNode="_I5mdgcVUEfCwOtMBvT8wYw" targetNode="_I5nrocVUEfCwOtMBvT8wYw">
+      <target xmi:type="ssrt:Relation" href="security_patterns/security_objectives/confidentiality/AuthCrypt.ssrt#//@provides.1/@isDescribedWith.2/@source.0"/>
+      <semanticElements xmi:type="ssrt:Relation" href="security_patterns/security_objectives/confidentiality/AuthCrypt.ssrt#//@provides.1/@isDescribedWith.2/@source.0"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_I5tLOsVUEfCwOtMBvT8wYw" routingStyle="manhattan" strokeColor="0,0,0">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@edgeMappings[name='SolElemRelationSolElem']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_I5tLO8VUEfCwOtMBvT8wYw" labelSize="12" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@edgeMappings[name='SolElemRelationSolElem']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_I5tLPsVUEfCwOtMBvT8wYw" name="verifies" sourceNode="_I5mdgcVUEfCwOtMBvT8wYw" targetNode="_I5nEkMVUEfCwOtMBvT8wYw">
+      <target xmi:type="ssrt:Relation" href="security_patterns/security_objectives/confidentiality/AuthCrypt.ssrt#//@provides.1/@isDescribedWith.2/@source.1"/>
+      <semanticElements xmi:type="ssrt:Relation" href="security_patterns/security_objectives/confidentiality/AuthCrypt.ssrt#//@provides.1/@isDescribedWith.2/@source.1"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_I5tLP8VUEfCwOtMBvT8wYw" routingStyle="manhattan" strokeColor="0,0,0">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@edgeMappings[name='SolElemRelationSolElem']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_I5tLQMVUEfCwOtMBvT8wYw" labelSize="12" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@edgeMappings[name='SolElemRelationSolElem']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_I5tLQ8VUEfCwOtMBvT8wYw" name="usedFor" sourceNode="_I5nrocVUEfCwOtMBvT8wYw" targetNode="_I5nrpMVUEfCwOtMBvT8wYw">
+      <target xmi:type="ssrt:Relation" href="security_patterns/security_objectives/confidentiality/AuthCrypt.ssrt#//@provides.1/@isDescribedWith.4/@source.0"/>
+      <semanticElements xmi:type="ssrt:Relation" href="security_patterns/security_objectives/confidentiality/AuthCrypt.ssrt#//@provides.1/@isDescribedWith.4/@source.0"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_I5tLRMVUEfCwOtMBvT8wYw" routingStyle="manhattan" strokeColor="0,0,0">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@edgeMappings[name='SolElemRelationSolElem']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_I5tLRcVUEfCwOtMBvT8wYw" labelSize="12" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@edgeMappings[name='SolElemRelationSolElem']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_I5tLSMVUEfCwOtMBvT8wYw" name="exchange" sourceNode="_I5o5wcVUEfCwOtMBvT8wYw" targetNode="_I5qH4cVUEfCwOtMBvT8wYw">
+      <target xmi:type="ssrt:Relation" href="security_patterns/security_objectives/confidentiality/AuthCrypt.ssrt#//@provides.2/@isDescribedWith.0/@source.0"/>
+      <semanticElements xmi:type="ssrt:Relation" href="security_patterns/security_objectives/confidentiality/AuthCrypt.ssrt#//@provides.2/@isDescribedWith.0/@source.0"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_I5tLScVUEfCwOtMBvT8wYw" routingStyle="manhattan" strokeColor="0,0,0">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@edgeMappings[name='SolElemRelationSolElem']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_I5tLSsVUEfCwOtMBvT8wYw" labelSize="12" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@edgeMappings[name='SolElemRelationSolElem']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_I5tyQsVUEfCwOtMBvT8wYw" name="isConnectedTo" sourceNode="_I5o5wcVUEfCwOtMBvT8wYw" targetNode="_I5pg0sVUEfCwOtMBvT8wYw">
+      <target xmi:type="ssrt:Relation" href="security_patterns/security_objectives/confidentiality/AuthCrypt.ssrt#//@provides.2/@isDescribedWith.0/@source.1"/>
+      <semanticElements xmi:type="ssrt:Relation" href="security_patterns/security_objectives/confidentiality/AuthCrypt.ssrt#//@provides.2/@isDescribedWith.0/@source.1"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_I5tyQ8VUEfCwOtMBvT8wYw" routingStyle="manhattan" strokeColor="0,0,0">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@edgeMappings[name='SolElemRelationSolElem']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_I5tyRMVUEfCwOtMBvT8wYw" labelSize="12" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@edgeMappings[name='SolElemRelationSolElem']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_I5tyR8VUEfCwOtMBvT8wYw" name="has" sourceNode="_I5o5wcVUEfCwOtMBvT8wYw" targetNode="_I5qu9sVUEfCwOtMBvT8wYw">
+      <target xmi:type="ssrt:Relation" href="security_patterns/security_objectives/confidentiality/AuthCrypt.ssrt#//@provides.2/@isDescribedWith.0/@source.2"/>
+      <semanticElements xmi:type="ssrt:Relation" href="security_patterns/security_objectives/confidentiality/AuthCrypt.ssrt#//@provides.2/@isDescribedWith.0/@source.2"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_I5tySMVUEfCwOtMBvT8wYw" routingStyle="manhattan" strokeColor="0,0,0">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@edgeMappings[name='SolElemRelationSolElem']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_I5tyScVUEfCwOtMBvT8wYw" labelSize="12" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@edgeMappings[name='SolElemRelationSolElem']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_I5tyTMVUEfCwOtMBvT8wYw" name="exchange With" sourceNode="_I5qH4cVUEfCwOtMBvT8wYw" targetNode="_I5qH5MVUEfCwOtMBvT8wYw">
+      <target xmi:type="ssrt:Relation" href="security_patterns/security_objectives/confidentiality/AuthCrypt.ssrt#//@provides.2/@isDescribedWith.2/@source.0"/>
+      <semanticElements xmi:type="ssrt:Relation" href="security_patterns/security_objectives/confidentiality/AuthCrypt.ssrt#//@provides.2/@isDescribedWith.2/@source.0"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_I5tyTcVUEfCwOtMBvT8wYw" routingStyle="manhattan" strokeColor="0,0,0">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@edgeMappings[name='SolElemRelationSolElem']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_I5tyTsVUEfCwOtMBvT8wYw" labelSize="12" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@edgeMappings[name='SolElemRelationSolElem']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_I5tyUcVUEfCwOtMBvT8wYw" name="verifies" sourceNode="_I5qH5MVUEfCwOtMBvT8wYw" targetNode="_I5qu8MVUEfCwOtMBvT8wYw">
+      <target xmi:type="ssrt:Relation" href="security_patterns/security_objectives/confidentiality/AuthCrypt.ssrt#//@provides.2/@isDescribedWith.3/@source.0"/>
+      <semanticElements xmi:type="ssrt:Relation" href="security_patterns/security_objectives/confidentiality/AuthCrypt.ssrt#//@provides.2/@isDescribedWith.3/@source.0"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_I5tyUsVUEfCwOtMBvT8wYw" routingStyle="manhattan" strokeColor="0,0,0">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@edgeMappings[name='SolElemRelationSolElem']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_I5tyU8VUEfCwOtMBvT8wYw" labelSize="12" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@edgeMappings[name='SolElemRelationSolElem']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_I5tyVsVUEfCwOtMBvT8wYw" name="creates" sourceNode="_I5qH5MVUEfCwOtMBvT8wYw" targetNode="_I5qu88VUEfCwOtMBvT8wYw">
+      <target xmi:type="ssrt:Relation" href="security_patterns/security_objectives/confidentiality/AuthCrypt.ssrt#//@provides.2/@isDescribedWith.3/@source.1"/>
+      <semanticElements xmi:type="ssrt:Relation" href="security_patterns/security_objectives/confidentiality/AuthCrypt.ssrt#//@provides.2/@isDescribedWith.3/@source.1"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_I5tyV8VUEfCwOtMBvT8wYw" routingStyle="manhattan" strokeColor="0,0,0">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@edgeMappings[name='SolElemRelationSolElem']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_I5tyWMVUEfCwOtMBvT8wYw" labelSize="12" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@edgeMappings[name='SolElemRelationSolElem']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_I5tyW8VUEfCwOtMBvT8wYw" name="usedFor" sourceNode="_I5qu88VUEfCwOtMBvT8wYw" targetNode="_I5pg0sVUEfCwOtMBvT8wYw">
+      <target xmi:type="ssrt:Relation" href="security_patterns/security_objectives/confidentiality/AuthCrypt.ssrt#//@provides.2/@isDescribedWith.5/@source.0"/>
+      <semanticElements xmi:type="ssrt:Relation" href="security_patterns/security_objectives/confidentiality/AuthCrypt.ssrt#//@provides.2/@isDescribedWith.5/@source.0"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_I5uZUMVUEfCwOtMBvT8wYw" routingStyle="manhattan" strokeColor="0,0,0">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@edgeMappings[name='SolElemRelationSolElem']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_I5uZUcVUEfCwOtMBvT8wYw" labelSize="12" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@edgeMappings[name='SolElemRelationSolElem']"/>
+    </ownedDiagramElements>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_I5YbEMVUEfCwOtMBvT8wYw"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/plugin/semcomdt.swsecurity.ssrt.design/description/ssrt.odesign#//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer"/>
+    <target xmi:type="ssrt:Library" href="security_patterns/security_objectives/confidentiality/AuthCrypt.ssrt#/"/>
+  </diagram:DSemanticDiagram>
+</xmi:XMI>

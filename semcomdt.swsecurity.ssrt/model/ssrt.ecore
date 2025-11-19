@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="ssrt" nsURI="http://www.example.org/ssrt" nsPrefix="ssrt">
+  <eClassifiers xsi:type="ecore:EClass" name="Solution">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="SolutionType" lowerBound="1"
+        eType="#//SolutionType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="SolutionLevel" lowerBound="1"
+        eType="#//Level"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="isDescribedWith" upperBound="-1"
+        eType="#//SolutionElement" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refines" lowerBound="1"
+        upperBound="-1" eType="#//Solution" unsettable="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SolutionElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="definition" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refines" lowerBound="1"
+        eType="#//SolutionElement" unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" upperBound="-1"
+        eType="#//Relation" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="SolutionType">
+    <eLiterals name="SecurityPattern"/>
+    <eLiterals name="SecurityTactic" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Level">
+    <eLiterals name="Conceptual" value="1"/>
+    <eLiterals name="Design" value="2"/>
+    <eLiterals name="Realization" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Library">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="provides" upperBound="-1"
+        eType="#//Solution" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Relation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
+        upperBound="-1" eType="#//SolutionElement"/>
+  </eClassifiers>
+</ecore:EPackage>
