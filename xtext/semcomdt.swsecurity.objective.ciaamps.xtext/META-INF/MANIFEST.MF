@@ -1,0 +1,29 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: semcomdt.swsecurity.objective.ciaamps.xtext
+Bundle-ManifestVersion: 2
+Bundle-Name: semcomdt.swsecurity.objective.ciaamps.xtext
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: semcomdt.swsecurity.objective.ciaamps.xtext; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.16.0",
+ org.eclipse.emf.ecore,
+ org.eclipse.xtext.xbase.lib;bundle-version="2.35.0",
+ org.eclipse.emf.common,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)",
+ semcomdt.swarchitecture.cbse.xtext;bundle-version="1.0.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Export-Package: semcomdt.swsecurity.objective.ciaamps.ciaamps,
+ semcomdt.swsecurity.objective.ciaamps.ciaamps.util,
+ semcomdt.swsecurity.objective.ciaamps.ciaamps.impl,
+ semcomdt.swsecurity.objective.ciaamps,
+ semcomdt.swsecurity.objective.ciaamps.parser.antlr.internal,
+ semcomdt.swsecurity.objective.ciaamps.generator,
+ semcomdt.swsecurity.objective.ciaamps.scoping,
+ semcomdt.swsecurity.objective.ciaamps.parser.antlr,
+ semcomdt.swsecurity.objective.ciaamps.validation,
+ semcomdt.swsecurity.objective.ciaamps.services,
+ semcomdt.swsecurity.objective.ciaamps.serializer
+Import-Package: org.apache.log4j

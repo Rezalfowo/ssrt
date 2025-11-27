@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: semcomdt.swsecurity.objective.ciaamps.xtext.ide
+Bundle-ManifestVersion: 2
+Bundle-Name: semcomdt.swsecurity.objective.ciaamps.xtext.ide
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: semcomdt.swsecurity.objective.ciaamps.xtext.ide; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: semcomdt.swsecurity.objective.ciaamps.xtext,
+ org.eclipse.xtext.ide,
+ org.eclipse.xtext.xbase.ide,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Export-Package: semcomdt.swsecurity.objective.ciaamps.ide.contentassist.antlr,
+ semcomdt.swsecurity.objective.ciaamps.ide.contentassist.antlr.internal

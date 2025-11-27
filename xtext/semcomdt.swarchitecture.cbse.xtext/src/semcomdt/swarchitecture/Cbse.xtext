@@ -1,0 +1,60 @@
+grammar semcomdt.swarchitecture.Cbse with org.eclipse.xtext.common.Terminals
+
+generate cbse "http://www.semcomdt.swarchitecture/Cbse"
+
+Cbse:
+	(system+=Element)*;
+
+Element:
+	Component | Connector | Port //| elem=ArchitectureElementType
+;
+Component:
+	PassiveComponent | ActiveComponent
+;
+Connector:
+	"connector" name=ID
+;
+Port:
+	"port" name=ID ':' kind=PortKind
+	('realizes' interactionNature=InteractionNature)?
+;
+
+PassiveComponent:
+	'passiveComponent' name=ID
+	;
+ActiveComponent:
+	'activeComponent' name=ID '{'
+	(functions+=Function)*
+	'}'
+;
+Function:
+	'function' name=ID
+;
+InteractionNature:
+	'interactionNature' name=ID
+;
+Data:
+	'data' name=ID ('extends' superType=[InteractionNature])
+;
+DataType:
+	"dataType" name=ID
+;
+Payload:
+	'payload' name=ID
+;
+MsgExchange:
+	'msgExchange' name=ID
+;
+CommunicationStyle:
+	'communicationStyle' name=ID
+;
+enum PortKind:
+	IN |
+	OUT 
+;
+enum ArchitectureElementType :
+	component="Component" | 
+	connector="Connector" |
+	activecomponent="ActiveComponent" |
+	passivecomponent="PassiveComponent"
+;
