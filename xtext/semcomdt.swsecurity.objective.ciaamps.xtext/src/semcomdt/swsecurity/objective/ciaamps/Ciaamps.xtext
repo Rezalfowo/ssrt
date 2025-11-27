@@ -1,0 +1,32 @@
+grammar semcomdt.swsecurity.objective.ciaamps.Ciaamps with org.eclipse.xtext.common.Terminals
+
+generate ciaamps "http://www.semcomdt.swsecurity/objective/Ciaamps"
+
+import "http://www.semcomdt.swarchitecture/Cbse" as cbse
+
+Assets:
+	imports+=Import*
+	assets+=AssetDetails*
+;
+Import:
+	'import' importURI=STRING
+;
+AssetDetails :
+	Asset | SecurityProperty | PropertyCategory
+;
+PropertyCategory:
+	'propertyCategory' name=ID 
+	'{' secprop+=SecurityProperty* '}'
+;	
+SecurityProperty:
+	'securityProperty' name=ID 
+	;
+
+Asset:
+	'asset' name=ID '{'
+	'ensureSP' ensureSP=[SecurityProperty|QualifiedName]
+	('refersToAE' refersToAE=[cbse::Element|QualifiedName]  )?
+	'}'
+;
+QualifiedName:
+	ID ('.' ID)*;

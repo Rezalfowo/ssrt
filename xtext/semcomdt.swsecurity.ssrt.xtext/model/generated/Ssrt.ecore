@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="ssrt" nsURI="http://www.semcomdt.swsecurity/Ssrt" nsPrefix="ssrt">
+  <eClassifiers xsi:type="ecore:EClass" name="Model">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="solutiontrees" upperBound="-1"
+        eType="#//SolutionTree" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SolutionTree">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="contributesTo" unique="false"
+        upperBound="-1" eType="ecore:EClass platform:/resource/semcomdt.swsecurity.objective.ciaamps.xtext/model/generated/Ciaamps.ecore#//SecurityProperty"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="solution" upperBound="-1"
+        eType="#//Solution" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Solution">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" eType="#//SSTSolutionKind"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="level" eType="#//SSTLevel"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refines" unique="false"
+        upperBound="-1" eType="#//Solution"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="concepts" upperBound="-1"
+        eType="#//SolutionElement" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="relations" upperBound="-1"
+        eType="#//Relation" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SolutionElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refines" eType="#//SolutionElement"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="definition" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Relation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refines" eType="#//Relation"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="definition" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="in" eType="#//SolutionElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="out" eType="#//SolutionElement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="SSTLevel">
+    <eLiterals name="Conceptual" literal="Conceptual"/>
+    <eLiterals name="Design" value="1" literal="Design"/>
+    <eLiterals name="Realization" value="2" literal="Realization"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="SSTSolutionKind">
+    <eLiterals name="SecurityPattern" literal="SecurityPattern"/>
+    <eLiterals name="Tactic" value="1" literal="Tactic"/>
+  </eClassifiers>
+</ecore:EPackage>

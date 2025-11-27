@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+	<extension point="org.eclipse.emf.ecore.generated_package">
+		<package
+			uri = "http://www.semcomdt.swsecurity/objective/Ciaamps"
+			class = "semcomdt.swsecurity.objective.ciaamps.ciaamps.CiaampsPackage"
+			genModel = "model/generated/Ciaamps.genmodel" />
+	</extension>
+</plugin>
