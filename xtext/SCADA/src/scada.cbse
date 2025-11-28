@@ -1,0 +1,15 @@
+activeComponent CentralController {
+	function sendSettings
+	function sendCommands
+	function retrieveStatusInfo
+}
+
+activeComponent FieldUnit {
+	function monitorEnv
+	function actionOnEnv
+	function sendStatusInfo
+	function sendAlarms
+}
+/**
+ * We don't specify other components for the moment as our example doesn't use them
+ */
