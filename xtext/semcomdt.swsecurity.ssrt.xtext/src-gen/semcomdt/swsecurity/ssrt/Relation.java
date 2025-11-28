@@ -15,10 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link semcomdt.swsecurity.ssrt.Relation#getName <em>Name</em>}</li>
- *   <li>{@link semcomdt.swsecurity.ssrt.Relation#getRefines <em>Refines</em>}</li>
- *   <li>{@link semcomdt.swsecurity.ssrt.Relation#getDefinition <em>Definition</em>}</li>
- *   <li>{@link semcomdt.swsecurity.ssrt.Relation#getIn <em>In</em>}</li>
- *   <li>{@link semcomdt.swsecurity.ssrt.Relation#getOut <em>Out</em>}</li>
+ *   <li>{@link semcomdt.swsecurity.ssrt.Relation#getTarget <em>Target</em>}</li>
  * </ul>
  *
  * @see semcomdt.swsecurity.ssrt.SsrtPackage#getRelation()
@@ -50,91 +47,25 @@ public interface Relation extends EObject
   void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Refines</b></em>' reference.
+   * Returns the value of the '<em><b>Target</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Refines</em>' reference.
-   * @see #setRefines(Relation)
-   * @see semcomdt.swsecurity.ssrt.SsrtPackage#getRelation_Refines()
+   * @return the value of the '<em>Target</em>' reference.
+   * @see #setTarget(SolutionElement)
+   * @see semcomdt.swsecurity.ssrt.SsrtPackage#getRelation_Target()
    * @model
    * @generated
    */
-  Relation getRefines();
+  SolutionElement getTarget();
 
   /**
-   * Sets the value of the '{@link semcomdt.swsecurity.ssrt.Relation#getRefines <em>Refines</em>}' reference.
+   * Sets the value of the '{@link semcomdt.swsecurity.ssrt.Relation#getTarget <em>Target</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Refines</em>' reference.
-   * @see #getRefines()
+   * @param value the new value of the '<em>Target</em>' reference.
+   * @see #getTarget()
    * @generated
    */
-  void setRefines(Relation value);
-
-  /**
-   * Returns the value of the '<em><b>Definition</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Definition</em>' attribute.
-   * @see #setDefinition(String)
-   * @see semcomdt.swsecurity.ssrt.SsrtPackage#getRelation_Definition()
-   * @model
-   * @generated
-   */
-  String getDefinition();
-
-  /**
-   * Sets the value of the '{@link semcomdt.swsecurity.ssrt.Relation#getDefinition <em>Definition</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Definition</em>' attribute.
-   * @see #getDefinition()
-   * @generated
-   */
-  void setDefinition(String value);
-
-  /**
-   * Returns the value of the '<em><b>In</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>In</em>' reference.
-   * @see #setIn(SolutionElement)
-   * @see semcomdt.swsecurity.ssrt.SsrtPackage#getRelation_In()
-   * @model
-   * @generated
-   */
-  SolutionElement getIn();
-
-  /**
-   * Sets the value of the '{@link semcomdt.swsecurity.ssrt.Relation#getIn <em>In</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>In</em>' reference.
-   * @see #getIn()
-   * @generated
-   */
-  void setIn(SolutionElement value);
-
-  /**
-   * Returns the value of the '<em><b>Out</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Out</em>' reference.
-   * @see #setOut(SolutionElement)
-   * @see semcomdt.swsecurity.ssrt.SsrtPackage#getRelation_Out()
-   * @model
-   * @generated
-   */
-  SolutionElement getOut();
-
-  /**
-   * Sets the value of the '{@link semcomdt.swsecurity.ssrt.Relation#getOut <em>Out</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Out</em>' reference.
-   * @see #getOut()
-   * @generated
-   */
-  void setOut(SolutionElement value);
+  void setTarget(SolutionElement value);
 
 } // Relation

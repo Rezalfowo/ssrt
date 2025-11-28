@@ -31,35 +31,31 @@ public class SsrtParser extends AbstractContentAssistParser {
 		}
 		
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, SsrtGrammarAccess grammarAccess) {
-			builder.put(grammarAccess.getSSTLevelAccess().getAlternatives(), "rule__SSTLevel__Alternatives");
-			builder.put(grammarAccess.getSSTSolutionKindAccess().getAlternatives(), "rule__SSTSolutionKind__Alternatives");
+			builder.put(grammarAccess.getLevelAccess().getAlternatives(), "rule__Level__Alternatives");
+			builder.put(grammarAccess.getSolutionTypeAccess().getAlternatives(), "rule__SolutionType__Alternatives");
 			builder.put(grammarAccess.getSolutionTreeAccess().getGroup(), "rule__SolutionTree__Group__0");
 			builder.put(grammarAccess.getSolutionAccess().getGroup(), "rule__Solution__Group__0");
 			builder.put(grammarAccess.getSolutionAccess().getGroup_3(), "rule__Solution__Group_3__0");
 			builder.put(grammarAccess.getSolutionElementAccess().getGroup(), "rule__SolutionElement__Group__0");
 			builder.put(grammarAccess.getSolutionElementAccess().getGroup_2(), "rule__SolutionElement__Group_2__0");
 			builder.put(grammarAccess.getRelationAccess().getGroup(), "rule__Relation__Group__0");
-			builder.put(grammarAccess.getRelationAccess().getGroup_2(), "rule__Relation__Group_2__0");
 			builder.put(grammarAccess.getQualifiedNameAccess().getGroup(), "rule__QualifiedName__Group__0");
 			builder.put(grammarAccess.getQualifiedNameAccess().getGroup_1(), "rule__QualifiedName__Group_1__0");
 			builder.put(grammarAccess.getModelAccess().getSolutiontreesAssignment(), "rule__Model__SolutiontreesAssignment");
 			builder.put(grammarAccess.getSolutionTreeAccess().getNameAssignment_1(), "rule__SolutionTree__NameAssignment_1");
 			builder.put(grammarAccess.getSolutionTreeAccess().getContributesToAssignment_3(), "rule__SolutionTree__ContributesToAssignment_3");
-			builder.put(grammarAccess.getSolutionTreeAccess().getSolutionAssignment_5(), "rule__SolutionTree__SolutionAssignment_5");
+			builder.put(grammarAccess.getSolutionTreeAccess().getProvidesAssignment_5(), "rule__SolutionTree__ProvidesAssignment_5");
 			builder.put(grammarAccess.getSolutionAccess().getKindAssignment_0(), "rule__Solution__KindAssignment_0");
 			builder.put(grammarAccess.getSolutionAccess().getLevelAssignment_1(), "rule__Solution__LevelAssignment_1");
 			builder.put(grammarAccess.getSolutionAccess().getNameAssignment_2(), "rule__Solution__NameAssignment_2");
 			builder.put(grammarAccess.getSolutionAccess().getRefinesAssignment_3_1(), "rule__Solution__RefinesAssignment_3_1");
-			builder.put(grammarAccess.getSolutionAccess().getConceptsAssignment_5(), "rule__Solution__ConceptsAssignment_5");
-			builder.put(grammarAccess.getSolutionAccess().getRelationsAssignment_6(), "rule__Solution__RelationsAssignment_6");
+			builder.put(grammarAccess.getSolutionAccess().getSolutionelementsAssignment_5(), "rule__Solution__SolutionelementsAssignment_5");
 			builder.put(grammarAccess.getSolutionElementAccess().getNameAssignment_1(), "rule__SolutionElement__NameAssignment_1");
 			builder.put(grammarAccess.getSolutionElementAccess().getRefinesAssignment_2_1(), "rule__SolutionElement__RefinesAssignment_2_1");
 			builder.put(grammarAccess.getSolutionElementAccess().getDefinitionAssignment_4(), "rule__SolutionElement__DefinitionAssignment_4");
+			builder.put(grammarAccess.getSolutionElementAccess().getSourceAssignment_6(), "rule__SolutionElement__SourceAssignment_6");
 			builder.put(grammarAccess.getRelationAccess().getNameAssignment_1(), "rule__Relation__NameAssignment_1");
-			builder.put(grammarAccess.getRelationAccess().getRefinesAssignment_2_1(), "rule__Relation__RefinesAssignment_2_1");
-			builder.put(grammarAccess.getRelationAccess().getDefinitionAssignment_4(), "rule__Relation__DefinitionAssignment_4");
-			builder.put(grammarAccess.getRelationAccess().getInAssignment_6(), "rule__Relation__InAssignment_6");
-			builder.put(grammarAccess.getRelationAccess().getOutAssignment_8(), "rule__Relation__OutAssignment_8");
+			builder.put(grammarAccess.getRelationAccess().getTargetAssignment_2(), "rule__Relation__TargetAssignment_2");
 		}
 	}
 	

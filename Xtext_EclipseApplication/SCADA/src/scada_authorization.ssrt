@@ -24,6 +24,6 @@ SolutionTree Authorization contributesTo Authentication_Authorization_sec_obj.Au
 		
 	}
 	SecurityPattern Realization StructuredRulesABAC refines AttributeBasedAccessControl{
-		
+	
 	}
 }

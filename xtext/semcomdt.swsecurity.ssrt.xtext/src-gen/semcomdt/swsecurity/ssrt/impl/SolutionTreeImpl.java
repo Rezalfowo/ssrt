@@ -36,7 +36,7 @@ import semcomdt.swsecurity.ssrt.SsrtPackage;
  * <ul>
  *   <li>{@link semcomdt.swsecurity.ssrt.impl.SolutionTreeImpl#getName <em>Name</em>}</li>
  *   <li>{@link semcomdt.swsecurity.ssrt.impl.SolutionTreeImpl#getContributesTo <em>Contributes To</em>}</li>
- *   <li>{@link semcomdt.swsecurity.ssrt.impl.SolutionTreeImpl#getSolution <em>Solution</em>}</li>
+ *   <li>{@link semcomdt.swsecurity.ssrt.impl.SolutionTreeImpl#getProvides <em>Provides</em>}</li>
  * </ul>
  *
  * @generated
@@ -74,14 +74,14 @@ public class SolutionTreeImpl extends MinimalEObjectImpl.Container implements So
   protected EList<SecurityProperty> contributesTo;
 
   /**
-   * The cached value of the '{@link #getSolution() <em>Solution</em>}' containment reference list.
+   * The cached value of the '{@link #getProvides() <em>Provides</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getSolution()
+   * @see #getProvides()
    * @generated
    * @ordered
    */
-  protected EList<Solution> solution;
+  protected EList<Solution> provides;
 
   /**
    * <!-- begin-user-doc -->
@@ -150,13 +150,13 @@ public class SolutionTreeImpl extends MinimalEObjectImpl.Container implements So
    * @generated
    */
   @Override
-  public EList<Solution> getSolution()
+  public EList<Solution> getProvides()
   {
-    if (solution == null)
+    if (provides == null)
     {
-      solution = new EObjectContainmentEList<Solution>(Solution.class, this, SsrtPackage.SOLUTION_TREE__SOLUTION);
+      provides = new EObjectContainmentEList<Solution>(Solution.class, this, SsrtPackage.SOLUTION_TREE__PROVIDES);
     }
-    return solution;
+    return provides;
   }
 
   /**
@@ -169,8 +169,8 @@ public class SolutionTreeImpl extends MinimalEObjectImpl.Container implements So
   {
     switch (featureID)
     {
-      case SsrtPackage.SOLUTION_TREE__SOLUTION:
-        return ((InternalEList<?>)getSolution()).basicRemove(otherEnd, msgs);
+      case SsrtPackage.SOLUTION_TREE__PROVIDES:
+        return ((InternalEList<?>)getProvides()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -189,8 +189,8 @@ public class SolutionTreeImpl extends MinimalEObjectImpl.Container implements So
         return getName();
       case SsrtPackage.SOLUTION_TREE__CONTRIBUTES_TO:
         return getContributesTo();
-      case SsrtPackage.SOLUTION_TREE__SOLUTION:
-        return getSolution();
+      case SsrtPackage.SOLUTION_TREE__PROVIDES:
+        return getProvides();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -213,9 +213,9 @@ public class SolutionTreeImpl extends MinimalEObjectImpl.Container implements So
         getContributesTo().clear();
         getContributesTo().addAll((Collection<? extends SecurityProperty>)newValue);
         return;
-      case SsrtPackage.SOLUTION_TREE__SOLUTION:
-        getSolution().clear();
-        getSolution().addAll((Collection<? extends Solution>)newValue);
+      case SsrtPackage.SOLUTION_TREE__PROVIDES:
+        getProvides().clear();
+        getProvides().addAll((Collection<? extends Solution>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -237,8 +237,8 @@ public class SolutionTreeImpl extends MinimalEObjectImpl.Container implements So
       case SsrtPackage.SOLUTION_TREE__CONTRIBUTES_TO:
         getContributesTo().clear();
         return;
-      case SsrtPackage.SOLUTION_TREE__SOLUTION:
-        getSolution().clear();
+      case SsrtPackage.SOLUTION_TREE__PROVIDES:
+        getProvides().clear();
         return;
     }
     super.eUnset(featureID);
@@ -258,8 +258,8 @@ public class SolutionTreeImpl extends MinimalEObjectImpl.Container implements So
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case SsrtPackage.SOLUTION_TREE__CONTRIBUTES_TO:
         return contributesTo != null && !contributesTo.isEmpty();
-      case SsrtPackage.SOLUTION_TREE__SOLUTION:
-        return solution != null && !solution.isEmpty();
+      case SsrtPackage.SOLUTION_TREE__PROVIDES:
+        return provides != null && !provides.isEmpty();
     }
     return super.eIsSet(featureID);
   }

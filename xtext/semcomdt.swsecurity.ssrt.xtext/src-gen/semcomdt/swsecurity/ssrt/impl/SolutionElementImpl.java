@@ -3,7 +3,12 @@
  */
 package semcomdt.swsecurity.ssrt.impl;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -11,6 +16,10 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+
+import semcomdt.swsecurity.ssrt.Relation;
 import semcomdt.swsecurity.ssrt.SolutionElement;
 import semcomdt.swsecurity.ssrt.SsrtPackage;
 
@@ -25,6 +34,7 @@ import semcomdt.swsecurity.ssrt.SsrtPackage;
  *   <li>{@link semcomdt.swsecurity.ssrt.impl.SolutionElementImpl#getName <em>Name</em>}</li>
  *   <li>{@link semcomdt.swsecurity.ssrt.impl.SolutionElementImpl#getRefines <em>Refines</em>}</li>
  *   <li>{@link semcomdt.swsecurity.ssrt.impl.SolutionElementImpl#getDefinition <em>Definition</em>}</li>
+ *   <li>{@link semcomdt.swsecurity.ssrt.impl.SolutionElementImpl#getSource <em>Source</em>}</li>
  * </ul>
  *
  * @generated
@@ -80,6 +90,16 @@ public class SolutionElementImpl extends MinimalEObjectImpl.Container implements
    * @ordered
    */
   protected String definition = DEFINITION_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getSource() <em>Source</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getSource()
+   * @generated
+   * @ordered
+   */
+  protected EList<Relation> source;
 
   /**
    * <!-- begin-user-doc -->
@@ -203,6 +223,37 @@ public class SolutionElementImpl extends MinimalEObjectImpl.Container implements
    * @generated
    */
   @Override
+  public EList<Relation> getSource()
+  {
+    if (source == null)
+    {
+      source = new EObjectContainmentEList<Relation>(Relation.class, this, SsrtPackage.SOLUTION_ELEMENT__SOURCE);
+    }
+    return source;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case SsrtPackage.SOLUTION_ELEMENT__SOURCE:
+        return ((InternalEList<?>)getSource()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
@@ -214,6 +265,8 @@ public class SolutionElementImpl extends MinimalEObjectImpl.Container implements
         return basicGetRefines();
       case SsrtPackage.SOLUTION_ELEMENT__DEFINITION:
         return getDefinition();
+      case SsrtPackage.SOLUTION_ELEMENT__SOURCE:
+        return getSource();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -223,6 +276,7 @@ public class SolutionElementImpl extends MinimalEObjectImpl.Container implements
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -236,6 +290,10 @@ public class SolutionElementImpl extends MinimalEObjectImpl.Container implements
         return;
       case SsrtPackage.SOLUTION_ELEMENT__DEFINITION:
         setDefinition((String)newValue);
+        return;
+      case SsrtPackage.SOLUTION_ELEMENT__SOURCE:
+        getSource().clear();
+        getSource().addAll((Collection<? extends Relation>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -260,6 +318,9 @@ public class SolutionElementImpl extends MinimalEObjectImpl.Container implements
       case SsrtPackage.SOLUTION_ELEMENT__DEFINITION:
         setDefinition(DEFINITION_EDEFAULT);
         return;
+      case SsrtPackage.SOLUTION_ELEMENT__SOURCE:
+        getSource().clear();
+        return;
     }
     super.eUnset(featureID);
   }
@@ -280,6 +341,8 @@ public class SolutionElementImpl extends MinimalEObjectImpl.Container implements
         return refines != null;
       case SsrtPackage.SOLUTION_ELEMENT__DEFINITION:
         return DEFINITION_EDEFAULT == null ? definition != null : !DEFINITION_EDEFAULT.equals(definition);
+      case SsrtPackage.SOLUTION_ELEMENT__SOURCE:
+        return source != null && !source.isEmpty();
     }
     return super.eIsSet(featureID);
   }

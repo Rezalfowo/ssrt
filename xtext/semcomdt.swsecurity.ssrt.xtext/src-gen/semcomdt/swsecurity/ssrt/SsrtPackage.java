@@ -115,13 +115,13 @@ public interface SsrtPackage extends EPackage
   int SOLUTION_TREE__CONTRIBUTES_TO = 1;
 
   /**
-   * The feature id for the '<em><b>Solution</b></em>' containment reference list.
+   * The feature id for the '<em><b>Provides</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SOLUTION_TREE__SOLUTION = 2;
+  int SOLUTION_TREE__PROVIDES = 2;
 
   /**
    * The number of structural features of the '<em>Solution Tree</em>' class.
@@ -179,22 +179,13 @@ public interface SsrtPackage extends EPackage
   int SOLUTION__REFINES = 3;
 
   /**
-   * The feature id for the '<em><b>Concepts</b></em>' containment reference list.
+   * The feature id for the '<em><b>Solutionelements</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SOLUTION__CONCEPTS = 4;
-
-  /**
-   * The feature id for the '<em><b>Relations</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SOLUTION__RELATIONS = 5;
+  int SOLUTION__SOLUTIONELEMENTS = 4;
 
   /**
    * The number of structural features of the '<em>Solution</em>' class.
@@ -203,7 +194,7 @@ public interface SsrtPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SOLUTION_FEATURE_COUNT = 6;
+  int SOLUTION_FEATURE_COUNT = 5;
 
   /**
    * The meta object id for the '{@link semcomdt.swsecurity.ssrt.impl.SolutionElementImpl <em>Solution Element</em>}' class.
@@ -243,13 +234,22 @@ public interface SsrtPackage extends EPackage
   int SOLUTION_ELEMENT__DEFINITION = 2;
 
   /**
+   * The feature id for the '<em><b>Source</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SOLUTION_ELEMENT__SOURCE = 3;
+
+  /**
    * The number of structural features of the '<em>Solution Element</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SOLUTION_ELEMENT_FEATURE_COUNT = 3;
+  int SOLUTION_ELEMENT_FEATURE_COUNT = 4;
 
   /**
    * The meta object id for the '{@link semcomdt.swsecurity.ssrt.impl.RelationImpl <em>Relation</em>}' class.
@@ -271,40 +271,13 @@ public interface SsrtPackage extends EPackage
   int RELATION__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Refines</b></em>' reference.
+   * The feature id for the '<em><b>Target</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int RELATION__REFINES = 1;
-
-  /**
-   * The feature id for the '<em><b>Definition</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RELATION__DEFINITION = 2;
-
-  /**
-   * The feature id for the '<em><b>In</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RELATION__IN = 3;
-
-  /**
-   * The feature id for the '<em><b>Out</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RELATION__OUT = 4;
+  int RELATION__TARGET = 1;
 
   /**
    * The number of structural features of the '<em>Relation</em>' class.
@@ -313,27 +286,27 @@ public interface SsrtPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RELATION_FEATURE_COUNT = 5;
+  int RELATION_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link semcomdt.swsecurity.ssrt.SSTLevel <em>SST Level</em>}' enum.
+   * The meta object id for the '{@link semcomdt.swsecurity.ssrt.Level <em>Level</em>}' enum.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see semcomdt.swsecurity.ssrt.SSTLevel
-   * @see semcomdt.swsecurity.ssrt.impl.SsrtPackageImpl#getSSTLevel()
+   * @see semcomdt.swsecurity.ssrt.Level
+   * @see semcomdt.swsecurity.ssrt.impl.SsrtPackageImpl#getLevel()
    * @generated
    */
-  int SST_LEVEL = 5;
+  int LEVEL = 5;
 
   /**
-   * The meta object id for the '{@link semcomdt.swsecurity.ssrt.SSTSolutionKind <em>SST Solution Kind</em>}' enum.
+   * The meta object id for the '{@link semcomdt.swsecurity.ssrt.SolutionType <em>Solution Type</em>}' enum.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see semcomdt.swsecurity.ssrt.SSTSolutionKind
-   * @see semcomdt.swsecurity.ssrt.impl.SsrtPackageImpl#getSSTSolutionKind()
+   * @see semcomdt.swsecurity.ssrt.SolutionType
+   * @see semcomdt.swsecurity.ssrt.impl.SsrtPackageImpl#getSolutionType()
    * @generated
    */
-  int SST_SOLUTION_KIND = 6;
+  int SOLUTION_TYPE = 6;
 
 
   /**
@@ -390,15 +363,15 @@ public interface SsrtPackage extends EPackage
   EReference getSolutionTree_ContributesTo();
 
   /**
-   * Returns the meta object for the containment reference list '{@link semcomdt.swsecurity.ssrt.SolutionTree#getSolution <em>Solution</em>}'.
+   * Returns the meta object for the containment reference list '{@link semcomdt.swsecurity.ssrt.SolutionTree#getProvides <em>Provides</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Solution</em>'.
-   * @see semcomdt.swsecurity.ssrt.SolutionTree#getSolution()
+   * @return the meta object for the containment reference list '<em>Provides</em>'.
+   * @see semcomdt.swsecurity.ssrt.SolutionTree#getProvides()
    * @see #getSolutionTree()
    * @generated
    */
-  EReference getSolutionTree_Solution();
+  EReference getSolutionTree_Provides();
 
   /**
    * Returns the meta object for class '{@link semcomdt.swsecurity.ssrt.Solution <em>Solution</em>}'.
@@ -455,26 +428,15 @@ public interface SsrtPackage extends EPackage
   EReference getSolution_Refines();
 
   /**
-   * Returns the meta object for the containment reference list '{@link semcomdt.swsecurity.ssrt.Solution#getConcepts <em>Concepts</em>}'.
+   * Returns the meta object for the containment reference list '{@link semcomdt.swsecurity.ssrt.Solution#getSolutionelements <em>Solutionelements</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Concepts</em>'.
-   * @see semcomdt.swsecurity.ssrt.Solution#getConcepts()
+   * @return the meta object for the containment reference list '<em>Solutionelements</em>'.
+   * @see semcomdt.swsecurity.ssrt.Solution#getSolutionelements()
    * @see #getSolution()
    * @generated
    */
-  EReference getSolution_Concepts();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link semcomdt.swsecurity.ssrt.Solution#getRelations <em>Relations</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Relations</em>'.
-   * @see semcomdt.swsecurity.ssrt.Solution#getRelations()
-   * @see #getSolution()
-   * @generated
-   */
-  EReference getSolution_Relations();
+  EReference getSolution_Solutionelements();
 
   /**
    * Returns the meta object for class '{@link semcomdt.swsecurity.ssrt.SolutionElement <em>Solution Element</em>}'.
@@ -520,6 +482,17 @@ public interface SsrtPackage extends EPackage
   EAttribute getSolutionElement_Definition();
 
   /**
+   * Returns the meta object for the containment reference list '{@link semcomdt.swsecurity.ssrt.SolutionElement#getSource <em>Source</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Source</em>'.
+   * @see semcomdt.swsecurity.ssrt.SolutionElement#getSource()
+   * @see #getSolutionElement()
+   * @generated
+   */
+  EReference getSolutionElement_Source();
+
+  /**
    * Returns the meta object for class '{@link semcomdt.swsecurity.ssrt.Relation <em>Relation</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -541,68 +514,35 @@ public interface SsrtPackage extends EPackage
   EAttribute getRelation_Name();
 
   /**
-   * Returns the meta object for the reference '{@link semcomdt.swsecurity.ssrt.Relation#getRefines <em>Refines</em>}'.
+   * Returns the meta object for the reference '{@link semcomdt.swsecurity.ssrt.Relation#getTarget <em>Target</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Refines</em>'.
-   * @see semcomdt.swsecurity.ssrt.Relation#getRefines()
+   * @return the meta object for the reference '<em>Target</em>'.
+   * @see semcomdt.swsecurity.ssrt.Relation#getTarget()
    * @see #getRelation()
    * @generated
    */
-  EReference getRelation_Refines();
+  EReference getRelation_Target();
 
   /**
-   * Returns the meta object for the attribute '{@link semcomdt.swsecurity.ssrt.Relation#getDefinition <em>Definition</em>}'.
+   * Returns the meta object for enum '{@link semcomdt.swsecurity.ssrt.Level <em>Level</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Definition</em>'.
-   * @see semcomdt.swsecurity.ssrt.Relation#getDefinition()
-   * @see #getRelation()
+   * @return the meta object for enum '<em>Level</em>'.
+   * @see semcomdt.swsecurity.ssrt.Level
    * @generated
    */
-  EAttribute getRelation_Definition();
+  EEnum getLevel();
 
   /**
-   * Returns the meta object for the reference '{@link semcomdt.swsecurity.ssrt.Relation#getIn <em>In</em>}'.
+   * Returns the meta object for enum '{@link semcomdt.swsecurity.ssrt.SolutionType <em>Solution Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>In</em>'.
-   * @see semcomdt.swsecurity.ssrt.Relation#getIn()
-   * @see #getRelation()
+   * @return the meta object for enum '<em>Solution Type</em>'.
+   * @see semcomdt.swsecurity.ssrt.SolutionType
    * @generated
    */
-  EReference getRelation_In();
-
-  /**
-   * Returns the meta object for the reference '{@link semcomdt.swsecurity.ssrt.Relation#getOut <em>Out</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Out</em>'.
-   * @see semcomdt.swsecurity.ssrt.Relation#getOut()
-   * @see #getRelation()
-   * @generated
-   */
-  EReference getRelation_Out();
-
-  /**
-   * Returns the meta object for enum '{@link semcomdt.swsecurity.ssrt.SSTLevel <em>SST Level</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for enum '<em>SST Level</em>'.
-   * @see semcomdt.swsecurity.ssrt.SSTLevel
-   * @generated
-   */
-  EEnum getSSTLevel();
-
-  /**
-   * Returns the meta object for enum '{@link semcomdt.swsecurity.ssrt.SSTSolutionKind <em>SST Solution Kind</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for enum '<em>SST Solution Kind</em>'.
-   * @see semcomdt.swsecurity.ssrt.SSTSolutionKind
-   * @generated
-   */
-  EEnum getSSTSolutionKind();
+  EEnum getSolutionType();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -672,12 +612,12 @@ public interface SsrtPackage extends EPackage
     EReference SOLUTION_TREE__CONTRIBUTES_TO = eINSTANCE.getSolutionTree_ContributesTo();
 
     /**
-     * The meta object literal for the '<em><b>Solution</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Provides</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference SOLUTION_TREE__SOLUTION = eINSTANCE.getSolutionTree_Solution();
+    EReference SOLUTION_TREE__PROVIDES = eINSTANCE.getSolutionTree_Provides();
 
     /**
      * The meta object literal for the '{@link semcomdt.swsecurity.ssrt.impl.SolutionImpl <em>Solution</em>}' class.
@@ -722,20 +662,12 @@ public interface SsrtPackage extends EPackage
     EReference SOLUTION__REFINES = eINSTANCE.getSolution_Refines();
 
     /**
-     * The meta object literal for the '<em><b>Concepts</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Solutionelements</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference SOLUTION__CONCEPTS = eINSTANCE.getSolution_Concepts();
-
-    /**
-     * The meta object literal for the '<em><b>Relations</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference SOLUTION__RELATIONS = eINSTANCE.getSolution_Relations();
+    EReference SOLUTION__SOLUTIONELEMENTS = eINSTANCE.getSolution_Solutionelements();
 
     /**
      * The meta object literal for the '{@link semcomdt.swsecurity.ssrt.impl.SolutionElementImpl <em>Solution Element</em>}' class.
@@ -772,6 +704,14 @@ public interface SsrtPackage extends EPackage
     EAttribute SOLUTION_ELEMENT__DEFINITION = eINSTANCE.getSolutionElement_Definition();
 
     /**
+     * The meta object literal for the '<em><b>Source</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SOLUTION_ELEMENT__SOURCE = eINSTANCE.getSolutionElement_Source();
+
+    /**
      * The meta object literal for the '{@link semcomdt.swsecurity.ssrt.impl.RelationImpl <em>Relation</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -790,56 +730,32 @@ public interface SsrtPackage extends EPackage
     EAttribute RELATION__NAME = eINSTANCE.getRelation_Name();
 
     /**
-     * The meta object literal for the '<em><b>Refines</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Target</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference RELATION__REFINES = eINSTANCE.getRelation_Refines();
+    EReference RELATION__TARGET = eINSTANCE.getRelation_Target();
 
     /**
-     * The meta object literal for the '<em><b>Definition</b></em>' attribute feature.
+     * The meta object literal for the '{@link semcomdt.swsecurity.ssrt.Level <em>Level</em>}' enum.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see semcomdt.swsecurity.ssrt.Level
+     * @see semcomdt.swsecurity.ssrt.impl.SsrtPackageImpl#getLevel()
      * @generated
      */
-    EAttribute RELATION__DEFINITION = eINSTANCE.getRelation_Definition();
+    EEnum LEVEL = eINSTANCE.getLevel();
 
     /**
-     * The meta object literal for the '<em><b>In</b></em>' reference feature.
+     * The meta object literal for the '{@link semcomdt.swsecurity.ssrt.SolutionType <em>Solution Type</em>}' enum.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see semcomdt.swsecurity.ssrt.SolutionType
+     * @see semcomdt.swsecurity.ssrt.impl.SsrtPackageImpl#getSolutionType()
      * @generated
      */
-    EReference RELATION__IN = eINSTANCE.getRelation_In();
-
-    /**
-     * The meta object literal for the '<em><b>Out</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference RELATION__OUT = eINSTANCE.getRelation_Out();
-
-    /**
-     * The meta object literal for the '{@link semcomdt.swsecurity.ssrt.SSTLevel <em>SST Level</em>}' enum.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see semcomdt.swsecurity.ssrt.SSTLevel
-     * @see semcomdt.swsecurity.ssrt.impl.SsrtPackageImpl#getSSTLevel()
-     * @generated
-     */
-    EEnum SST_LEVEL = eINSTANCE.getSSTLevel();
-
-    /**
-     * The meta object literal for the '{@link semcomdt.swsecurity.ssrt.SSTSolutionKind <em>SST Solution Kind</em>}' enum.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see semcomdt.swsecurity.ssrt.SSTSolutionKind
-     * @see semcomdt.swsecurity.ssrt.impl.SsrtPackageImpl#getSSTSolutionKind()
-     * @generated
-     */
-    EEnum SST_SOLUTION_KIND = eINSTANCE.getSSTSolutionKind();
+    EEnum SOLUTION_TYPE = eINSTANCE.getSolutionType();
 
   }
 
