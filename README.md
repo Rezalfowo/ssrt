@@ -32,12 +32,13 @@ This repository has been made to let users use the tool we created with Sirius t
 
 ## Installation requirements
 
-- Java 19 Open JDK
+- Java 17 Open JDK
 - Obeo Designer Community 11.9 found on [Sirius website](https://eclipse.dev/sirius/download.html).
 
 ## Installation guide
 
 Import the `semcomdt.swsecurity.ssrt` and `semcomdt.swsecurity.ssrt.design` project in Obeo Designer Community. In the `model` folder open the `ssrt.genmodel` file in and right-click on `Ssrt` and select `Generate All`. Doing so will create files in the src-gen folder and two projects: `semcomdt.swsecurity.ssrt.edit` and `semcomdt.swsecurity.ssrt.editor`.
+There might be errors shown in the `semcomdt.swsecurity.ssrt.edit` and `semcomdt.swsecurity.ssrt.editor`, you can go to Project > Clean to clean all projects.
 You can now click on the green arrow in the toolbar, select `Run Configurations...`, create a new `Eclipse Application` and run it.
 
 :warning: Make sure to import the `semcomdt.swsecurity.ssrt.design` or it might be compiled with an invalid Java version during runtime and cause issues.
