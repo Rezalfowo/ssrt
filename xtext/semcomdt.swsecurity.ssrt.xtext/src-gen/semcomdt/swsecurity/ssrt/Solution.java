@@ -20,8 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link semcomdt.swsecurity.ssrt.Solution#getLevel <em>Level</em>}</li>
  *   <li>{@link semcomdt.swsecurity.ssrt.Solution#getName <em>Name</em>}</li>
  *   <li>{@link semcomdt.swsecurity.ssrt.Solution#getRefines <em>Refines</em>}</li>
- *   <li>{@link semcomdt.swsecurity.ssrt.Solution#getConcepts <em>Concepts</em>}</li>
- *   <li>{@link semcomdt.swsecurity.ssrt.Solution#getRelations <em>Relations</em>}</li>
+ *   <li>{@link semcomdt.swsecurity.ssrt.Solution#getSolutionelements <em>Solutionelements</em>}</li>
  * </ul>
  *
  * @see semcomdt.swsecurity.ssrt.SsrtPackage#getSolution()
@@ -32,53 +31,53 @@ public interface Solution extends EObject
 {
   /**
    * Returns the value of the '<em><b>Kind</b></em>' attribute.
-   * The literals are from the enumeration {@link semcomdt.swsecurity.ssrt.SSTSolutionKind}.
+   * The literals are from the enumeration {@link semcomdt.swsecurity.ssrt.SolutionType}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Kind</em>' attribute.
-   * @see semcomdt.swsecurity.ssrt.SSTSolutionKind
-   * @see #setKind(SSTSolutionKind)
+   * @see semcomdt.swsecurity.ssrt.SolutionType
+   * @see #setKind(SolutionType)
    * @see semcomdt.swsecurity.ssrt.SsrtPackage#getSolution_Kind()
    * @model
    * @generated
    */
-  SSTSolutionKind getKind();
+  SolutionType getKind();
 
   /**
    * Sets the value of the '{@link semcomdt.swsecurity.ssrt.Solution#getKind <em>Kind</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Kind</em>' attribute.
-   * @see semcomdt.swsecurity.ssrt.SSTSolutionKind
+   * @see semcomdt.swsecurity.ssrt.SolutionType
    * @see #getKind()
    * @generated
    */
-  void setKind(SSTSolutionKind value);
+  void setKind(SolutionType value);
 
   /**
    * Returns the value of the '<em><b>Level</b></em>' attribute.
-   * The literals are from the enumeration {@link semcomdt.swsecurity.ssrt.SSTLevel}.
+   * The literals are from the enumeration {@link semcomdt.swsecurity.ssrt.Level}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Level</em>' attribute.
-   * @see semcomdt.swsecurity.ssrt.SSTLevel
-   * @see #setLevel(SSTLevel)
+   * @see semcomdt.swsecurity.ssrt.Level
+   * @see #setLevel(Level)
    * @see semcomdt.swsecurity.ssrt.SsrtPackage#getSolution_Level()
    * @model
    * @generated
    */
-  SSTLevel getLevel();
+  Level getLevel();
 
   /**
    * Sets the value of the '{@link semcomdt.swsecurity.ssrt.Solution#getLevel <em>Level</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Level</em>' attribute.
-   * @see semcomdt.swsecurity.ssrt.SSTLevel
+   * @see semcomdt.swsecurity.ssrt.Level
    * @see #getLevel()
    * @generated
    */
-  void setLevel(SSTLevel value);
+  void setLevel(Level value);
 
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.
@@ -115,27 +114,15 @@ public interface Solution extends EObject
   EList<Solution> getRefines();
 
   /**
-   * Returns the value of the '<em><b>Concepts</b></em>' containment reference list.
+   * Returns the value of the '<em><b>Solutionelements</b></em>' containment reference list.
    * The list contents are of type {@link semcomdt.swsecurity.ssrt.SolutionElement}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Concepts</em>' containment reference list.
-   * @see semcomdt.swsecurity.ssrt.SsrtPackage#getSolution_Concepts()
+   * @return the value of the '<em>Solutionelements</em>' containment reference list.
+   * @see semcomdt.swsecurity.ssrt.SsrtPackage#getSolution_Solutionelements()
    * @model containment="true"
    * @generated
    */
-  EList<SolutionElement> getConcepts();
-
-  /**
-   * Returns the value of the '<em><b>Relations</b></em>' containment reference list.
-   * The list contents are of type {@link semcomdt.swsecurity.ssrt.Relation}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Relations</em>' containment reference list.
-   * @see semcomdt.swsecurity.ssrt.SsrtPackage#getSolution_Relations()
-   * @model containment="true"
-   * @generated
-   */
-  EList<Relation> getRelations();
+  EList<SolutionElement> getSolutionelements();
 
 } // Solution

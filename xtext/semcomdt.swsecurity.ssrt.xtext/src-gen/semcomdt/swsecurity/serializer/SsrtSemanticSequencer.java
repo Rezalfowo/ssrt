@@ -11,7 +11,9 @@ import org.eclipse.xtext.Action;
 import org.eclipse.xtext.Parameter;
 import org.eclipse.xtext.ParserRule;
 import org.eclipse.xtext.serializer.ISerializationContext;
+import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
+import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import semcomdt.swsecurity.services.SsrtGrammarAccess;
 import semcomdt.swsecurity.ssrt.Model;
 import semcomdt.swsecurity.ssrt.Relation;
@@ -74,11 +76,20 @@ public class SsrtSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Relation returns Relation
 	 *
 	 * Constraint:
-	 *     (name=ID refines=[Relation|QualifiedName]? definition=STRING in=[SolutionElement|QualifiedName] out=[SolutionElement|QualifiedName])
+	 *     (name=ID target=[SolutionElement|QualifiedName])
 	 * </pre>
 	 */
 	protected void sequence_Relation(ISerializationContext context, Relation semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SsrtPackage.Literals.RELATION__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SsrtPackage.Literals.RELATION__NAME));
+			if (transientValues.isValueTransient(semanticObject, SsrtPackage.Literals.RELATION__TARGET) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SsrtPackage.Literals.RELATION__TARGET));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getRelationAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getRelationAccess().getTargetSolutionElementQualifiedNameParserRuleCall_2_0_1(), semanticObject.eGet(SsrtPackage.Literals.RELATION__TARGET, false));
+		feeder.finish();
 	}
 	
 	
@@ -88,7 +99,7 @@ public class SsrtSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     SolutionElement returns SolutionElement
 	 *
 	 * Constraint:
-	 *     (name=ID refines=[SolutionElement|QualifiedName]? definition=STRING)
+	 *     (name=ID refines=[SolutionElement|QualifiedName]? definition=STRING source+=Relation*)
 	 * </pre>
 	 */
 	protected void sequence_SolutionElement(ISerializationContext context, SolutionElement semanticObject) {
@@ -102,7 +113,7 @@ public class SsrtSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     SolutionTree returns SolutionTree
 	 *
 	 * Constraint:
-	 *     (name=ID contributesTo+=[SecurityProperty|QualifiedName] solution+=Solution*)
+	 *     (name=ID contributesTo+=[SecurityProperty|QualifiedName] provides+=Solution*)
 	 * </pre>
 	 */
 	protected void sequence_SolutionTree(ISerializationContext context, SolutionTree semanticObject) {
@@ -116,14 +127,7 @@ public class SsrtSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Solution returns Solution
 	 *
 	 * Constraint:
-	 *     (
-	 *         kind=SSTSolutionKind 
-	 *         level=SSTLevel 
-	 *         name=ID 
-	 *         refines+=[Solution|QualifiedName]* 
-	 *         concepts+=SolutionElement* 
-	 *         relations+=Relation*
-	 *     )
+	 *     (kind=SolutionType level=Level name=ID refines+=[Solution|QualifiedName]* solutionelements+=SolutionElement*)
 	 * </pre>
 	 */
 	protected void sequence_Solution(ISerializationContext context, Solution semanticObject) {

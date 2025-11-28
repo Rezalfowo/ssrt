@@ -20,11 +20,10 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import semcomdt.swsecurity.ssrt.Relation;
-import semcomdt.swsecurity.ssrt.SSTLevel;
-import semcomdt.swsecurity.ssrt.SSTSolutionKind;
+import semcomdt.swsecurity.ssrt.Level;
 import semcomdt.swsecurity.ssrt.Solution;
 import semcomdt.swsecurity.ssrt.SolutionElement;
+import semcomdt.swsecurity.ssrt.SolutionType;
 import semcomdt.swsecurity.ssrt.SsrtPackage;
 
 /**
@@ -39,8 +38,7 @@ import semcomdt.swsecurity.ssrt.SsrtPackage;
  *   <li>{@link semcomdt.swsecurity.ssrt.impl.SolutionImpl#getLevel <em>Level</em>}</li>
  *   <li>{@link semcomdt.swsecurity.ssrt.impl.SolutionImpl#getName <em>Name</em>}</li>
  *   <li>{@link semcomdt.swsecurity.ssrt.impl.SolutionImpl#getRefines <em>Refines</em>}</li>
- *   <li>{@link semcomdt.swsecurity.ssrt.impl.SolutionImpl#getConcepts <em>Concepts</em>}</li>
- *   <li>{@link semcomdt.swsecurity.ssrt.impl.SolutionImpl#getRelations <em>Relations</em>}</li>
+ *   <li>{@link semcomdt.swsecurity.ssrt.impl.SolutionImpl#getSolutionelements <em>Solutionelements</em>}</li>
  * </ul>
  *
  * @generated
@@ -55,7 +53,7 @@ public class SolutionImpl extends MinimalEObjectImpl.Container implements Soluti
    * @generated
    * @ordered
    */
-  protected static final SSTSolutionKind KIND_EDEFAULT = SSTSolutionKind.SECURITY_PATTERN;
+  protected static final SolutionType KIND_EDEFAULT = SolutionType.SECURITY_PATTERN;
 
   /**
    * The cached value of the '{@link #getKind() <em>Kind</em>}' attribute.
@@ -65,7 +63,7 @@ public class SolutionImpl extends MinimalEObjectImpl.Container implements Soluti
    * @generated
    * @ordered
    */
-  protected SSTSolutionKind kind = KIND_EDEFAULT;
+  protected SolutionType kind = KIND_EDEFAULT;
 
   /**
    * The default value of the '{@link #getLevel() <em>Level</em>}' attribute.
@@ -75,7 +73,7 @@ public class SolutionImpl extends MinimalEObjectImpl.Container implements Soluti
    * @generated
    * @ordered
    */
-  protected static final SSTLevel LEVEL_EDEFAULT = SSTLevel.CONCEPTUAL;
+  protected static final Level LEVEL_EDEFAULT = Level.CONCEPTUAL;
 
   /**
    * The cached value of the '{@link #getLevel() <em>Level</em>}' attribute.
@@ -85,7 +83,7 @@ public class SolutionImpl extends MinimalEObjectImpl.Container implements Soluti
    * @generated
    * @ordered
    */
-  protected SSTLevel level = LEVEL_EDEFAULT;
+  protected Level level = LEVEL_EDEFAULT;
 
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -118,24 +116,14 @@ public class SolutionImpl extends MinimalEObjectImpl.Container implements Soluti
   protected EList<Solution> refines;
 
   /**
-   * The cached value of the '{@link #getConcepts() <em>Concepts</em>}' containment reference list.
+   * The cached value of the '{@link #getSolutionelements() <em>Solutionelements</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getConcepts()
+   * @see #getSolutionelements()
    * @generated
    * @ordered
    */
-  protected EList<SolutionElement> concepts;
-
-  /**
-   * The cached value of the '{@link #getRelations() <em>Relations</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getRelations()
-   * @generated
-   * @ordered
-   */
-  protected EList<Relation> relations;
+  protected EList<SolutionElement> solutionelements;
 
   /**
    * <!-- begin-user-doc -->
@@ -164,7 +152,7 @@ public class SolutionImpl extends MinimalEObjectImpl.Container implements Soluti
    * @generated
    */
   @Override
-  public SSTSolutionKind getKind()
+  public SolutionType getKind()
   {
     return kind;
   }
@@ -175,9 +163,9 @@ public class SolutionImpl extends MinimalEObjectImpl.Container implements Soluti
    * @generated
    */
   @Override
-  public void setKind(SSTSolutionKind newKind)
+  public void setKind(SolutionType newKind)
   {
-    SSTSolutionKind oldKind = kind;
+    SolutionType oldKind = kind;
     kind = newKind == null ? KIND_EDEFAULT : newKind;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, SsrtPackage.SOLUTION__KIND, oldKind, kind));
@@ -189,7 +177,7 @@ public class SolutionImpl extends MinimalEObjectImpl.Container implements Soluti
    * @generated
    */
   @Override
-  public SSTLevel getLevel()
+  public Level getLevel()
   {
     return level;
   }
@@ -200,9 +188,9 @@ public class SolutionImpl extends MinimalEObjectImpl.Container implements Soluti
    * @generated
    */
   @Override
-  public void setLevel(SSTLevel newLevel)
+  public void setLevel(Level newLevel)
   {
-    SSTLevel oldLevel = level;
+    Level oldLevel = level;
     level = newLevel == null ? LEVEL_EDEFAULT : newLevel;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, SsrtPackage.SOLUTION__LEVEL, oldLevel, level));
@@ -254,28 +242,13 @@ public class SolutionImpl extends MinimalEObjectImpl.Container implements Soluti
    * @generated
    */
   @Override
-  public EList<SolutionElement> getConcepts()
+  public EList<SolutionElement> getSolutionelements()
   {
-    if (concepts == null)
+    if (solutionelements == null)
     {
-      concepts = new EObjectContainmentEList<SolutionElement>(SolutionElement.class, this, SsrtPackage.SOLUTION__CONCEPTS);
+      solutionelements = new EObjectContainmentEList<SolutionElement>(SolutionElement.class, this, SsrtPackage.SOLUTION__SOLUTIONELEMENTS);
     }
-    return concepts;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EList<Relation> getRelations()
-  {
-    if (relations == null)
-    {
-      relations = new EObjectContainmentEList<Relation>(Relation.class, this, SsrtPackage.SOLUTION__RELATIONS);
-    }
-    return relations;
+    return solutionelements;
   }
 
   /**
@@ -288,10 +261,8 @@ public class SolutionImpl extends MinimalEObjectImpl.Container implements Soluti
   {
     switch (featureID)
     {
-      case SsrtPackage.SOLUTION__CONCEPTS:
-        return ((InternalEList<?>)getConcepts()).basicRemove(otherEnd, msgs);
-      case SsrtPackage.SOLUTION__RELATIONS:
-        return ((InternalEList<?>)getRelations()).basicRemove(otherEnd, msgs);
+      case SsrtPackage.SOLUTION__SOLUTIONELEMENTS:
+        return ((InternalEList<?>)getSolutionelements()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -314,10 +285,8 @@ public class SolutionImpl extends MinimalEObjectImpl.Container implements Soluti
         return getName();
       case SsrtPackage.SOLUTION__REFINES:
         return getRefines();
-      case SsrtPackage.SOLUTION__CONCEPTS:
-        return getConcepts();
-      case SsrtPackage.SOLUTION__RELATIONS:
-        return getRelations();
+      case SsrtPackage.SOLUTION__SOLUTIONELEMENTS:
+        return getSolutionelements();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -334,10 +303,10 @@ public class SolutionImpl extends MinimalEObjectImpl.Container implements Soluti
     switch (featureID)
     {
       case SsrtPackage.SOLUTION__KIND:
-        setKind((SSTSolutionKind)newValue);
+        setKind((SolutionType)newValue);
         return;
       case SsrtPackage.SOLUTION__LEVEL:
-        setLevel((SSTLevel)newValue);
+        setLevel((Level)newValue);
         return;
       case SsrtPackage.SOLUTION__NAME:
         setName((String)newValue);
@@ -346,13 +315,9 @@ public class SolutionImpl extends MinimalEObjectImpl.Container implements Soluti
         getRefines().clear();
         getRefines().addAll((Collection<? extends Solution>)newValue);
         return;
-      case SsrtPackage.SOLUTION__CONCEPTS:
-        getConcepts().clear();
-        getConcepts().addAll((Collection<? extends SolutionElement>)newValue);
-        return;
-      case SsrtPackage.SOLUTION__RELATIONS:
-        getRelations().clear();
-        getRelations().addAll((Collection<? extends Relation>)newValue);
+      case SsrtPackage.SOLUTION__SOLUTIONELEMENTS:
+        getSolutionelements().clear();
+        getSolutionelements().addAll((Collection<? extends SolutionElement>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -380,11 +345,8 @@ public class SolutionImpl extends MinimalEObjectImpl.Container implements Soluti
       case SsrtPackage.SOLUTION__REFINES:
         getRefines().clear();
         return;
-      case SsrtPackage.SOLUTION__CONCEPTS:
-        getConcepts().clear();
-        return;
-      case SsrtPackage.SOLUTION__RELATIONS:
-        getRelations().clear();
+      case SsrtPackage.SOLUTION__SOLUTIONELEMENTS:
+        getSolutionelements().clear();
         return;
     }
     super.eUnset(featureID);
@@ -408,10 +370,8 @@ public class SolutionImpl extends MinimalEObjectImpl.Container implements Soluti
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case SsrtPackage.SOLUTION__REFINES:
         return refines != null && !refines.isEmpty();
-      case SsrtPackage.SOLUTION__CONCEPTS:
-        return concepts != null && !concepts.isEmpty();
-      case SsrtPackage.SOLUTION__RELATIONS:
-        return relations != null && !relations.isEmpty();
+      case SsrtPackage.SOLUTION__SOLUTIONELEMENTS:
+        return solutionelements != null && !solutionelements.isEmpty();
     }
     return super.eIsSet(featureID);
   }

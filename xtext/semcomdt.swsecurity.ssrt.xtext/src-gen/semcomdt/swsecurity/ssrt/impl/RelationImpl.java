@@ -24,10 +24,7 @@ import semcomdt.swsecurity.ssrt.SsrtPackage;
  * </p>
  * <ul>
  *   <li>{@link semcomdt.swsecurity.ssrt.impl.RelationImpl#getName <em>Name</em>}</li>
- *   <li>{@link semcomdt.swsecurity.ssrt.impl.RelationImpl#getRefines <em>Refines</em>}</li>
- *   <li>{@link semcomdt.swsecurity.ssrt.impl.RelationImpl#getDefinition <em>Definition</em>}</li>
- *   <li>{@link semcomdt.swsecurity.ssrt.impl.RelationImpl#getIn <em>In</em>}</li>
- *   <li>{@link semcomdt.swsecurity.ssrt.impl.RelationImpl#getOut <em>Out</em>}</li>
+ *   <li>{@link semcomdt.swsecurity.ssrt.impl.RelationImpl#getTarget <em>Target</em>}</li>
  * </ul>
  *
  * @generated
@@ -55,54 +52,14 @@ public class RelationImpl extends MinimalEObjectImpl.Container implements Relati
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getRefines() <em>Refines</em>}' reference.
+   * The cached value of the '{@link #getTarget() <em>Target</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getRefines()
+   * @see #getTarget()
    * @generated
    * @ordered
    */
-  protected Relation refines;
-
-  /**
-   * The default value of the '{@link #getDefinition() <em>Definition</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDefinition()
-   * @generated
-   * @ordered
-   */
-  protected static final String DEFINITION_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getDefinition() <em>Definition</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDefinition()
-   * @generated
-   * @ordered
-   */
-  protected String definition = DEFINITION_EDEFAULT;
-
-  /**
-   * The cached value of the '{@link #getIn() <em>In</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getIn()
-   * @generated
-   * @ordered
-   */
-  protected SolutionElement in;
-
-  /**
-   * The cached value of the '{@link #getOut() <em>Out</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getOut()
-   * @generated
-   * @ordered
-   */
-  protected SolutionElement out;
+  protected SolutionElement target;
 
   /**
    * <!-- begin-user-doc -->
@@ -156,19 +113,19 @@ public class RelationImpl extends MinimalEObjectImpl.Container implements Relati
    * @generated
    */
   @Override
-  public Relation getRefines()
+  public SolutionElement getTarget()
   {
-    if (refines != null && refines.eIsProxy())
+    if (target != null && target.eIsProxy())
     {
-      InternalEObject oldRefines = (InternalEObject)refines;
-      refines = (Relation)eResolveProxy(oldRefines);
-      if (refines != oldRefines)
+      InternalEObject oldTarget = (InternalEObject)target;
+      target = (SolutionElement)eResolveProxy(oldTarget);
+      if (target != oldTarget)
       {
         if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, SsrtPackage.RELATION__REFINES, oldRefines, refines));
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, SsrtPackage.RELATION__TARGET, oldTarget, target));
       }
     }
-    return refines;
+    return target;
   }
 
   /**
@@ -176,9 +133,9 @@ public class RelationImpl extends MinimalEObjectImpl.Container implements Relati
    * <!-- end-user-doc -->
    * @generated
    */
-  public Relation basicGetRefines()
+  public SolutionElement basicGetTarget()
   {
-    return refines;
+    return target;
   }
 
   /**
@@ -187,127 +144,12 @@ public class RelationImpl extends MinimalEObjectImpl.Container implements Relati
    * @generated
    */
   @Override
-  public void setRefines(Relation newRefines)
+  public void setTarget(SolutionElement newTarget)
   {
-    Relation oldRefines = refines;
-    refines = newRefines;
+    SolutionElement oldTarget = target;
+    target = newTarget;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SsrtPackage.RELATION__REFINES, oldRefines, refines));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String getDefinition()
-  {
-    return definition;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setDefinition(String newDefinition)
-  {
-    String oldDefinition = definition;
-    definition = newDefinition;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SsrtPackage.RELATION__DEFINITION, oldDefinition, definition));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public SolutionElement getIn()
-  {
-    if (in != null && in.eIsProxy())
-    {
-      InternalEObject oldIn = (InternalEObject)in;
-      in = (SolutionElement)eResolveProxy(oldIn);
-      if (in != oldIn)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, SsrtPackage.RELATION__IN, oldIn, in));
-      }
-    }
-    return in;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public SolutionElement basicGetIn()
-  {
-    return in;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setIn(SolutionElement newIn)
-  {
-    SolutionElement oldIn = in;
-    in = newIn;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SsrtPackage.RELATION__IN, oldIn, in));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public SolutionElement getOut()
-  {
-    if (out != null && out.eIsProxy())
-    {
-      InternalEObject oldOut = (InternalEObject)out;
-      out = (SolutionElement)eResolveProxy(oldOut);
-      if (out != oldOut)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, SsrtPackage.RELATION__OUT, oldOut, out));
-      }
-    }
-    return out;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public SolutionElement basicGetOut()
-  {
-    return out;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setOut(SolutionElement newOut)
-  {
-    SolutionElement oldOut = out;
-    out = newOut;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SsrtPackage.RELATION__OUT, oldOut, out));
+      eNotify(new ENotificationImpl(this, Notification.SET, SsrtPackage.RELATION__TARGET, oldTarget, target));
   }
 
   /**
@@ -322,17 +164,9 @@ public class RelationImpl extends MinimalEObjectImpl.Container implements Relati
     {
       case SsrtPackage.RELATION__NAME:
         return getName();
-      case SsrtPackage.RELATION__REFINES:
-        if (resolve) return getRefines();
-        return basicGetRefines();
-      case SsrtPackage.RELATION__DEFINITION:
-        return getDefinition();
-      case SsrtPackage.RELATION__IN:
-        if (resolve) return getIn();
-        return basicGetIn();
-      case SsrtPackage.RELATION__OUT:
-        if (resolve) return getOut();
-        return basicGetOut();
+      case SsrtPackage.RELATION__TARGET:
+        if (resolve) return getTarget();
+        return basicGetTarget();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -350,17 +184,8 @@ public class RelationImpl extends MinimalEObjectImpl.Container implements Relati
       case SsrtPackage.RELATION__NAME:
         setName((String)newValue);
         return;
-      case SsrtPackage.RELATION__REFINES:
-        setRefines((Relation)newValue);
-        return;
-      case SsrtPackage.RELATION__DEFINITION:
-        setDefinition((String)newValue);
-        return;
-      case SsrtPackage.RELATION__IN:
-        setIn((SolutionElement)newValue);
-        return;
-      case SsrtPackage.RELATION__OUT:
-        setOut((SolutionElement)newValue);
+      case SsrtPackage.RELATION__TARGET:
+        setTarget((SolutionElement)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -379,17 +204,8 @@ public class RelationImpl extends MinimalEObjectImpl.Container implements Relati
       case SsrtPackage.RELATION__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case SsrtPackage.RELATION__REFINES:
-        setRefines((Relation)null);
-        return;
-      case SsrtPackage.RELATION__DEFINITION:
-        setDefinition(DEFINITION_EDEFAULT);
-        return;
-      case SsrtPackage.RELATION__IN:
-        setIn((SolutionElement)null);
-        return;
-      case SsrtPackage.RELATION__OUT:
-        setOut((SolutionElement)null);
+      case SsrtPackage.RELATION__TARGET:
+        setTarget((SolutionElement)null);
         return;
     }
     super.eUnset(featureID);
@@ -407,14 +223,8 @@ public class RelationImpl extends MinimalEObjectImpl.Container implements Relati
     {
       case SsrtPackage.RELATION__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case SsrtPackage.RELATION__REFINES:
-        return refines != null;
-      case SsrtPackage.RELATION__DEFINITION:
-        return DEFINITION_EDEFAULT == null ? definition != null : !DEFINITION_EDEFAULT.equals(definition);
-      case SsrtPackage.RELATION__IN:
-        return in != null;
-      case SsrtPackage.RELATION__OUT:
-        return out != null;
+      case SsrtPackage.RELATION__TARGET:
+        return target != null;
     }
     return super.eIsSet(featureID);
   }
@@ -432,8 +242,6 @@ public class RelationImpl extends MinimalEObjectImpl.Container implements Relati
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (name: ");
     result.append(name);
-    result.append(", definition: ");
-    result.append(definition);
     result.append(')');
     return result.toString();
   }

@@ -4,6 +4,9 @@
 package semcomdt.swsecurity.ui.labeling;
 
 import com.google.inject.Inject;
+
+import semcomdt.swsecurity.ssrt.SolutionTree;
+
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.xtext.ui.label.DefaultEObjectLabelProvider;
 
@@ -21,8 +24,8 @@ public class SsrtLabelProvider extends DefaultEObjectLabelProvider {
 
 	// Labels and icons can be computed like this:
 	
-//	String text(Greeting ele) {
-//		return "A greeting to " + ele.getName();
+//	String text(SolutionTree soltree) {
+//		return "A greeting to " + soltree.getName();
 //	}
 //
 //	String image(Greeting ele) {

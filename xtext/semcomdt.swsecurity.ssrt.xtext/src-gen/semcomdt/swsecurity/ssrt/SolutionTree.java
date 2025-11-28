@@ -20,7 +20,7 @@ import semcomdt.swsecurity.objective.ciaamps.ciaamps.SecurityProperty;
  * <ul>
  *   <li>{@link semcomdt.swsecurity.ssrt.SolutionTree#getName <em>Name</em>}</li>
  *   <li>{@link semcomdt.swsecurity.ssrt.SolutionTree#getContributesTo <em>Contributes To</em>}</li>
- *   <li>{@link semcomdt.swsecurity.ssrt.SolutionTree#getSolution <em>Solution</em>}</li>
+ *   <li>{@link semcomdt.swsecurity.ssrt.SolutionTree#getProvides <em>Provides</em>}</li>
  * </ul>
  *
  * @see semcomdt.swsecurity.ssrt.SsrtPackage#getSolutionTree()
@@ -64,15 +64,15 @@ public interface SolutionTree extends EObject
   EList<SecurityProperty> getContributesTo();
 
   /**
-   * Returns the value of the '<em><b>Solution</b></em>' containment reference list.
+   * Returns the value of the '<em><b>Provides</b></em>' containment reference list.
    * The list contents are of type {@link semcomdt.swsecurity.ssrt.Solution}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Solution</em>' containment reference list.
-   * @see semcomdt.swsecurity.ssrt.SsrtPackage#getSolutionTree_Solution()
+   * @return the value of the '<em>Provides</em>' containment reference list.
+   * @see semcomdt.swsecurity.ssrt.SsrtPackage#getSolutionTree_Provides()
    * @model containment="true"
    * @generated
    */
-  EList<Solution> getSolution();
+  EList<Solution> getProvides();
 
 } // SolutionTree

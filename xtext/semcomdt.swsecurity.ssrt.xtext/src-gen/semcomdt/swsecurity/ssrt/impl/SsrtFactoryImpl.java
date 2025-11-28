@@ -86,10 +86,10 @@ public class SsrtFactoryImpl extends EFactoryImpl implements SsrtFactory
   {
     switch (eDataType.getClassifierID())
     {
-      case SsrtPackage.SST_LEVEL:
-        return createSSTLevelFromString(eDataType, initialValue);
-      case SsrtPackage.SST_SOLUTION_KIND:
-        return createSSTSolutionKindFromString(eDataType, initialValue);
+      case SsrtPackage.LEVEL:
+        return createLevelFromString(eDataType, initialValue);
+      case SsrtPackage.SOLUTION_TYPE:
+        return createSolutionTypeFromString(eDataType, initialValue);
       default:
         throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
@@ -105,10 +105,10 @@ public class SsrtFactoryImpl extends EFactoryImpl implements SsrtFactory
   {
     switch (eDataType.getClassifierID())
     {
-      case SsrtPackage.SST_LEVEL:
-        return convertSSTLevelToString(eDataType, instanceValue);
-      case SsrtPackage.SST_SOLUTION_KIND:
-        return convertSSTSolutionKindToString(eDataType, instanceValue);
+      case SsrtPackage.LEVEL:
+        return convertLevelToString(eDataType, instanceValue);
+      case SsrtPackage.SOLUTION_TYPE:
+        return convertSolutionTypeToString(eDataType, instanceValue);
       default:
         throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
@@ -179,9 +179,9 @@ public class SsrtFactoryImpl extends EFactoryImpl implements SsrtFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public SSTLevel createSSTLevelFromString(EDataType eDataType, String initialValue)
+  public Level createLevelFromString(EDataType eDataType, String initialValue)
   {
-    SSTLevel result = SSTLevel.get(initialValue);
+    Level result = Level.get(initialValue);
     if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
     return result;
   }
@@ -191,7 +191,7 @@ public class SsrtFactoryImpl extends EFactoryImpl implements SsrtFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public String convertSSTLevelToString(EDataType eDataType, Object instanceValue)
+  public String convertLevelToString(EDataType eDataType, Object instanceValue)
   {
     return instanceValue == null ? null : instanceValue.toString();
   }
@@ -201,9 +201,9 @@ public class SsrtFactoryImpl extends EFactoryImpl implements SsrtFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public SSTSolutionKind createSSTSolutionKindFromString(EDataType eDataType, String initialValue)
+  public SolutionType createSolutionTypeFromString(EDataType eDataType, String initialValue)
   {
-    SSTSolutionKind result = SSTSolutionKind.get(initialValue);
+    SolutionType result = SolutionType.get(initialValue);
     if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
     return result;
   }
@@ -213,7 +213,7 @@ public class SsrtFactoryImpl extends EFactoryImpl implements SsrtFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public String convertSSTSolutionKindToString(EDataType eDataType, Object instanceValue)
+  public String convertSolutionTypeToString(EDataType eDataType, Object instanceValue)
   {
     return instanceValue == null ? null : instanceValue.toString();
   }

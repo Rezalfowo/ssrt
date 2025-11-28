@@ -3,6 +3,8 @@
  */
 package semcomdt.swsecurity.ssrt;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -17,6 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link semcomdt.swsecurity.ssrt.SolutionElement#getName <em>Name</em>}</li>
  *   <li>{@link semcomdt.swsecurity.ssrt.SolutionElement#getRefines <em>Refines</em>}</li>
  *   <li>{@link semcomdt.swsecurity.ssrt.SolutionElement#getDefinition <em>Definition</em>}</li>
+ *   <li>{@link semcomdt.swsecurity.ssrt.SolutionElement#getSource <em>Source</em>}</li>
  * </ul>
  *
  * @see semcomdt.swsecurity.ssrt.SsrtPackage#getSolutionElement()
@@ -90,5 +93,17 @@ public interface SolutionElement extends EObject
    * @generated
    */
   void setDefinition(String value);
+
+  /**
+   * Returns the value of the '<em><b>Source</b></em>' containment reference list.
+   * The list contents are of type {@link semcomdt.swsecurity.ssrt.Relation}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Source</em>' containment reference list.
+   * @see semcomdt.swsecurity.ssrt.SsrtPackage#getSolutionElement_Source()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Relation> getSource();
 
 } // SolutionElement

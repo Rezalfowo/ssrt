@@ -162,17 +162,17 @@ ruleSolutionTree returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getSolutionTreeAccess().getSolutionSolutionParserRuleCall_5_0());
+					newCompositeNode(grammarAccess.getSolutionTreeAccess().getProvidesSolutionParserRuleCall_5_0());
 				}
-				lv_solution_5_0=ruleSolution
+				lv_provides_5_0=ruleSolution
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getSolutionTreeRule());
 					}
 					add(
 						$current,
-						"solution",
-						lv_solution_5_0,
+						"provides",
+						lv_provides_5_0,
 						"semcomdt.swsecurity.Ssrt.Solution");
 					afterParserOrEnumRuleCall();
 				}
@@ -204,9 +204,9 @@ ruleSolution returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getSolutionAccess().getKindSSTSolutionKindEnumRuleCall_0_0());
+					newCompositeNode(grammarAccess.getSolutionAccess().getKindSolutionTypeEnumRuleCall_0_0());
 				}
-				lv_kind_0_0=ruleSSTSolutionKind
+				lv_kind_0_0=ruleSolutionType
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getSolutionRule());
@@ -215,7 +215,7 @@ ruleSolution returns [EObject current=null]
 						$current,
 						"kind",
 						lv_kind_0_0,
-						"semcomdt.swsecurity.Ssrt.SSTSolutionKind");
+						"semcomdt.swsecurity.Ssrt.SolutionType");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -223,9 +223,9 @@ ruleSolution returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getSolutionAccess().getLevelSSTLevelEnumRuleCall_1_0());
+					newCompositeNode(grammarAccess.getSolutionAccess().getLevelLevelEnumRuleCall_1_0());
 				}
-				lv_level_1_0=ruleSSTLevel
+				lv_level_1_0=ruleLevel
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getSolutionRule());
@@ -234,7 +234,7 @@ ruleSolution returns [EObject current=null]
 						$current,
 						"level",
 						lv_level_1_0,
-						"semcomdt.swsecurity.Ssrt.SSTLevel");
+						"semcomdt.swsecurity.Ssrt.Level");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -277,7 +277,7 @@ ruleSolution returns [EObject current=null]
 						afterParserOrEnumRuleCall();
 					}
 				)
-			)*
+			)+
 		)?
 		otherlv_5='{'
 		{
@@ -286,44 +286,25 @@ ruleSolution returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getSolutionAccess().getConceptsSolutionElementParserRuleCall_5_0());
+					newCompositeNode(grammarAccess.getSolutionAccess().getSolutionelementsSolutionElementParserRuleCall_5_0());
 				}
-				lv_concepts_6_0=ruleSolutionElement
+				lv_solutionelements_6_0=ruleSolutionElement
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getSolutionRule());
 					}
 					add(
 						$current,
-						"concepts",
-						lv_concepts_6_0,
+						"solutionelements",
+						lv_solutionelements_6_0,
 						"semcomdt.swsecurity.Ssrt.SolutionElement");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)*
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getSolutionAccess().getRelationsRelationParserRuleCall_6_0());
-				}
-				lv_relations_7_0=ruleRelation
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getSolutionRule());
-					}
-					add(
-						$current,
-						"relations",
-						lv_relations_7_0,
-						"semcomdt.swsecurity.Ssrt.Relation");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)*
-		otherlv_8='}'
+		otherlv_7='}'
 		{
-			newLeafNode(otherlv_8, grammarAccess.getSolutionAccess().getRightCurlyBracketKeyword_7());
+			newLeafNode(otherlv_7, grammarAccess.getSolutionAccess().getRightCurlyBracketKeyword_6());
 		}
 	)
 ;
@@ -344,7 +325,7 @@ ruleSolutionElement returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='Solution Element'
+		otherlv_0='SolutionElement'
 		{
 			newLeafNode(otherlv_0, grammarAccess.getSolutionElementAccess().getSolutionElementKeyword_0());
 		}
@@ -414,6 +395,25 @@ ruleSolutionElement returns [EObject current=null]
 		{
 			newLeafNode(otherlv_6, grammarAccess.getSolutionElementAccess().getRightParenthesisKeyword_5());
 		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getSolutionElementAccess().getSourceRelationParserRuleCall_6_0());
+				}
+				lv_source_7_0=ruleRelation
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getSolutionElementRule());
+					}
+					add(
+						$current,
+						"source",
+						lv_source_7_0,
+						"semcomdt.swsecurity.Ssrt.Relation");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)*
 	)
 ;
 
@@ -456,54 +456,6 @@ ruleRelation returns [EObject current=null]
 			)
 		)
 		(
-			otherlv_2='refines'
-			{
-				newLeafNode(otherlv_2, grammarAccess.getRelationAccess().getRefinesKeyword_2_0());
-			}
-			(
-				(
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getRelationRule());
-						}
-					}
-					{
-						newCompositeNode(grammarAccess.getRelationAccess().getRefinesRelationCrossReference_2_1_0());
-					}
-					ruleQualifiedName
-					{
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)?
-		otherlv_4='('
-		{
-			newLeafNode(otherlv_4, grammarAccess.getRelationAccess().getLeftParenthesisKeyword_3());
-		}
-		(
-			(
-				lv_definition_5_0=RULE_STRING
-				{
-					newLeafNode(lv_definition_5_0, grammarAccess.getRelationAccess().getDefinitionSTRINGTerminalRuleCall_4_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getRelationRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"definition",
-						lv_definition_5_0,
-						"org.eclipse.xtext.common.Terminals.STRING");
-				}
-			)
-		)
-		otherlv_6=')'
-		{
-			newLeafNode(otherlv_6, grammarAccess.getRelationAccess().getRightParenthesisKeyword_5());
-		}
-		(
 			(
 				{
 					if ($current==null) {
@@ -511,27 +463,7 @@ ruleRelation returns [EObject current=null]
 					}
 				}
 				{
-					newCompositeNode(grammarAccess.getRelationAccess().getInSolutionElementCrossReference_6_0());
-				}
-				ruleQualifiedName
-				{
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		otherlv_8='->'
-		{
-			newLeafNode(otherlv_8, grammarAccess.getRelationAccess().getHyphenMinusGreaterThanSignKeyword_7());
-		}
-		(
-			(
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getRelationRule());
-					}
-				}
-				{
-					newCompositeNode(grammarAccess.getRelationAccess().getOutSolutionElementCrossReference_8_0());
+					newCompositeNode(grammarAccess.getRelationAccess().getTargetSolutionElementCrossReference_2_0());
 				}
 				ruleQualifiedName
 				{
@@ -582,8 +514,8 @@ ruleQualifiedName returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleT
 	)
 ;
 
-// Rule SSTLevel
-ruleSSTLevel returns [Enumerator current=null]
+// Rule Level
+ruleLevel returns [Enumerator current=null]
 @init {
 	enterRule();
 }
@@ -594,31 +526,31 @@ ruleSSTLevel returns [Enumerator current=null]
 		(
 			enumLiteral_0='Conceptual'
 			{
-				$current = grammarAccess.getSSTLevelAccess().getConceptualEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_0, grammarAccess.getSSTLevelAccess().getConceptualEnumLiteralDeclaration_0());
+				$current = grammarAccess.getLevelAccess().getConceptualEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_0, grammarAccess.getLevelAccess().getConceptualEnumLiteralDeclaration_0());
 			}
 		)
 		    |
 		(
 			enumLiteral_1='Design'
 			{
-				$current = grammarAccess.getSSTLevelAccess().getDesignEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_1, grammarAccess.getSSTLevelAccess().getDesignEnumLiteralDeclaration_1());
+				$current = grammarAccess.getLevelAccess().getDesignEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_1, grammarAccess.getLevelAccess().getDesignEnumLiteralDeclaration_1());
 			}
 		)
 		    |
 		(
 			enumLiteral_2='Realization'
 			{
-				$current = grammarAccess.getSSTLevelAccess().getRealizationEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_2, grammarAccess.getSSTLevelAccess().getRealizationEnumLiteralDeclaration_2());
+				$current = grammarAccess.getLevelAccess().getRealizationEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_2, grammarAccess.getLevelAccess().getRealizationEnumLiteralDeclaration_2());
 			}
 		)
 	)
 ;
 
-// Rule SSTSolutionKind
-ruleSSTSolutionKind returns [Enumerator current=null]
+// Rule SolutionType
+ruleSolutionType returns [Enumerator current=null]
 @init {
 	enterRule();
 }
@@ -629,16 +561,16 @@ ruleSSTSolutionKind returns [Enumerator current=null]
 		(
 			enumLiteral_0='SecurityPattern'
 			{
-				$current = grammarAccess.getSSTSolutionKindAccess().getSecurityPatternEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_0, grammarAccess.getSSTSolutionKindAccess().getSecurityPatternEnumLiteralDeclaration_0());
+				$current = grammarAccess.getSolutionTypeAccess().getSecurityPatternEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_0, grammarAccess.getSolutionTypeAccess().getSecurityPatternEnumLiteralDeclaration_0());
 			}
 		)
 		    |
 		(
-			enumLiteral_1='Tactic'
+			enumLiteral_1='SecurityTactic'
 			{
-				$current = grammarAccess.getSSTSolutionKindAccess().getTacticEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_1, grammarAccess.getSSTSolutionKindAccess().getTacticEnumLiteralDeclaration_1());
+				$current = grammarAccess.getSolutionTypeAccess().getTacticEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_1, grammarAccess.getSolutionTypeAccess().getTacticEnumLiteralDeclaration_1());
 			}
 		)
 	)

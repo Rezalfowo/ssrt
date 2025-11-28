@@ -10,8 +10,6 @@ import org.eclipse.xtext.IGrammarAccess;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.AbstractElementAlias;
-import org.eclipse.xtext.serializer.analysis.GrammarAlias.TokenAlias;
-import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynNavigable;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynTransition;
 import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 import semcomdt.swsecurity.services.SsrtGrammarAccess;
@@ -20,12 +18,10 @@ import semcomdt.swsecurity.services.SsrtGrammarAccess;
 public class SsrtSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected SsrtGrammarAccess grammarAccess;
-	protected AbstractElementAlias match_Solution_RefinesKeyword_3_0_q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (SsrtGrammarAccess) access;
-		match_Solution_RefinesKeyword_3_0_q = new TokenAlias(false, true, grammarAccess.getSolutionAccess().getRefinesKeyword_3_0());
 	}
 	
 	@Override
@@ -40,26 +36,8 @@ public class SsrtSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if (match_Solution_RefinesKeyword_3_0_q.equals(syntax))
-				emit_Solution_RefinesKeyword_3_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else acceptNodes(getLastNavigableState(), syntaxNodes);
+			acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
 
-	/**
-	 * <pre>
-	 * Ambiguous syntax:
-	 *     'refines'?
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     name=ID (ambiguity) '{' '}' (rule end)
-	 *     name=ID (ambiguity) '{' concepts+=SolutionElement
-	 *     name=ID (ambiguity) '{' relations+=Relation
-	 
-	 * </pre>
-	 */
-	protected void emit_Solution_RefinesKeyword_3_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
 }

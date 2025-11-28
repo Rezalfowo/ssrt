@@ -51,18 +51,18 @@ public class SsrtGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		private final CrossReference cContributesToSecurityPropertyCrossReference_3_0 = (CrossReference)cContributesToAssignment_3.eContents().get(0);
 		private final RuleCall cContributesToSecurityPropertyQualifiedNameParserRuleCall_3_0_1 = (RuleCall)cContributesToSecurityPropertyCrossReference_3_0.eContents().get(1);
 		private final Keyword cLeftCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cSolutionAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cSolutionSolutionParserRuleCall_5_0 = (RuleCall)cSolutionAssignment_5.eContents().get(0);
+		private final Assignment cProvidesAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cProvidesSolutionParserRuleCall_5_0 = (RuleCall)cProvidesAssignment_5.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//SolutionTree:
 		//    'SolutionTree' name=ID "contributesTo" contributesTo+=[ciaamps::SecurityProperty|QualifiedName]
-		//     '{' solution+=Solution* '}'
+		//     '{' provides+=Solution* '}'
 		//    ;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'SolutionTree' name=ID "contributesTo" contributesTo+=[ciaamps::SecurityProperty|QualifiedName]
-		// '{' solution+=Solution* '}'
+		// '{' provides+=Solution* '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'SolutionTree'
@@ -89,11 +89,11 @@ public class SsrtGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_4() { return cLeftCurlyBracketKeyword_4; }
 		
-		//solution+=Solution*
-		public Assignment getSolutionAssignment_5() { return cSolutionAssignment_5; }
+		//provides+=Solution*
+		public Assignment getProvidesAssignment_5() { return cProvidesAssignment_5; }
 		
 		//Solution
-		public RuleCall getSolutionSolutionParserRuleCall_5_0() { return cSolutionSolutionParserRuleCall_5_0; }
+		public RuleCall getProvidesSolutionParserRuleCall_5_0() { return cProvidesSolutionParserRuleCall_5_0; }
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
@@ -102,9 +102,9 @@ public class SsrtGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "semcomdt.swsecurity.Ssrt.Solution");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cKindAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cKindSSTSolutionKindEnumRuleCall_0_0 = (RuleCall)cKindAssignment_0.eContents().get(0);
+		private final RuleCall cKindSolutionTypeEnumRuleCall_0_0 = (RuleCall)cKindAssignment_0.eContents().get(0);
 		private final Assignment cLevelAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cLevelSSTLevelEnumRuleCall_1_0 = (RuleCall)cLevelAssignment_1.eContents().get(0);
+		private final RuleCall cLevelLevelEnumRuleCall_1_0 = (RuleCall)cLevelAssignment_1.eContents().get(0);
 		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
@@ -113,37 +113,33 @@ public class SsrtGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		private final CrossReference cRefinesSolutionCrossReference_3_1_0 = (CrossReference)cRefinesAssignment_3_1.eContents().get(0);
 		private final RuleCall cRefinesSolutionQualifiedNameParserRuleCall_3_1_0_1 = (RuleCall)cRefinesSolutionCrossReference_3_1_0.eContents().get(1);
 		private final Keyword cLeftCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cConceptsAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cConceptsSolutionElementParserRuleCall_5_0 = (RuleCall)cConceptsAssignment_5.eContents().get(0);
-		private final Assignment cRelationsAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cRelationsRelationParserRuleCall_6_0 = (RuleCall)cRelationsAssignment_6.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Assignment cSolutionelementsAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cSolutionelementsSolutionElementParserRuleCall_5_0 = (RuleCall)cSolutionelementsAssignment_5.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//Solution :
-		//    kind=SSTSolutionKind level=SSTLevel name=ID
-		//    ("refines" refines+=[Solution|QualifiedName]*)?
-		//    "{" concepts+=SolutionElement*
-		//    relations+=Relation* "}"
+		//    kind=SolutionType level=Level name=ID
+		//    ("refines" refines+=[Solution|QualifiedName]+)?
+		//    "{" solutionelements+=SolutionElement* "}"
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//kind=SSTSolutionKind level=SSTLevel name=ID
-		//("refines" refines+=[Solution|QualifiedName]*)?
-		//"{" concepts+=SolutionElement*
-		//relations+=Relation* "}"
+		//kind=SolutionType level=Level name=ID
+		//("refines" refines+=[Solution|QualifiedName]+)?
+		//"{" solutionelements+=SolutionElement* "}"
 		public Group getGroup() { return cGroup; }
 		
-		//kind=SSTSolutionKind
+		//kind=SolutionType
 		public Assignment getKindAssignment_0() { return cKindAssignment_0; }
 		
-		//SSTSolutionKind
-		public RuleCall getKindSSTSolutionKindEnumRuleCall_0_0() { return cKindSSTSolutionKindEnumRuleCall_0_0; }
+		//SolutionType
+		public RuleCall getKindSolutionTypeEnumRuleCall_0_0() { return cKindSolutionTypeEnumRuleCall_0_0; }
 		
-		//level=SSTLevel
+		//level=Level
 		public Assignment getLevelAssignment_1() { return cLevelAssignment_1; }
 		
-		//SSTLevel
-		public RuleCall getLevelSSTLevelEnumRuleCall_1_0() { return cLevelSSTLevelEnumRuleCall_1_0; }
+		//Level
+		public RuleCall getLevelLevelEnumRuleCall_1_0() { return cLevelLevelEnumRuleCall_1_0; }
 		
 		//name=ID
 		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
@@ -151,13 +147,13 @@ public class SsrtGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
 		
-		//("refines" refines+=[Solution|QualifiedName]*)?
+		//("refines" refines+=[Solution|QualifiedName]+)?
 		public Group getGroup_3() { return cGroup_3; }
 		
 		//"refines"
 		public Keyword getRefinesKeyword_3_0() { return cRefinesKeyword_3_0; }
 		
-		//refines+=[Solution|QualifiedName]*
+		//refines+=[Solution|QualifiedName]+
 		public Assignment getRefinesAssignment_3_1() { return cRefinesAssignment_3_1; }
 		
 		//[Solution|QualifiedName]
@@ -169,20 +165,14 @@ public class SsrtGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_4() { return cLeftCurlyBracketKeyword_4; }
 		
-		//concepts+=SolutionElement*
-		public Assignment getConceptsAssignment_5() { return cConceptsAssignment_5; }
+		//solutionelements+=SolutionElement*
+		public Assignment getSolutionelementsAssignment_5() { return cSolutionelementsAssignment_5; }
 		
 		//SolutionElement
-		public RuleCall getConceptsSolutionElementParserRuleCall_5_0() { return cConceptsSolutionElementParserRuleCall_5_0; }
-		
-		//relations+=Relation*
-		public Assignment getRelationsAssignment_6() { return cRelationsAssignment_6; }
-		
-		//Relation
-		public RuleCall getRelationsRelationParserRuleCall_6_0() { return cRelationsRelationParserRuleCall_6_0; }
+		public RuleCall getSolutionelementsSolutionElementParserRuleCall_5_0() { return cSolutionelementsSolutionElementParserRuleCall_5_0; }
 		
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
+		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
 	}
 	public class SolutionElementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "semcomdt.swsecurity.Ssrt.SolutionElement");
@@ -199,19 +189,22 @@ public class SsrtGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		private final Assignment cDefinitionAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final RuleCall cDefinitionSTRINGTerminalRuleCall_4_0 = (RuleCall)cDefinitionAssignment_4.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cSourceAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cSourceRelationParserRuleCall_6_0 = (RuleCall)cSourceAssignment_6.eContents().get(0);
 		
 		//SolutionElement:
-		//    "Solution Element" name=ID ("refines" refines=[SolutionElement|QualifiedName])?
+		//    "SolutionElement" name=ID ("refines" refines=[SolutionElement|QualifiedName])?
 		//    "(" definition=STRING ")"
-		////    ("-"relation+=STRING">" relatedconcept+=[Concept|QualifiedName])?
+		//    (source+=Relation*)
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"Solution Element" name=ID ("refines" refines=[SolutionElement|QualifiedName])?
+		//"SolutionElement" name=ID ("refines" refines=[SolutionElement|QualifiedName])?
 		//"(" definition=STRING ")"
+		//(source+=Relation*)
 		public Group getGroup() { return cGroup; }
 		
-		//"Solution Element"
+		//"SolutionElement"
 		public Keyword getSolutionElementKeyword_0() { return cSolutionElementKeyword_0; }
 		
 		//name=ID
@@ -246,6 +239,12 @@ public class SsrtGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		
 		//")"
 		public Keyword getRightParenthesisKeyword_5() { return cRightParenthesisKeyword_5; }
+		
+		//(source+=Relation*)
+		public Assignment getSourceAssignment_6() { return cSourceAssignment_6; }
+		
+		//Relation
+		public RuleCall getSourceRelationParserRuleCall_6_0() { return cSourceRelationParserRuleCall_6_0; }
 	}
 	public class RelationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "semcomdt.swsecurity.Ssrt.Relation");
@@ -253,33 +252,16 @@ public class SsrtGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		private final Keyword cRelationKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final Keyword cRefinesKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
-		private final Assignment cRefinesAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final CrossReference cRefinesRelationCrossReference_2_1_0 = (CrossReference)cRefinesAssignment_2_1.eContents().get(0);
-		private final RuleCall cRefinesRelationQualifiedNameParserRuleCall_2_1_0_1 = (RuleCall)cRefinesRelationCrossReference_2_1_0.eContents().get(1);
-		private final Keyword cLeftParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cDefinitionAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cDefinitionSTRINGTerminalRuleCall_4_0 = (RuleCall)cDefinitionAssignment_4.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Assignment cInAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final CrossReference cInSolutionElementCrossReference_6_0 = (CrossReference)cInAssignment_6.eContents().get(0);
-		private final RuleCall cInSolutionElementQualifiedNameParserRuleCall_6_0_1 = (RuleCall)cInSolutionElementCrossReference_6_0.eContents().get(1);
-		private final Keyword cHyphenMinusGreaterThanSignKeyword_7 = (Keyword)cGroup.eContents().get(7);
-		private final Assignment cOutAssignment_8 = (Assignment)cGroup.eContents().get(8);
-		private final CrossReference cOutSolutionElementCrossReference_8_0 = (CrossReference)cOutAssignment_8.eContents().get(0);
-		private final RuleCall cOutSolutionElementQualifiedNameParserRuleCall_8_0_1 = (RuleCall)cOutSolutionElementCrossReference_8_0.eContents().get(1);
+		private final Assignment cTargetAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final CrossReference cTargetSolutionElementCrossReference_2_0 = (CrossReference)cTargetAssignment_2.eContents().get(0);
+		private final RuleCall cTargetSolutionElementQualifiedNameParserRuleCall_2_0_1 = (RuleCall)cTargetSolutionElementCrossReference_2_0.eContents().get(1);
 		
 		//Relation :
-		//    "Relation" name=ID ("refines" refines=[Relation|QualifiedName])?
-		//    "(" definition=STRING ")"
-		//    in=[SolutionElement|QualifiedName] "->" out=[SolutionElement|QualifiedName]
+		//    "Relation" name=ID target=[SolutionElement|QualifiedName]
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"Relation" name=ID ("refines" refines=[Relation|QualifiedName])?
-		//"(" definition=STRING ")"
-		//in=[SolutionElement|QualifiedName] "->" out=[SolutionElement|QualifiedName]
+		//"Relation" name=ID target=[SolutionElement|QualifiedName]
 		public Group getGroup() { return cGroup; }
 		
 		//"Relation"
@@ -291,53 +273,14 @@ public class SsrtGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 		
-		//("refines" refines=[Relation|QualifiedName])?
-		public Group getGroup_2() { return cGroup_2; }
-		
-		//"refines"
-		public Keyword getRefinesKeyword_2_0() { return cRefinesKeyword_2_0; }
-		
-		//refines=[Relation|QualifiedName]
-		public Assignment getRefinesAssignment_2_1() { return cRefinesAssignment_2_1; }
-		
-		//[Relation|QualifiedName]
-		public CrossReference getRefinesRelationCrossReference_2_1_0() { return cRefinesRelationCrossReference_2_1_0; }
-		
-		//QualifiedName
-		public RuleCall getRefinesRelationQualifiedNameParserRuleCall_2_1_0_1() { return cRefinesRelationQualifiedNameParserRuleCall_2_1_0_1; }
-		
-		//"("
-		public Keyword getLeftParenthesisKeyword_3() { return cLeftParenthesisKeyword_3; }
-		
-		//definition=STRING
-		public Assignment getDefinitionAssignment_4() { return cDefinitionAssignment_4; }
-		
-		//STRING
-		public RuleCall getDefinitionSTRINGTerminalRuleCall_4_0() { return cDefinitionSTRINGTerminalRuleCall_4_0; }
-		
-		//")"
-		public Keyword getRightParenthesisKeyword_5() { return cRightParenthesisKeyword_5; }
-		
-		//in=[SolutionElement|QualifiedName]
-		public Assignment getInAssignment_6() { return cInAssignment_6; }
+		//target=[SolutionElement|QualifiedName]
+		public Assignment getTargetAssignment_2() { return cTargetAssignment_2; }
 		
 		//[SolutionElement|QualifiedName]
-		public CrossReference getInSolutionElementCrossReference_6_0() { return cInSolutionElementCrossReference_6_0; }
+		public CrossReference getTargetSolutionElementCrossReference_2_0() { return cTargetSolutionElementCrossReference_2_0; }
 		
 		//QualifiedName
-		public RuleCall getInSolutionElementQualifiedNameParserRuleCall_6_0_1() { return cInSolutionElementQualifiedNameParserRuleCall_6_0_1; }
-		
-		//"->"
-		public Keyword getHyphenMinusGreaterThanSignKeyword_7() { return cHyphenMinusGreaterThanSignKeyword_7; }
-		
-		//out=[SolutionElement|QualifiedName]
-		public Assignment getOutAssignment_8() { return cOutAssignment_8; }
-		
-		//[SolutionElement|QualifiedName]
-		public CrossReference getOutSolutionElementCrossReference_8_0() { return cOutSolutionElementCrossReference_8_0; }
-		
-		//QualifiedName
-		public RuleCall getOutSolutionElementQualifiedNameParserRuleCall_8_0_1() { return cOutSolutionElementQualifiedNameParserRuleCall_8_0_1; }
+		public RuleCall getTargetSolutionElementQualifiedNameParserRuleCall_2_0_1() { return cTargetSolutionElementQualifiedNameParserRuleCall_2_0_1; }
 	}
 	public class QualifiedNameElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "semcomdt.swsecurity.Ssrt.QualifiedName");
@@ -367,8 +310,8 @@ public class SsrtGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		public RuleCall getIDTerminalRuleCall_1_1() { return cIDTerminalRuleCall_1_1; }
 	}
 	
-	public class SSTLevelElements extends AbstractElementFinder.AbstractEnumRuleElementFinder {
-		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "semcomdt.swsecurity.Ssrt.SSTLevel");
+	public class LevelElements extends AbstractElementFinder.AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "semcomdt.swsecurity.Ssrt.Level");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final EnumLiteralDeclaration cConceptualEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
 		private final Keyword cConceptualConceptualKeyword_0_0 = (Keyword)cConceptualEnumLiteralDeclaration_0.eContents().get(0);
@@ -377,7 +320,7 @@ public class SsrtGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		private final EnumLiteralDeclaration cRealizationEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
 		private final Keyword cRealizationRealizationKeyword_2_0 = (Keyword)cRealizationEnumLiteralDeclaration_2.eContents().get(0);
 		
-		//enum SSTLevel :
+		//enum Level :
 		//    Conceptual="Conceptual" | Design="Design" | Realization="Realization"
 		//;
 		public EnumRule getRule() { return rule; }
@@ -403,20 +346,20 @@ public class SsrtGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		//"Realization"
 		public Keyword getRealizationRealizationKeyword_2_0() { return cRealizationRealizationKeyword_2_0; }
 	}
-	public class SSTSolutionKindElements extends AbstractElementFinder.AbstractEnumRuleElementFinder {
-		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "semcomdt.swsecurity.Ssrt.SSTSolutionKind");
+	public class SolutionTypeElements extends AbstractElementFinder.AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "semcomdt.swsecurity.Ssrt.SolutionType");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final EnumLiteralDeclaration cSecurityPatternEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
 		private final Keyword cSecurityPatternSecurityPatternKeyword_0_0 = (Keyword)cSecurityPatternEnumLiteralDeclaration_0.eContents().get(0);
 		private final EnumLiteralDeclaration cTacticEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
-		private final Keyword cTacticTacticKeyword_1_0 = (Keyword)cTacticEnumLiteralDeclaration_1.eContents().get(0);
+		private final Keyword cTacticSecurityTacticKeyword_1_0 = (Keyword)cTacticEnumLiteralDeclaration_1.eContents().get(0);
 		
-		//enum SSTSolutionKind :
-		//    SecurityPattern="SecurityPattern" | Tactic="Tactic"
+		//enum SolutionType :
+		//    SecurityPattern="SecurityPattern" | Tactic="SecurityTactic"
 		//;
 		public EnumRule getRule() { return rule; }
 		
-		//SecurityPattern="SecurityPattern" | Tactic="Tactic"
+		//SecurityPattern="SecurityPattern" | Tactic="SecurityTactic"
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//SecurityPattern="SecurityPattern"
@@ -425,11 +368,11 @@ public class SsrtGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		//"SecurityPattern"
 		public Keyword getSecurityPatternSecurityPatternKeyword_0_0() { return cSecurityPatternSecurityPatternKeyword_0_0; }
 		
-		//Tactic="Tactic"
+		//Tactic="SecurityTactic"
 		public EnumLiteralDeclaration getTacticEnumLiteralDeclaration_1() { return cTacticEnumLiteralDeclaration_1; }
 		
-		//"Tactic"
-		public Keyword getTacticTacticKeyword_1_0() { return cTacticTacticKeyword_1_0; }
+		//"SecurityTactic"
+		public Keyword getTacticSecurityTacticKeyword_1_0() { return cTacticSecurityTacticKeyword_1_0; }
 	}
 	
 	private final ModelElements pModel;
@@ -437,8 +380,8 @@ public class SsrtGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	private final SolutionElements pSolution;
 	private final SolutionElementElements pSolutionElement;
 	private final RelationElements pRelation;
-	private final SSTLevelElements eSSTLevel;
-	private final SSTSolutionKindElements eSSTSolutionKind;
+	private final LevelElements eLevel;
+	private final SolutionTypeElements eSolutionType;
 	private final QualifiedNameElements pQualifiedName;
 	
 	private final Grammar grammar;
@@ -455,8 +398,8 @@ public class SsrtGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		this.pSolution = new SolutionElements();
 		this.pSolutionElement = new SolutionElementElements();
 		this.pRelation = new RelationElements();
-		this.eSSTLevel = new SSTLevelElements();
-		this.eSSTSolutionKind = new SSTSolutionKindElements();
+		this.eLevel = new LevelElements();
+		this.eSolutionType = new SolutionTypeElements();
 		this.pQualifiedName = new QualifiedNameElements();
 	}
 	
@@ -499,7 +442,7 @@ public class SsrtGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	
 	//SolutionTree:
 	//    'SolutionTree' name=ID "contributesTo" contributesTo+=[ciaamps::SecurityProperty|QualifiedName]
-	//     '{' solution+=Solution* '}'
+	//     '{' provides+=Solution* '}'
 	//    ;
 	public SolutionTreeElements getSolutionTreeAccess() {
 		return pSolutionTree;
@@ -510,10 +453,9 @@ public class SsrtGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	}
 	
 	//Solution :
-	//    kind=SSTSolutionKind level=SSTLevel name=ID
-	//    ("refines" refines+=[Solution|QualifiedName]*)?
-	//    "{" concepts+=SolutionElement*
-	//    relations+=Relation* "}"
+	//    kind=SolutionType level=Level name=ID
+	//    ("refines" refines+=[Solution|QualifiedName]+)?
+	//    "{" solutionelements+=SolutionElement* "}"
 	//;
 	public SolutionElements getSolutionAccess() {
 		return pSolution;
@@ -524,9 +466,9 @@ public class SsrtGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	}
 	
 	//SolutionElement:
-	//    "Solution Element" name=ID ("refines" refines=[SolutionElement|QualifiedName])?
+	//    "SolutionElement" name=ID ("refines" refines=[SolutionElement|QualifiedName])?
 	//    "(" definition=STRING ")"
-	////    ("-"relation+=STRING">" relatedconcept+=[Concept|QualifiedName])?
+	//    (source+=Relation*)
 	//;
 	public SolutionElementElements getSolutionElementAccess() {
 		return pSolutionElement;
@@ -537,9 +479,7 @@ public class SsrtGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	}
 	
 	//Relation :
-	//    "Relation" name=ID ("refines" refines=[Relation|QualifiedName])?
-	//    "(" definition=STRING ")"
-	//    in=[SolutionElement|QualifiedName] "->" out=[SolutionElement|QualifiedName]
+	//    "Relation" name=ID target=[SolutionElement|QualifiedName]
 	//;
 	public RelationElements getRelationAccess() {
 		return pRelation;
@@ -549,26 +489,26 @@ public class SsrtGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		return getRelationAccess().getRule();
 	}
 	
-	//enum SSTLevel :
+	//enum Level :
 	//    Conceptual="Conceptual" | Design="Design" | Realization="Realization"
 	//;
-	public SSTLevelElements getSSTLevelAccess() {
-		return eSSTLevel;
+	public LevelElements getLevelAccess() {
+		return eLevel;
 	}
 	
-	public EnumRule getSSTLevelRule() {
-		return getSSTLevelAccess().getRule();
+	public EnumRule getLevelRule() {
+		return getLevelAccess().getRule();
 	}
 	
-	//enum SSTSolutionKind :
-	//    SecurityPattern="SecurityPattern" | Tactic="Tactic"
+	//enum SolutionType :
+	//    SecurityPattern="SecurityPattern" | Tactic="SecurityTactic"
 	//;
-	public SSTSolutionKindElements getSSTSolutionKindAccess() {
-		return eSSTSolutionKind;
+	public SolutionTypeElements getSolutionTypeAccess() {
+		return eSolutionType;
 	}
 	
-	public EnumRule getSSTSolutionKindRule() {
-		return getSSTSolutionKindAccess().getRule();
+	public EnumRule getSolutionTypeRule() {
+		return getSolutionTypeAccess().getRule();
 	}
 	
 	//QualifiedName:

@@ -11,5 +11,7 @@ package semcomdt.swsecurity.scoping;
  * on how and when to use it.
  */
 public class SsrtScopeProvider extends AbstractSsrtScopeProvider {
-
+	
+	
+	
 }

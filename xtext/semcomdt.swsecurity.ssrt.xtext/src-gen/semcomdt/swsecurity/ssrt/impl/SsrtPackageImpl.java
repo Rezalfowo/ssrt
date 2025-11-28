@@ -15,13 +15,13 @@ import semcomdt.swarchitecture.cbse.CbsePackage;
 
 import semcomdt.swsecurity.objective.ciaamps.ciaamps.CiaampsPackage;
 
+import semcomdt.swsecurity.ssrt.Level;
 import semcomdt.swsecurity.ssrt.Model;
 import semcomdt.swsecurity.ssrt.Relation;
-import semcomdt.swsecurity.ssrt.SSTLevel;
-import semcomdt.swsecurity.ssrt.SSTSolutionKind;
 import semcomdt.swsecurity.ssrt.Solution;
 import semcomdt.swsecurity.ssrt.SolutionElement;
 import semcomdt.swsecurity.ssrt.SolutionTree;
+import semcomdt.swsecurity.ssrt.SolutionType;
 import semcomdt.swsecurity.ssrt.SsrtFactory;
 import semcomdt.swsecurity.ssrt.SsrtPackage;
 
@@ -73,14 +73,14 @@ public class SsrtPackageImpl extends EPackageImpl implements SsrtPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EEnum sstLevelEEnum = null;
+  private EEnum levelEEnum = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EEnum sstSolutionKindEEnum = null;
+  private EEnum solutionTypeEEnum = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -209,7 +209,7 @@ public class SsrtPackageImpl extends EPackageImpl implements SsrtPackage
    * @generated
    */
   @Override
-  public EReference getSolutionTree_Solution()
+  public EReference getSolutionTree_Provides()
   {
     return (EReference)solutionTreeEClass.getEStructuralFeatures().get(2);
   }
@@ -275,20 +275,9 @@ public class SsrtPackageImpl extends EPackageImpl implements SsrtPackage
    * @generated
    */
   @Override
-  public EReference getSolution_Concepts()
+  public EReference getSolution_Solutionelements()
   {
     return (EReference)solutionEClass.getEStructuralFeatures().get(4);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getSolution_Relations()
-  {
-    return (EReference)solutionEClass.getEStructuralFeatures().get(5);
   }
 
   /**
@@ -341,6 +330,17 @@ public class SsrtPackageImpl extends EPackageImpl implements SsrtPackage
    * @generated
    */
   @Override
+  public EReference getSolutionElement_Source()
+  {
+    return (EReference)solutionElementEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getRelation()
   {
     return relationEClass;
@@ -363,7 +363,7 @@ public class SsrtPackageImpl extends EPackageImpl implements SsrtPackage
    * @generated
    */
   @Override
-  public EReference getRelation_Refines()
+  public EReference getRelation_Target()
   {
     return (EReference)relationEClass.getEStructuralFeatures().get(1);
   }
@@ -374,9 +374,9 @@ public class SsrtPackageImpl extends EPackageImpl implements SsrtPackage
    * @generated
    */
   @Override
-  public EAttribute getRelation_Definition()
+  public EEnum getLevel()
   {
-    return (EAttribute)relationEClass.getEStructuralFeatures().get(2);
+    return levelEEnum;
   }
 
   /**
@@ -385,42 +385,9 @@ public class SsrtPackageImpl extends EPackageImpl implements SsrtPackage
    * @generated
    */
   @Override
-  public EReference getRelation_In()
+  public EEnum getSolutionType()
   {
-    return (EReference)relationEClass.getEStructuralFeatures().get(3);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getRelation_Out()
-  {
-    return (EReference)relationEClass.getEStructuralFeatures().get(4);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EEnum getSSTLevel()
-  {
-    return sstLevelEEnum;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EEnum getSSTSolutionKind()
-  {
-    return sstSolutionKindEEnum;
+    return solutionTypeEEnum;
   }
 
   /**
@@ -460,31 +427,28 @@ public class SsrtPackageImpl extends EPackageImpl implements SsrtPackage
     solutionTreeEClass = createEClass(SOLUTION_TREE);
     createEAttribute(solutionTreeEClass, SOLUTION_TREE__NAME);
     createEReference(solutionTreeEClass, SOLUTION_TREE__CONTRIBUTES_TO);
-    createEReference(solutionTreeEClass, SOLUTION_TREE__SOLUTION);
+    createEReference(solutionTreeEClass, SOLUTION_TREE__PROVIDES);
 
     solutionEClass = createEClass(SOLUTION);
     createEAttribute(solutionEClass, SOLUTION__KIND);
     createEAttribute(solutionEClass, SOLUTION__LEVEL);
     createEAttribute(solutionEClass, SOLUTION__NAME);
     createEReference(solutionEClass, SOLUTION__REFINES);
-    createEReference(solutionEClass, SOLUTION__CONCEPTS);
-    createEReference(solutionEClass, SOLUTION__RELATIONS);
+    createEReference(solutionEClass, SOLUTION__SOLUTIONELEMENTS);
 
     solutionElementEClass = createEClass(SOLUTION_ELEMENT);
     createEAttribute(solutionElementEClass, SOLUTION_ELEMENT__NAME);
     createEReference(solutionElementEClass, SOLUTION_ELEMENT__REFINES);
     createEAttribute(solutionElementEClass, SOLUTION_ELEMENT__DEFINITION);
+    createEReference(solutionElementEClass, SOLUTION_ELEMENT__SOURCE);
 
     relationEClass = createEClass(RELATION);
     createEAttribute(relationEClass, RELATION__NAME);
-    createEReference(relationEClass, RELATION__REFINES);
-    createEAttribute(relationEClass, RELATION__DEFINITION);
-    createEReference(relationEClass, RELATION__IN);
-    createEReference(relationEClass, RELATION__OUT);
+    createEReference(relationEClass, RELATION__TARGET);
 
     // Create enums
-    sstLevelEEnum = createEEnum(SST_LEVEL);
-    sstSolutionKindEEnum = createEEnum(SST_SOLUTION_KIND);
+    levelEEnum = createEEnum(LEVEL);
+    solutionTypeEEnum = createEEnum(SOLUTION_TYPE);
   }
 
   /**
@@ -527,37 +491,34 @@ public class SsrtPackageImpl extends EPackageImpl implements SsrtPackage
     initEClass(solutionTreeEClass, SolutionTree.class, "SolutionTree", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getSolutionTree_Name(), ecorePackage.getEString(), "name", null, 0, 1, SolutionTree.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getSolutionTree_ContributesTo(), theCiaampsPackage.getSecurityProperty(), null, "contributesTo", null, 0, -1, SolutionTree.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getSolutionTree_Solution(), this.getSolution(), null, "solution", null, 0, -1, SolutionTree.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSolutionTree_Provides(), this.getSolution(), null, "provides", null, 0, -1, SolutionTree.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(solutionEClass, Solution.class, "Solution", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getSolution_Kind(), this.getSSTSolutionKind(), "kind", null, 0, 1, Solution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getSolution_Level(), this.getSSTLevel(), "level", null, 0, 1, Solution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSolution_Kind(), this.getSolutionType(), "kind", null, 0, 1, Solution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSolution_Level(), this.getLevel(), "level", null, 0, 1, Solution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getSolution_Name(), ecorePackage.getEString(), "name", null, 0, 1, Solution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getSolution_Refines(), this.getSolution(), null, "refines", null, 0, -1, Solution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getSolution_Concepts(), this.getSolutionElement(), null, "concepts", null, 0, -1, Solution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getSolution_Relations(), this.getRelation(), null, "relations", null, 0, -1, Solution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSolution_Solutionelements(), this.getSolutionElement(), null, "solutionelements", null, 0, -1, Solution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(solutionElementEClass, SolutionElement.class, "SolutionElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getSolutionElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, SolutionElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getSolutionElement_Refines(), this.getSolutionElement(), null, "refines", null, 0, 1, SolutionElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getSolutionElement_Definition(), ecorePackage.getEString(), "definition", null, 0, 1, SolutionElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSolutionElement_Source(), this.getRelation(), null, "source", null, 0, -1, SolutionElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(relationEClass, Relation.class, "Relation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getRelation_Name(), ecorePackage.getEString(), "name", null, 0, 1, Relation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getRelation_Refines(), this.getRelation(), null, "refines", null, 0, 1, Relation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getRelation_Definition(), ecorePackage.getEString(), "definition", null, 0, 1, Relation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getRelation_In(), this.getSolutionElement(), null, "in", null, 0, 1, Relation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getRelation_Out(), this.getSolutionElement(), null, "out", null, 0, 1, Relation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRelation_Target(), this.getSolutionElement(), null, "target", null, 0, 1, Relation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Initialize enums and add enum literals
-    initEEnum(sstLevelEEnum, SSTLevel.class, "SSTLevel");
-    addEEnumLiteral(sstLevelEEnum, SSTLevel.CONCEPTUAL);
-    addEEnumLiteral(sstLevelEEnum, SSTLevel.DESIGN);
-    addEEnumLiteral(sstLevelEEnum, SSTLevel.REALIZATION);
+    initEEnum(levelEEnum, Level.class, "Level");
+    addEEnumLiteral(levelEEnum, Level.CONCEPTUAL);
+    addEEnumLiteral(levelEEnum, Level.DESIGN);
+    addEEnumLiteral(levelEEnum, Level.REALIZATION);
 
-    initEEnum(sstSolutionKindEEnum, SSTSolutionKind.class, "SSTSolutionKind");
-    addEEnumLiteral(sstSolutionKindEEnum, SSTSolutionKind.SECURITY_PATTERN);
-    addEEnumLiteral(sstSolutionKindEEnum, SSTSolutionKind.TACTIC);
+    initEEnum(solutionTypeEEnum, SolutionType.class, "SolutionType");
+    addEEnumLiteral(solutionTypeEEnum, SolutionType.SECURITY_PATTERN);
+    addEEnumLiteral(solutionTypeEEnum, SolutionType.TACTIC);
 
     // Create resource
     createResource(eNS_URI);

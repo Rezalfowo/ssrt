@@ -3,23 +3,104 @@
  */
 package semcomdt.swsecurity.validation;
 
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.xtext.validation.Check;
+
+import semcomdt.swsecurity.ssrt.Relation;
+import semcomdt.swsecurity.ssrt.Solution;
+import semcomdt.swsecurity.ssrt.SolutionElement;
+import semcomdt.swsecurity.ssrt.SolutionTree;
+import semcomdt.swsecurity.ssrt.SsrtPackage;
 
 /**
  * This class contains custom validation rules. 
  *
- * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#validation
+ * See https://www.eclipse.org/Xtext/documentation/303_runtime_SolutionElements.html#validation
  */
 public class SsrtValidator extends AbstractSsrtValidator {
 	
-//	public static final String INVALID_NAME = "invalidName";
-//
-//	@Check
-//	public void checkGreetingStartsWithCapital(Greeting greeting) {
-//		if (!Character.isUpperCase(greeting.getName().charAt(0))) {
-//			warning("Name should start with a capital",
-//					SsrtPackage.Literals.GREETING__NAME,
-//					INVALID_NAME);
-//		}
-//	}
+	@Check
+	public void checkNameStartsWithCapital(SolutionElement SolutionElement) {
+		if (!Character.isUpperCase(SolutionElement.getName().charAt(0))) {
+			warning("Name should start with a capital", SsrtPackage.Literals.SOLUTION_ELEMENT__NAME);
+		}
+	}
+	/**
+	 * Function to validate that the solution link 'related to' is made with a solution of a level above this one
+	 * @param solution we verify its relation validity
+	 */
+	@Check
+	public void checkSolutionRelation(Solution solution)
+	{
+		EList<Solution> listrelated = solution.getRefines();
+		
+		for ( Solution relsol : listrelated) {
+			if (relsol.getLevel().equals(solution.getLevel())){
+				error("Actual solution can't refer to a solution of the same level",SsrtPackage.Literals.SOLUTION__REFINES);
+			}
+			else if (solution.getLevel().getValue() < relsol.getLevel().getValue() ) {
+				error("Actual solution can't refer to a solution of a lower level",SsrtPackage.Literals.SOLUTION__REFINES);
+			}
+		}
+	}
+	
+	/**
+	 * Check that the SolutionElement referred to in the refines relation is in a solution of a higher level
+	 * @param SolutionElement used to check with the SolutionElements it is related to
+	 */
+	@Check
+	public void checkSolutionElementSpecification(SolutionTree ssrt, Solution solution) {
+		EList<Solution> listsol = ssrt.getProvides();
+		listsol.remove(solution);
+		
+		for (SolutionElement SolutionElement : solution.getSolutionelements()) {
+//			getElements().stream().filter(elt -> elt.getClass().equals(SolutionElement.class)).collect(Collectors.toList())
+			listsol.forEach(sol -> sol.getSolutionelements()
+					.stream()
+					.filter(solSolutionElement -> SolutionElement.getRefines()
+							.getName()
+							.equals(solSolutionElement.getName())
+							)
+					);
+			for (Solution sol : listsol) {
+				for (SolutionElement solSolutionElement : sol.getSolutionelements())
+					if (SolutionElement.getRefines().getName().equals(solSolutionElement.getName())) {
+						if (solution.getLevel().equals(sol.getLevel())) {
+							error("Actual SolutionElement can't refer to a SolutionElement of the same level",SsrtPackage.Literals.SOLUTION_ELEMENT__REFINES);
+						}
+						else if (solution.getLevel().getValue() < sol.getLevel().getValue()) {
+							error("Actual SolutionElement can't refer to a SolutionElement of a lower level",SsrtPackage.Literals.SOLUTION_ELEMENT__REFINES);
+						}
+				}
+			}
+		}
+	}
+	
+	/**
+	 * Check that the relation referred to in the refines relation is in a solution of a higher level
+	 * @param relation used to check with the SolutionElements it is related to
+	 */
+	@Check
+	public void checkRelationSpecification(SolutionTree ssrt, Solution solution) {
+		EList<Solution> listsol = ssrt.getProvides();
+		listsol.remove(solution);
+		
+		for (SolutionElement solutionelement: solution.getSolutionelements()) {
+			for (Relation relation : solutionelement.getSource()) {
+				
+			
+			for (Solution sol : listsol) {
+				for (SolutionElement solSolutionElement : sol.getSolutionelements())
+					if (relation.getTarget().getName().equals(solSolutionElement.getName())) {
+						if (solution.getLevel().equals(sol.getLevel())) {
+							error("Actual SolutionElement can't refer to a SolutionElement of the same level",SsrtPackage.Literals.SOLUTION_ELEMENT__REFINES);
+						}
+						else if (solution.getLevel().getValue() < sol.getLevel().getValue()) {
+							error("Actual SolutionElement can't refer to a SolutionElement of a lower level",SsrtPackage.Literals.SOLUTION_ELEMENT__REFINES);
+						}
+				}
+			}
+		}
+	}}
 	
 }

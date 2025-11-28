@@ -9,33 +9,32 @@ Model:
 
 SolutionTree:
 	'SolutionTree' name=ID "contributesTo" contributesTo+=[ciaamps::SecurityProperty|QualifiedName] 
-	 '{' solution+=Solution* '}'
+	 '{' provides+=Solution* '}'
 	;
 
 
 Solution :
-	kind=SSTSolutionKind level=SSTLevel name=ID 
-	("refines" refines+=[Solution|QualifiedName]*)? 
-	"{" concepts+=SolutionElement*
-	relations+=Relation* "}"	
+	kind=SolutionType level=Level name=ID 
+	("refines" refines+=[Solution|QualifiedName]+)? 
+	"{" solutionelements+=SolutionElement* "}"	
 ;
 
 SolutionElement:
-	"Solution Element" name=ID ("refines" refines=[SolutionElement|QualifiedName])?
+	"SolutionElement" name=ID ("refines" refines=[SolutionElement|QualifiedName])? 
 	"(" definition=STRING ")"
-//	("-"relation+=STRING">" relatedconcept+=[Concept|QualifiedName])?
+	
+	(source+=Relation*)
+	
 ;
 Relation :
-	"Relation" name=ID ("refines" refines=[Relation|QualifiedName])?
-	"(" definition=STRING ")"
-	in=[SolutionElement|QualifiedName] "->" out=[SolutionElement|QualifiedName]
+	"Relation" name=ID target=[SolutionElement|QualifiedName]
 ;
 
-enum SSTLevel :
+enum Level :
 	Conceptual="Conceptual" | Design="Design" | Realization="Realization"
 ;
-enum SSTSolutionKind :
-	SecurityPattern="SecurityPattern" | Tactic="Tactic"
+enum SolutionType :
+	SecurityPattern="SecurityPattern" | Tactic="SecurityTactic"
 ;
 QualifiedName:
 	ID ('.' ID)*;
