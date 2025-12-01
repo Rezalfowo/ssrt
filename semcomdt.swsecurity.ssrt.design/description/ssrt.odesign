@@ -22,7 +22,7 @@
           </style>
         </edgeMappings>
         <containerMappings name="Design Solution" labelDirectEdit="//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@toolSections.0/@ownedTools[name='editName']" semanticCandidatesExpression="aql:self.provides->select(solution | solution.SolutionLevel = ssrt::Level::Design)" domainClass="ssrt::Solution">
-          <subNodeMappings name="SolutionElement" semanticCandidatesExpression="feature:isDescribedWith" domainClass="ssrt::SolutionElement">
+          <subNodeMappings name="SolutionElement" semanticCandidatesExpression="feature:isDescribedWith" domainClass="ssrt::Element">
             <style xsi:type="style:SquareDescription" borderSizeComputationExpression="2" labelSize="12" showIcon="false" labelPosition="node" resizeKind="NSEW" width="14" height="5">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -72,7 +72,7 @@
           </style>
         </containerMappings>
         <containerMappings name="Conceptual Solution" labelDirectEdit="//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@toolSections.0/@ownedTools[name='editName']" semanticCandidatesExpression="aql:self.provides->select(solution | solution.SolutionLevel = ssrt::Level::Conceptual)" domainClass="ssrt::Solution">
-          <subNodeMappings name="SolutionElement" labelDirectEdit="//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@toolSections.0/@ownedTools[name='editName']" semanticCandidatesExpression="feature:isDescribedWith" synchronizationLock="true" domainClass="ssrt::SolutionElement">
+          <subNodeMappings name="SolutionElement" labelDirectEdit="//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@toolSections.0/@ownedTools[name='editName']" semanticCandidatesExpression="feature:isDescribedWith" synchronizationLock="true" domainClass="ssrt::Element">
             <style xsi:type="style:SquareDescription" borderSizeComputationExpression="2" labelSize="12" showIcon="false" sizeComputationExpression="" labelPosition="node" resizeKind="NSEW" width="14" height="5">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -122,7 +122,7 @@
           </style>
         </containerMappings>
         <containerMappings name="Realization Solution" labelDirectEdit="//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@toolSections.0/@ownedTools[name='editName']" semanticCandidatesExpression="aql:self.provides->select(solution | solution.SolutionLevel = ssrt::Level::Realization)" domainClass="ssrt::Solution">
-          <subNodeMappings name="SolutionElement" semanticCandidatesExpression="feature:isDescribedWith" domainClass="ssrt::SolutionElement">
+          <subNodeMappings name="SolutionElement" semanticCandidatesExpression="feature:isDescribedWith" domainClass="ssrt::Element">
             <style xsi:type="style:SquareDescription" borderSizeComputationExpression="2" labelSize="12" labelPosition="node" resizeKind="NSEW" width="14" height="5">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -224,7 +224,7 @@
             <viewVariable name="containerView"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ssrt::SolutionElement" referenceName="isDescribedWith">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ssrt::Element" referenceName="isDescribedWith">
                   <subModelOperations xsi:type="properties:DialogModelOperation" titleExpression="Concept Creation">
                     <buttons labelExpression="Cancel" closeDialogOnClick="true" rollbackChangesOnClose="true">
                       <initialOperation/>
@@ -251,7 +251,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Concept Relation" edgeMappings="//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@edgeMappings[name='SolElemRelationSolElem']" iconPath="/semcomdt.swsecurity.ssrt.edit/icons/full/obj16/Relation.gif">
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Concept Relation" edgeMappings="//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@edgeMappings[name='SolElemRelationSolElem']" iconPath="/org.eclipse.sirius.diagram.ui/icons/full/obj16/EdgeStyle.gif">
             <sourceVariable name="source"/>
             <targetVariable name="target"/>
             <sourceViewVariable name="sourceView"/>
@@ -284,7 +284,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Solution Refinement" edgeMappings="//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@edgeMappings[name='SolutionRefinesSolution']">
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Solution Refinement" edgeMappings="//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@edgeMappings[name='SolutionRefinesSolution']" iconPath="/org.eclipse.sirius.diagram.ui/icons/full/obj16/EdgeStyle.gif">
             <sourceVariable name="source"/>
             <targetVariable name="target"/>
             <sourceViewVariable name="sourceView"/>
@@ -293,6 +293,15 @@
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
                 <subModelOperations xsi:type="tool_1:SetValue" featureName="refines" valueExpression="var:target"/>
               </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Element Refinement" edgeMappings="//@ownedViewpoints[name='SSRT%20Design']/@ownedRepresentations[name='SSRT%20Library']/@defaultLayer/@edgeMappings[name='SolElemRelationSolElem']" iconPath="/org.eclipse.sirius.diagram.ui/icons/full/obj16/EdgeStyle.gif">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="refines" valueExpression="var:target"/>
             </initialOperation>
           </ownedTools>
         </toolSections>

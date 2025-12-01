@@ -27,11 +27,11 @@
           ecoreFeature="ecore:EReference ssrt.ecore#//Solution/isDescribedWith"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ssrt.ecore#//Solution/refines"/>
     </genClasses>
-    <genClasses ecoreClass="ssrt.ecore#//SolutionElement">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssrt.ecore#//SolutionElement/definition"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ssrt.ecore#//SolutionElement/refines"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssrt.ecore#//SolutionElement/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ssrt.ecore#//SolutionElement/source"/>
+    <genClasses ecoreClass="ssrt.ecore#//Element">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssrt.ecore#//Element/definition"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ssrt.ecore#//Element/refines"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ssrt.ecore#//Element/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ssrt.ecore#//Element/source"/>
     </genClasses>
     <genClasses ecoreClass="ssrt.ecore#//Library">
       <genFeatures property="None" children="true" createChild="true" propertySortChoices="true"
