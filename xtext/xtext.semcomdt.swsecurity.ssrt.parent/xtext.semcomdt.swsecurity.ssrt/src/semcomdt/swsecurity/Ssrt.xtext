@@ -1,0 +1,40 @@
+grammar semcomdt.swsecurity.Ssrt with org.eclipse.xtext.common.Terminals
+
+generate ssrt "http://www.semcomdt.swsecurity/Ssrt"
+
+import "http://www.semcomdt.swsecurity/objective/Ciaamps" as ciaamps
+
+Model:
+	solutiontrees+=SolutionTree*;
+
+SolutionTree:
+	'SolutionTree' name=ID "contributesTo" contributesTo+=[ciaamps::SecurityProperty|QualifiedName] 
+	 '{' provides+=Solution* '}'
+	;
+
+
+Solution :
+	kind=SolutionType level=Level name=ID 
+	("refines" refines+=[Solution|QualifiedName]+)? 
+	"{" solutionelements+=Element* "}"	
+;
+
+Element:
+	"Element" name=ID ("refines" refines=[Element|QualifiedName])? 
+	"(" definition=STRING ")"
+	
+	(source+=Relation*)
+	
+;
+Relation :
+	"Relation" name=ID target=[Element|QualifiedName]
+;
+
+enum Level :
+	Conceptual="Conceptual" | Design="Design" | Realization="Realization"
+;
+enum SolutionType :
+	SecurityPattern="SecurityPattern" | Tactic="SecurityTactic"
+;
+QualifiedName:
+	ID ('.' ID)*;

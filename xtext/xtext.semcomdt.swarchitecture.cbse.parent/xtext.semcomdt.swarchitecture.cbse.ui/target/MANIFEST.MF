@@ -3,7 +3,7 @@ Automatic-Module-Name: xtext.semcomdt.swarchitecture.cbse.ui
 Bundle-ManifestVersion: 2
 Bundle-Name: xtext.semcomdt.swarchitecture.cbse.ui
 Bundle-Vendor: My Company
-Bundle-Version: 1.0.0.202512021015
+Bundle-Version: 1.0.0.202512021046
 Bundle-SymbolicName: xtext.semcomdt.swarchitecture.cbse.ui; singleton:=t
  rue
 Bundle-ActivationPolicy: lazy
