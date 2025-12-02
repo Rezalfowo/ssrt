@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: semcomdt.swsecurity.ssrt.ui
+Bundle-ManifestVersion: 2
+Bundle-Name: semcomdt.swsecurity.ssrt.ui
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.202512021016
+Bundle-SymbolicName: semcomdt.swsecurity.ssrt.ui; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: semcomdt.swsecurity.ssrt,semcomdt.swsecurity.ssrt.ide,or
+ g.eclipse.xtext.ui,org.eclipse.xtext.ui.shared,org.eclipse.xtext.ui.cod
+ etemplates.ui,org.eclipse.ui.editors;bundle-version="3.14.300",org.ecli
+ pse.ui.ide;bundle-version="3.18.500",org.eclipse.ui,org.eclipse.compare
+ ,org.eclipse.xtext.builder
+Import-Package: org.apache.log4j
+Export-Package: semcomdt.swsecurity.ui.contentassist,semcomdt.swsecurity
+ .ssrt.ui.internal,semcomdt.swsecurity.ui.quickfix
+Bundle-Activator: semcomdt.swsecurity.ssrt.ui.internal.SsrtActivator
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=21))"
+

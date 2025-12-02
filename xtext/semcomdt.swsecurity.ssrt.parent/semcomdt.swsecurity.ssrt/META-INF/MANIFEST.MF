@@ -1,0 +1,30 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: semcomdt.swsecurity.ssrt
+Bundle-ManifestVersion: 2
+Bundle-Name: semcomdt.swsecurity.ssrt
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: semcomdt.swsecurity.ssrt; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.16.0",
+ org.eclipse.emf.ecore,
+ org.eclipse.xtext.xbase.lib;bundle-version="2.35.0",
+ org.eclipse.emf.common,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)",
+ xtext.semcomdt.swarchitecture.cbse;bundle-version="1.0.0",
+ xtext.semcomdt.swsecurity.objective.ciaamps;bundle-version="1.0.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Export-Package: semcomdt.swsecurity.parser.antlr,
+ semcomdt.swsecurity.validation,
+ semcomdt.swsecurity.parser.antlr.internal,
+ semcomdt.swsecurity.generator,
+ semcomdt.swsecurity,
+ semcomdt.swsecurity.serializer,
+ semcomdt.swsecurity.ssrt,
+ semcomdt.swsecurity.ssrt.util,
+ semcomdt.swsecurity.ssrt.impl,
+ semcomdt.swsecurity.services,
+ semcomdt.swsecurity.scoping
+Import-Package: org.apache.log4j
