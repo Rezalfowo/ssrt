@@ -52,6 +52,7 @@ Workflow {
 			fragment = web.WebIntegrationFragment {
             	framework = "Ace"
             	generateHtmlExample = true
+            	
         	}
 		}
 	}
