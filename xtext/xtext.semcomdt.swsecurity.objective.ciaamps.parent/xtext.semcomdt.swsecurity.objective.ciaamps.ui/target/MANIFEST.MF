@@ -3,7 +3,7 @@ Automatic-Module-Name: xtext.semcomdt.swsecurity.objective.ciaamps.ui
 Bundle-ManifestVersion: 2
 Bundle-Name: xtext.semcomdt.swsecurity.objective.ciaamps.ui
 Bundle-Vendor: My Company
-Bundle-Version: 1.0.0.202512030856
+Bundle-Version: 1.0.0.202512030911
 Bundle-SymbolicName: xtext.semcomdt.swsecurity.objective.ciaamps.ui; sin
  gleton:=true
 Bundle-ActivationPolicy: lazy
@@ -13,10 +13,10 @@ Require-Bundle: xtext.semcomdt.swsecurity.objective.ciaamps,xtext.semcom
  ors;bundle-version="3.14.300",org.eclipse.ui.ide;bundle-version="3.18.5
  00",org.eclipse.ui,org.eclipse.compare,org.eclipse.xtext.builder
 Import-Package: org.apache.log4j
-Bundle-RequiredExecutionEnvironment: JavaSE-21
 Export-Package: xtext.semcomdt.swsecurity.objective.ciaamps.ui.internal,
  semcomdt.swsecurity.objective.ui.quickfix,semcomdt.swsecurity.objective
  .ui.contentassist
 Bundle-Activator: xtext.semcomdt.swsecurity.objective.ciaamps.ui.interna
  l.CiaampsActivator
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=21))"
 

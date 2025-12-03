@@ -37,6 +37,8 @@ Graphical Representation :
 
 Xtext :
 - Eclipse MDT 2024-06
+- Java 21 Open JDK
+- Maven 3.9+
 ## Installation guide
 
 Import the `semcomdt.swsecurity.ssrt` and `semcomdt.swsecurity.ssrt.design` project in Obeo Designer Community. In the `model` folder open the `ssrt.genmodel` file in and right-click on `Ssrt` and select `Generate All`. Doing so will create files in the src-gen folder and two projects: `semcomdt.swsecurity.ssrt.edit` and `semcomdt.swsecurity.ssrt.editor`.
