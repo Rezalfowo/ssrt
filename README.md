@@ -64,7 +64,9 @@ If you want to create new Security Solution Refinement Tree Models, you need to 
 ## Xtext Installation Guide
 
 ### Creating Xtext required folders 
-First you will need to run the script `createdirs.sh` so it can clean and create the required directories in the projects.
+First you will need to run a script so it can clean and create the required directories in the projects.
+- On linux : `bash createdirs.sh` 
+- On Windows : double-click on `createdirs.bat`
 
 ### Importing projects
 You can then launch your Eclipse MDT and import the `xtext.semcomdt.swarchitecture.cbse.parent`, `xtext.semcomdt.swsecurity.objective.ciaamps.parent`, `xtext.semcomdt.swsecurity.ssrt.parent` projects.
