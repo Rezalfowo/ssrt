@@ -59,12 +59,7 @@
 								<include>**/*</include>
 							</includes>
 						</fileset>
-						<fileset>
-							<directory>${basedir}/../xtext.semcomdt.swarchitecture.cbse.tests/src-gen/</directory>
-							<includes>
-								<include>**/*</include>
-							</includes>
-						</fileset>
+
 						<fileset>
 							<directory>${basedir}/../xtext.semcomdt.swarchitecture.cbse.ide/src-gen/</directory>
 							<includes>
@@ -73,12 +68,6 @@
 						</fileset>
 						<fileset>
 							<directory>${basedir}/../xtext.semcomdt.swarchitecture.cbse.ui/src-gen/</directory>
-							<includes>
-								<include>**/*</include>
-							</includes>
-						</fileset>
-						<fileset>
-							<directory>${basedir}/../xtext.semcomdt.swarchitecture.cbse.ui.tests/src-gen/</directory>
 							<includes>
 								<include>**/*</include>
 							</includes>

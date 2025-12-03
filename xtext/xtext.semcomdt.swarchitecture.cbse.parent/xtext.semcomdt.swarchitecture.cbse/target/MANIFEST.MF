@@ -3,7 +3,7 @@ Automatic-Module-Name: xtext.semcomdt.swarchitecture.cbse
 Bundle-ManifestVersion: 2
 Bundle-Name: xtext.semcomdt.swarchitecture.cbse
 Bundle-Vendor: My Company
-Bundle-Version: 1.0.0.202512021046
+Bundle-Version: 1.0.0.202512030856
 Bundle-SymbolicName: xtext.semcomdt.swarchitecture.cbse; singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.eclipse.xtext,org.eclipse.xtext.xbase,org.eclipse.eq

@@ -1,4 +1,13 @@
 /.metadata/
-/semcomdt.swsecurity.ssrt.xtext.ide/xtend-gen/
-/semcomdt.swsecurity.ssrt.xtext/src-gen/
-/semcomdt.swsecurity.ssrt.xtext/xtend-gen/
+!/.gitignore
+!/.gitkeep
+!.github
+bin/
+target/
+build/
+generated/
+generated-sources/
+src-gen/
+xtend-gen/
+.DS_Store
+*.xml_gen

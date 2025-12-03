@@ -26,8 +26,6 @@
 		<module>xtext.semcomdt.swsecurity.objective.ciaamps.ui</module>
 		<module>xtext.semcomdt.swsecurity.objective.ciaamps.web</module>
 		<module>xtext.semcomdt.swsecurity.objective.ciaamps.target</module>
-		<module>xtext.semcomdt.swsecurity.objective.ciaamps.tests</module>
-		<module>xtext.semcomdt.swsecurity.objective.ciaamps.ui.tests</module>
 	</modules>
 	<dependencyManagement>
 		<dependencies>

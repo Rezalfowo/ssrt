@@ -26,8 +26,6 @@
 		<module>xtext.semcomdt.swarchitecture.cbse.ui</module>
 		<module>xtext.semcomdt.swarchitecture.cbse.web</module>
 		<module>xtext.semcomdt.swarchitecture.cbse.target</module>
-		<module>xtext.semcomdt.swarchitecture.cbse.tests</module>
-		<module>xtext.semcomdt.swarchitecture.cbse.ui.tests</module>
 	</modules>
 	<dependencyManagement>
 		<dependencies>
