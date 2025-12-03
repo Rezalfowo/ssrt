@@ -1,0 +1,13 @@
+/.metadata/
+!/.gitignore
+!/.gitkeep
+!.github
+bin/
+target/
+build/
+generated/
+generated-sources/
+src-gen/
+xtend-gen/
+.DS_Store
+*.xml_gen
