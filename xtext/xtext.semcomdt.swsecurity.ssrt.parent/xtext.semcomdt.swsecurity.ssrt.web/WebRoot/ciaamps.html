@@ -23,7 +23,8 @@
 			require(["xtext/xtext-ace"], function(xtext) {
 				xtext.createEditor({
 					baseUrl: baseUrl,
-					syntaxDefinition: "xtext-resources/generated/mode-ssrt"
+					loadFromServer: true,
+					syntaxDefinition: "xtext-resources/generated/mode-ciaamps"
 				});
 			});
 		});
@@ -33,10 +34,10 @@
 
 <div class="container">
 	<div class="header">
-		<h1>Example Ssrt Web Editor</h1>
+		<h1>Example Ciaamps Web Editor</h1>
 	</div>
 	<div class="content">
-		<div id="xtext-editor" data-editor-xtext-lang="ssrt"></div>
+		<div id="xtext-editor" data-editor-resource-id="multi-resource/ciaamps"></div>
 	</div>
 
 </div>

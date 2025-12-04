@@ -125,5 +125,21 @@
 			<version>2.0.5</version>
 			<scope>provided</scope>
 		</dependency>
+		<dependency>
+			<groupId>xtext.semcomdt.swarchitecture.cbse</groupId>
+			<artifactId>
+				xtext.semcomdt.swarchitecture.cbse.web
+			</artifactId>
+			<version>1.0.0-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>
+				xtext.semcomdt.swsecurity.objective.ciaamps
+			</groupId>
+			<artifactId>
+				xtext.semcomdt.swsecurity.objective.ciaamps.web
+			</artifactId>
+			<version>1.0.0-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 </project>
