@@ -20,4 +20,5 @@ public class SsrtWebSetup extends SsrtStandaloneSetup {
 		return Guice.createInjector(Modules2.mixin(new SsrtRuntimeModule(), new SsrtIdeModule(), new SsrtWebModule()));
 	}
 	
+	
 }
