@@ -1,6 +1,6 @@
-SolutionTree Authentication contributesTo Authentication_Authorization_sec_obj.Authentication {
+SolutionTree Authentication {
   
- SecurityPattern Conceptual Abstract_Authenticator  {
+ SecurityPattern Conceptual Abstract_Authenticator contributesTo Authentication_Authorization_sec_obj.Authentication {
 	Element Subject ("the active entity (whether user or system) asking for access to the system by issuing a request to the Authenticator, providing a Proof of Identity.") 
 		Relation RequestAuthentication Authenticator 
 		Relation has ProofOfAuthentication
@@ -12,7 +12,7 @@ SolutionTree Authentication contributesTo Authentication_Authorization_sec_obj.A
 	Element ProofOfAuthentication ( "provided to the subject by the Authenticator so it can be used to prove that the subject has already authenticated himself to the system or sub-system.")
 	Element AuthenticationInformation ( "includes whatever information is needed to authenticate users, could be a list of passwords, a set of fingerprints, a history of past interactions and so on.")
 	} 
-SecurityPattern Design PasswordBasedAuthentication refines Abstract_Authenticator {
+SecurityPattern Design PasswordBasedAuthentication contributesTo Authentication_Authorization_sec_obj.Authentication refines Abstract_Authenticator {
 	Element Subject refines Abstract_Authenticator.Subject ( "Must be a human user")
 	Element Authenticator refines Abstract_Authenticator.Authenticator ("")
 	Element Password refines Abstract_Authenticator.ProofOfIdentity ( "sequence of characters known by the subject") 
@@ -20,14 +20,14 @@ SecurityPattern Design PasswordBasedAuthentication refines Abstract_Authenticato
 	Element PasswordList refines Abstract_Authenticator.AuthenticationInformation ("")
 }
 	
-SecurityPattern Design CredentialBasedAuthentication {
+SecurityPattern Design CredentialBasedAuthentication contributesTo Authentication_Authorization_sec_obj.Authentication {
 	Element Principal refines Abstract_Authenticator.Subject ( "a responsible subject" )
 	Element Authenticator refines Abstract_Authenticator.Authenticator ("")
 	Element Credential refines Abstract_Authenticator.ProofOfIdentity ( "The proof of identity presented by the principal" )
 	Element ValidatedCredential refines Abstract_Authenticator.ProofOfAuthentication ("")
 	Element AuthenticationInformation refines Abstract_Authenticator.AuthenticationInformation ("")
 }
-SecurityPattern Realization X509BasedAuthentication {
+SecurityPattern Realization X509BasedAuthentication contributesTo Authentication_Authorization_sec_obj.Authentication {
 	Element Principal refines CredentialBasedAuthentication.Principal ("")
 	Element Authenticator refines CredentialBasedAuthentication.Authenticator ("")
 	Element CertificationAuthority refines CredentialBasedAuthentication.Authenticator ("")
@@ -35,13 +35,13 @@ SecurityPattern Realization X509BasedAuthentication {
 	Element ValidatedCertificate refines CredentialBasedAuthentication.ValidatedCredential ("")
 	Element CertificationInformation refines CredentialBasedAuthentication.AuthenticationInformation ("")
 }
-SecurityPattern Design BiometricBasedAuthentication  {
+SecurityPattern Design BiometricBasedAuthentication contributesTo Authentication_Authorization_sec_obj.Authentication {
 	Element BiometricProof refines Abstract_Authenticator.ProofOfIdentity ( "humans physical or behavioral traits presented by the human user to authenticate himself." )
 	Element BiometricAuthenticator ( "authenticates biometric information provided") }
-SecurityPattern Design CryptographicAuthentication  {
+SecurityPattern Design CryptographicAuthentication contributesTo Authentication_Authorization_sec_obj.Authentication {
 	Element UnforgeableProofOfIdentity  refines Abstract_Authenticator.ProofOfIdentity ( "is a proof that cannot be falsified and ensure the authenticity of the subject.")
 }
-SecurityPattern Realization TextPhrase { 
+SecurityPattern Realization TextPhrase contributesTo Authentication_Authorization_sec_obj.Authentication{ 
 		Element TextphrasePassword refines PasswordBasedAuthentication.Password ( "Using words for the password" )
 	}
 }
