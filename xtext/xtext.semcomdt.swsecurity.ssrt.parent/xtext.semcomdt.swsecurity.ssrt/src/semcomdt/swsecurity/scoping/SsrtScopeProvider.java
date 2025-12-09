@@ -3,6 +3,18 @@
  */
 package semcomdt.swsecurity.scoping;
 
+import java.util.List;
+
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EReference;
+import org.eclipse.xtext.EcoreUtil2;
+import org.eclipse.xtext.scoping.IScope;
+import org.eclipse.xtext.scoping.Scopes;
+
+import semcomdt.swsecurity.ssrt.Element;
+import semcomdt.swsecurity.ssrt.Relation;
+import semcomdt.swsecurity.ssrt.Solution;
+import semcomdt.swsecurity.ssrt.SsrtPackage;
 
 /**
  * This class contains custom scoping description.
@@ -11,5 +23,36 @@ package semcomdt.swsecurity.scoping;
  * on how and when to use it.
  */
 public class SsrtScopeProvider extends AbstractSsrtScopeProvider {
+	
+    @Override
+    public IScope getScope(EObject context, EReference reference) {
+        // Check that solution refines a solution of one level before 
+    	// Example : Design Solution refines a Conceptual Solution
+    	if (context instanceof Solution  && reference == SsrtPackage.Literals.SOLUTION__REFINES) {
+        	Solution contextsol = (Solution) context;
+            EObject rootElement = EcoreUtil2.getRootContainer(context);
+            List<Solution> candidates = EcoreUtil2.getAllContentsOfType(rootElement, Solution.class);
+            candidates = candidates.stream().filter(sol -> sol.getLevel().getValue() - contextsol.getLevel().getValue() == -1).toList();
+            return Scopes.scopeFor(candidates);
+        } 
+    	// We make sure that elements refines elements of one level before
+        else if (context instanceof Element && reference == SsrtPackage.Literals.ELEMENT__REFINES) {
+        	Element solelement = (Element) context;
+        	EObject rootElement = EcoreUtil2.getRootContainer(context);
+            List<Element> candidates = EcoreUtil2.getAllContentsOfType(rootElement, Element.class);
+            candidates = candidates.stream().filter(solelem -> ((Solution) solelem.eContainer()).getLevel().getValue() - ((Solution) solelement.eContainer()).getLevel().getValue() == -1).toList();
+            return Scopes.scopeFor(candidates);
+        } 
+    	// We check if the relation points to an element of the same solution
+        else if (context instanceof Relation && reference == SsrtPackage.Literals.RELATION__TARGET) {
+        	Solution solution = (Solution) ((Relation) context).eContainer().eContainer();
+        	EObject rootElement = EcoreUtil2.getRootContainer(context);
+        	List<Element> possibletargets = EcoreUtil2.getAllContentsOfType(rootElement, Element.class);
+        	possibletargets = possibletargets.stream().filter(elem -> ((Solution) elem.eContainer()).equals(solution)).toList();
+        	return Scopes.scopeFor(possibletargets);
+        	
+        }
+        return super.getScope(context, reference);
+    }
 
 }
