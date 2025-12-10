@@ -3,9 +3,43 @@
  */
 package semcomdt.swsecurity.objective.web;
 
+import org.eclipse.xtext.web.server.generator.IContentTypeProvider;
+import org.eclipse.xtext.web.server.model.IWebResourceSetProvider;
+import org.eclipse.xtext.web.server.persistence.FileResourceHandler;
+import org.eclipse.xtext.web.server.persistence.IResourceBaseProvider;
+import org.eclipse.xtext.web.server.persistence.IServerResourceHandler;
+
+import com.google.inject.Binder;
+
+import semcomdt.swsecurity.objective.web.resource.CiaampsContentTypeProvider;
+import semcomdt.swsecurity.objective.web.resource.CiaampsResourceSetProvider;
 
 /**
  * Use this class to register additional components to be used within the web application.
  */
 public class CiaampsWebModule extends AbstractCiaampsWebModule {
+
+	private IResourceBaseProvider resourceBaseProvider;
+	@Override
+	public Class<? extends IContentTypeProvider> bindIContentTypeProvider() {
+		return CiaampsContentTypeProvider.class;
+	}
+
+	public Class<? extends IWebResourceSetProvider> bindIWebResourceSetProvider() {
+		return CiaampsResourceSetProvider.class;
+	}
+
+	public void configureResourceBaseProvider(Binder binder) {
+		if (resourceBaseProvider != null) {
+			binder.bind(IResourceBaseProvider.class).toInstance(resourceBaseProvider);
+		}
+	}
+
+	public Class<? extends IServerResourceHandler> bindIServerResourceHandler() {
+		return FileResourceHandler.class;
+	}
+
+	public CiaampsWebModule(IResourceBaseProvider resourceBaseProvider) {
+		this.resourceBaseProvider = resourceBaseProvider;
+	}
 }

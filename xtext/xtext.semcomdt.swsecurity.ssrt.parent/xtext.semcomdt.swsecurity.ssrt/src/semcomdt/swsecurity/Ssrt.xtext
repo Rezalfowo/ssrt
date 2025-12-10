@@ -5,8 +5,12 @@ generate ssrt "http://www.semcomdt.swsecurity/Ssrt"
 import "http://www.semcomdt.swsecurity/objective/Ciaamps" as ciaamps
 
 Model:
+	imports+=Import*
 	solutiontrees+=SolutionTree*;
 
+Import:
+	'import' importURI=STRING
+;
 SolutionTree:
 	'SolutionTree' name=ID 
 	 '{' provides+=Solution* '}'

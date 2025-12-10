@@ -6,6 +6,8 @@ package semcomdt.swarchitecture.web;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 import org.eclipse.xtext.util.Modules2;
+import org.eclipse.xtext.web.server.persistence.IResourceBaseProvider;
+
 import semcomdt.swarchitecture.CbseRuntimeModule;
 import semcomdt.swarchitecture.CbseStandaloneSetup;
 import semcomdt.swarchitecture.ide.CbseIdeModule;
@@ -14,10 +16,16 @@ import semcomdt.swarchitecture.ide.CbseIdeModule;
  * Initialization support for running Xtext languages in web applications.
  */
 public class CbseWebSetup extends CbseStandaloneSetup {
+	private final IResourceBaseProvider resourceBaseProvider;
+
+	public CbseWebSetup(IResourceBaseProvider resourceBaseProvider) {
+		this.resourceBaseProvider = resourceBaseProvider;
+	}
 	
 	@Override
 	public Injector createInjector() {
-		return Guice.createInjector(Modules2.mixin(new CbseRuntimeModule(), new CbseIdeModule(), new CbseWebModule()));
+		CbseWebModule webmodule = new CbseWebModule(this.resourceBaseProvider);
+		return Guice.createInjector(Modules2.mixin(new CbseRuntimeModule(), new CbseIdeModule(), webmodule));
 	}
 	
 }

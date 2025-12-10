@@ -1,0 +1,29 @@
+SolutionTree Authorization {
+	SecurityPattern Conceptual Authorization contributesTo Authentication_Authorization_sec_obj.Authorization {
+		
+	}
+	SecurityPattern Design RoleBasedAccessControl contributesTo Authentication_Authorization_sec_obj.Authorization refines Authorization {
+		
+	}
+	SecurityPattern Realization SymmetricRBAC contributesTo Authentication_Authorization_sec_obj.Authorization{
+		
+	}
+	SecurityPattern Realization CoreRBAC contributesTo Authentication_Authorization_sec_obj.Authorization{
+		
+	}
+	SecurityPattern Realization HierarchicalRBAC contributesTo Authentication_Authorization_sec_obj.Authorization{
+		
+	}
+	SecurityPattern Realization ConstrainedRBAC contributesTo Authentication_Authorization_sec_obj.Authorization{
+		
+	}
+	SecurityPattern Design AttributeBasedAccessControl contributesTo Authentication_Authorization_sec_obj.Authorization refines Authorization {
+		
+	}
+	SecurityPattern Realization UnstructuredRulesABAC contributesTo Authentication_Authorization_sec_obj.Authorization refines AttributeBasedAccessControl{
+		
+	}
+	SecurityPattern Realization StructuredRulesABAC contributesTo Authentication_Authorization_sec_obj.Authorization refines AttributeBasedAccessControl{
+	
+	}
+}

@@ -7,6 +7,8 @@ import com.google.inject.Injector;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import org.eclipse.xtext.util.DisposableRegistry;
+import org.eclipse.xtext.web.server.persistence.IResourceBaseProvider;
+import org.eclipse.xtext.web.server.persistence.ResourceBaseProviderImpl;
 import org.eclipse.xtext.web.servlet.XtextServlet;
 
 /**
@@ -21,7 +23,8 @@ public class CbseServlet extends XtextServlet {
 	
 	public void init() throws ServletException {
 		super.init();
-		Injector injector = new CbseWebSetup().createInjectorAndDoEMFRegistration();
+		IResourceBaseProvider resourceBaseProvider = new ResourceBaseProviderImpl("./WebRoot/xtext-resources/multi-resource");
+		Injector injector = new CbseWebSetup(resourceBaseProvider).createInjectorAndDoEMFRegistration();
 		this.disposableRegistry = injector.getInstance(DisposableRegistry.class);
 	}
 	

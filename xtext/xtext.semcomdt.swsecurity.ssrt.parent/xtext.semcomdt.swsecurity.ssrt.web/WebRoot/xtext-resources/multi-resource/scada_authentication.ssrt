@@ -1,6 +1,6 @@
 SolutionTree Authentication {
  
- SecurityPattern Conceptual Abstract_Authenticator contributesTo Authentication_Authorization_sec_obj.Authentication {
+ SecurityPattern Conceptual Abstract_Authenticator {
 	Element Subject ("the active entity (whether user or system) asking for access to the system by issuing a request to the Authenticator, providing a Proof of Identity.") 
 		{Relation RequestAuthentication  Authenticator 
 		Relation has ProofOfAuthentication
@@ -12,7 +12,7 @@ SolutionTree Authentication {
 	Element ProofOfAuthentication ( "provided to the subject by the Authenticator so it can be used to prove that the subject has already authenticated himself to the system or sub-system.")
 	Element AuthenticationInformation ( "includes whatever information is needed to authenticate users, could be a list of passwords, a set of fingerprints, a history of past interactions and so on.")
 	} 
-SecurityPattern Design PasswordBasedAuthentication contributesTo Authentication_Authorization_sec_obj.Authentication refines Abstract_Authenticator {
+SecurityPattern Design PasswordBasedAuthentication  refines Abstract_Authenticator {
 	Element Subject refines Subject ( "Must be a human user") {
 	Relation connectsTo Authenticator }
 	Element Authenticator refines Authenticator ("") {
@@ -22,14 +22,14 @@ SecurityPattern Design PasswordBasedAuthentication contributesTo Authentication_
 	Element PasswordList refines AuthenticationInformation ("")
 }
 	
-SecurityPattern Design CredentialBasedAuthentication contributesTo Authentication_Authorization_sec_obj.Authentication refines Abstract_Authenticator{
+SecurityPattern Design CredentialBasedAuthentication  refines Abstract_Authenticator{
 	Element Principal refines Subject ( "a responsible subject" )
 	Element Authenticator refines Authenticator ("")
 	Element Credential refines ProofOfIdentity ( "The proof of identity presented by the principal" )
 	Element ValidatedCredential refines ProofOfAuthentication ("")
 	Element AuthenticationInformation refines AuthenticationInformation ("")
 }
-SecurityPattern Realization X509BasedAuthentication contributesTo Authentication_Authorization_sec_obj.Authentication refines CredentialBasedAuthentication {
+SecurityPattern Realization X509BasedAuthentication  refines CredentialBasedAuthentication {
 	Element Principal refines Principal ("")
 	Element Authenticator refines Authenticator ("")
 	Element CertificationAuthority refines Authenticator ("")
@@ -37,13 +37,13 @@ SecurityPattern Realization X509BasedAuthentication contributesTo Authentication
 	Element ValidatedCertificate refines ValidatedCredential ("")
 	Element CertificationInformation refines AuthenticationInformation ("")
 }
-SecurityPattern Design BiometricBasedAuthentication contributesTo Authentication_Authorization_sec_obj.Authentication refines Abstract_Authenticator{
+SecurityPattern Design BiometricBasedAuthentication  refines Abstract_Authenticator{
 	Element BiometricProof refines ProofOfIdentity ( "humans physical or behavioral traits presented by the human user to authenticate himself." )
 	Element BiometricAuthenticator ( "authenticates biometric information provided") }
-SecurityPattern Design CryptographicAuthentication contributesTo Authentication_Authorization_sec_obj.Authentication refines Abstract_Authenticator{
+SecurityPattern Design CryptographicAuthentication  refines Abstract_Authenticator{
 	Element UnforgeableProofOfIdentity  refines ProofOfIdentity ( "is a proof that cannot be falsified and ensure the authenticity of the subject.")
 }
-SecurityPattern Realization TextPhrase contributesTo Authentication_Authorization_sec_obj.Authentication refines PasswordBasedAuthentication { 
+SecurityPattern Realization TextPhrase  refines PasswordBasedAuthentication { 
 		Element TextphrasePassword refines Password ( "Using words for the password" )
 	}
 }

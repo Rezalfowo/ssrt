@@ -52,6 +52,14 @@ public class SsrtScopeProvider extends AbstractSsrtScopeProvider {
         	return Scopes.scopeFor(possibletargets);
         	
         }
+//        else if (context instanceof Element && reference == SsrtPackage.Literals) {
+//        	Solution solution = (Solution) context.eContainer();
+//        	EObject rootElement = EcoreUtil2.getRootContainer(solution);
+//        	List<Solution> possibletargets = EcoreUtil2.getAllContentsOfType(rootElement, Solution.class);
+//        	possibletargets = possibletargets.stream().filter(sol -> sol.equals(solution)).toList();
+//        	return Scopes.scopeFor(possibletargets);
+//        	
+//        }
         return super.getScope(context, reference);
     }
 

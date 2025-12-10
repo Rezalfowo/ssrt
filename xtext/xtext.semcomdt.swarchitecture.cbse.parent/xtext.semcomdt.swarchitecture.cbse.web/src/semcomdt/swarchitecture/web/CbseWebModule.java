@@ -3,9 +3,42 @@
  */
 package semcomdt.swarchitecture.web;
 
+import org.eclipse.xtext.web.server.generator.IContentTypeProvider;
+import org.eclipse.xtext.web.server.model.IWebResourceSetProvider;
+import org.eclipse.xtext.web.server.persistence.FileResourceHandler;
+import org.eclipse.xtext.web.server.persistence.IResourceBaseProvider;
+import org.eclipse.xtext.web.server.persistence.IServerResourceHandler;
+
+import com.google.inject.Binder;
+
+import semcomdt.swarchitecture.web.resource.CbseContentTypeProvider;
+import semcomdt.swarchitecture.web.resource.CbseResourceSetProvider;
 
 /**
  * Use this class to register additional components to be used within the web application.
  */
 public class CbseWebModule extends AbstractCbseWebModule {
+	private IResourceBaseProvider resourceBaseProvider;
+	@Override
+	public Class<? extends IContentTypeProvider> bindIContentTypeProvider() {
+		return CbseContentTypeProvider.class;
+	}
+
+	public Class<? extends IWebResourceSetProvider> bindIWebResourceSetProvider() {
+		return CbseResourceSetProvider.class;
+	}
+
+	public void configureResourceBaseProvider(Binder binder) {
+		if (resourceBaseProvider != null) {
+			binder.bind(IResourceBaseProvider.class).toInstance(resourceBaseProvider);
+		}
+	}
+
+	public Class<? extends IServerResourceHandler> bindIServerResourceHandler() {
+		return FileResourceHandler.class;
+	}
+
+	public CbseWebModule(IResourceBaseProvider resourceBaseProvider) {
+		this.resourceBaseProvider = resourceBaseProvider;
+	}
 }

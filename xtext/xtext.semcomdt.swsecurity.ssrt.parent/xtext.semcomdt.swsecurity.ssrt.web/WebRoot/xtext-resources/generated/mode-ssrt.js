@@ -1,6 +1,6 @@
 define(["ace/lib/oop", "ace/mode/text", "ace/mode/text_highlight_rules"], function(oop, mText, mTextHighlightRules) {
 	var HighlightRules = function() {
-		var keywords = "Conceptual|Design|Element|Realization|Relation|SecurityPattern|SecurityTactic|SolutionTree|contributesTo|refines";
+		var keywords = "Conceptual|Design|Element|Realization|Relation|SecurityPattern|SecurityTactic|SolutionTree|contributesTo|import|refines";
 		this.$rules = {
 			"start": [
 				{token: "comment", regex: "\\/\\/.*$"},

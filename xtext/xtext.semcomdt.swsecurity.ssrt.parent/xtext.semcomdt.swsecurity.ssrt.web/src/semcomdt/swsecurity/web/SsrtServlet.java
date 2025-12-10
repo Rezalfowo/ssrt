@@ -8,6 +8,8 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import semcomdt.swarchitecture.web.CbseWebSetup;
 import semcomdt.swsecurity.objective.web.CiaampsWebSetup;
+import org.eclipse.xtext.web.server.persistence.IResourceBaseProvider;
+import org.eclipse.xtext.web.server.persistence.ResourceBaseProviderImpl;
 
 import org.eclipse.xtext.util.DisposableRegistry;
 import org.eclipse.xtext.web.servlet.XtextServlet;
@@ -24,10 +26,12 @@ public class SsrtServlet extends XtextServlet {
 	
 	public void init() throws ServletException {
 		super.init();
-		new CiaampsWebSetup().createInjectorAndDoEMFRegistration();
-		new CbseWebSetup().createInjectorAndDoEMFRegistration();
-		Injector injector = new SsrtWebSetup().createInjectorAndDoEMFRegistration();
-		this.disposableRegistry = injector.getInstance(DisposableRegistry.class);
+		IResourceBaseProvider resourceBaseProvider = new ResourceBaseProviderImpl("./WebRoot/xtext-resources/multi-resource");
+		new CiaampsWebSetup(resourceBaseProvider).createInjectorAndDoEMFRegistration();
+		new CbseWebSetup(resourceBaseProvider).createInjectorAndDoEMFRegistration();
+		new SsrtWebSetup(resourceBaseProvider).createInjectorAndDoEMFRegistration();
+//		Injector injector = new SsrtWebSetup().createInjectorAndDoEMFRegistration();
+//		this.disposableRegistry = injector.getInstance(DisposableRegistry.class);
 	}
 	
 	public void destroy() {

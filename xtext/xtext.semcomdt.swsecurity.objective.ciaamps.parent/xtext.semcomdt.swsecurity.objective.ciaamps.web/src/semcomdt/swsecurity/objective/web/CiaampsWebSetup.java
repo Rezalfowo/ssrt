@@ -6,6 +6,8 @@ package semcomdt.swsecurity.objective.web;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 import org.eclipse.xtext.util.Modules2;
+import org.eclipse.xtext.web.server.persistence.IResourceBaseProvider;
+
 import semcomdt.swsecurity.objective.CiaampsRuntimeModule;
 import semcomdt.swsecurity.objective.CiaampsStandaloneSetup;
 import semcomdt.swsecurity.objective.ide.CiaampsIdeModule;
@@ -14,10 +16,16 @@ import semcomdt.swsecurity.objective.ide.CiaampsIdeModule;
  * Initialization support for running Xtext languages in web applications.
  */
 public class CiaampsWebSetup extends CiaampsStandaloneSetup {
+	private final IResourceBaseProvider resourceBaseProvider;
+
+	public CiaampsWebSetup(IResourceBaseProvider resourceBaseProvider) {
+		this.resourceBaseProvider = resourceBaseProvider;
+	}
 	
 	@Override
 	public Injector createInjector() {
-		return Guice.createInjector(Modules2.mixin(new CiaampsRuntimeModule(), new CiaampsIdeModule(), new CiaampsWebModule()));
+		CiaampsWebModule webmodule = new CiaampsWebModule(this.resourceBaseProvider);
+		return Guice.createInjector(Modules2.mixin(new CiaampsRuntimeModule(), new CiaampsIdeModule(), webmodule));
 	}
 	
 }

@@ -6,6 +6,8 @@ package semcomdt.swsecurity.web;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 import org.eclipse.xtext.util.Modules2;
+import org.eclipse.xtext.web.server.persistence.IResourceBaseProvider;
+
 import semcomdt.swsecurity.SsrtRuntimeModule;
 import semcomdt.swsecurity.SsrtStandaloneSetup;
 import semcomdt.swsecurity.ide.SsrtIdeModule;
@@ -14,10 +16,15 @@ import semcomdt.swsecurity.ide.SsrtIdeModule;
  * Initialization support for running Xtext languages in web applications.
  */
 public class SsrtWebSetup extends SsrtStandaloneSetup {
-	
+	private final IResourceBaseProvider resourceBaseProvider;
+
+	public SsrtWebSetup(IResourceBaseProvider resourceBaseProvider) {
+		this.resourceBaseProvider = resourceBaseProvider;
+	}
 	@Override
 	public Injector createInjector() {
-		return Guice.createInjector(Modules2.mixin(new SsrtRuntimeModule(), new SsrtIdeModule(), new SsrtWebModule()));
+		SsrtWebModule webmodule = new SsrtWebModule(this.resourceBaseProvider);
+		return Guice.createInjector(Modules2.mixin(new SsrtRuntimeModule(), new SsrtIdeModule(), webmodule));
 	}
 	
 	

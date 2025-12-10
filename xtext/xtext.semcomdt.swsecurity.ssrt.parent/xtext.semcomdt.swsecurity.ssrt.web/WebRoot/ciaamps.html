@@ -21,26 +21,51 @@
 		});
 		require(["webjars/ace/1.3.3/src/ace"], function() {
 			require(["xtext/xtext-ace"], function(xtext) {
-				xtext.createEditor({
-					baseUrl: baseUrl,
-					xtextLang: "ciaamps",
-					syntaxDefinition: "xtext-resources/generated/mode-ciaamps"
-				});
-			});
-		});
-	</script>
-</head>
-<body>
+				var editor = xtext.createEditor({syntaxDefinition: "xtext-resources/generated/mode-ciaamps",baseUrl: baseUrl,});
+												$("#save-button").click(function() {
+													editor.xtextServices.saveResource();
+												});
+												$("#revert-button").click(function() {
+													editor.xtextServices.revertResource();
+												});
+												$("#generate-button").click(function() {
+													window.open('http://' + location.host + baseUrl + 'xtext-service/generate?resource=' + editor.xtextServices.options.resourceId);
+												});
+												$("#change-resource").change(function() {
+													var resourceId = $("#change-resource option:selected").attr("value");
+													editor.xtextServices.serviceBuilder.changeResource(resourceId);
+												});
+												$("#disable-button").click(function() {
+													xtext.removeServices(editor);
+												});
+											});
+										});
+									</script>
+								</head>
+								<body>
 
-<div class="container">
-	<div class="header">
-		<h1>Example Ciaamps Web Editor</h1>
-	</div>
-	<div class="content">
-		<div id="xtext-editor" data-editor-xtext-lang="ciaamps"></div>
-	</div>
+								<div class="container">
+									<div id="xtext-editor"
+										data-editor-resource-id="scada.ciaamps"
+										data-editor-dirty-element="dirty-indicator"
+										data-editor-enable-save-action="true"
+										data-editor-enable-formatting-action="true"
+										data-editor-show-error-dialogs="true"></div>
+									<div class="status-wrapper">
+										<div id="dirty-indicator">modified</div>
+										<div id="status">Welcome to Xtext-Web</div>
+									</div>
+									<div class="button-wrapper">
+										<button id="save-button">Save</button>
+										<button id="revert-button">Revert</button>
+										<button id="generate-button">Generate</button>
+										<select id="change-resource">
+											<option value="scada.ciaamps">Example 1</option>
+											<option value="scada.ciaamps">Example 2</option>
+										</select>
+										<button id="disable-button">Disable</button>
+									</div>
+								</div>
 
-</div>
-
-</body>
+								</body>
 </html>
