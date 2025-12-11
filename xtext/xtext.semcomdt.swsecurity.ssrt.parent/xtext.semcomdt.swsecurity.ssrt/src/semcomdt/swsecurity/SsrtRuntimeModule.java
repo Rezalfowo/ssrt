@@ -3,9 +3,16 @@
  */
 package semcomdt.swsecurity;
 
+import org.eclipse.xtext.scoping.IGlobalScopeProvider;
 
 /**
- * Use this class to register components to be used at runtime / without the Equinox extension registry.
+ * Use this class to register components to be used at runtime / without the
+ * Equinox extension registry.
  */
 public class SsrtRuntimeModule extends AbstractSsrtRuntimeModule {
+	@Override
+	public Class<? extends IGlobalScopeProvider> bindIGlobalScopeProvider() {
+		return SsrtScopeProvider.class;
+	}
+
 }

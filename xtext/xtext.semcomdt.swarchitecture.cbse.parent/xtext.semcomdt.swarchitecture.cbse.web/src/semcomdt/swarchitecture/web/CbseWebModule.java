@@ -41,4 +41,5 @@ public class CbseWebModule extends AbstractCbseWebModule {
 	public CbseWebModule(IResourceBaseProvider resourceBaseProvider) {
 		this.resourceBaseProvider = resourceBaseProvider;
 	}
+
 }

@@ -1,3 +1,4 @@
+import "scada.ciaamps"
 SolutionTree Authorization {
 	SecurityPattern Conceptual Authorization contributesTo Authentication_Authorization_sec_obj.Authorization {
 		

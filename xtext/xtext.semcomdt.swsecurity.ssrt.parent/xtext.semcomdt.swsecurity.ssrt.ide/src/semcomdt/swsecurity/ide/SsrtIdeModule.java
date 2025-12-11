@@ -3,9 +3,9 @@
  */
 package semcomdt.swsecurity.ide;
 
-
 /**
  * Use this class to register ide components.
  */
 public class SsrtIdeModule extends AbstractSsrtIdeModule {
+
 }

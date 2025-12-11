@@ -3,10 +3,11 @@
  */
 package semcomdt.swsecurity.web;
 
-import com.google.inject.Guice;
-import com.google.inject.Injector;
 import org.eclipse.xtext.util.Modules2;
 import org.eclipse.xtext.web.server.persistence.IResourceBaseProvider;
+
+import com.google.inject.Guice;
+import com.google.inject.Injector;
 
 import semcomdt.swsecurity.SsrtRuntimeModule;
 import semcomdt.swsecurity.SsrtStandaloneSetup;
@@ -21,11 +22,12 @@ public class SsrtWebSetup extends SsrtStandaloneSetup {
 	public SsrtWebSetup(IResourceBaseProvider resourceBaseProvider) {
 		this.resourceBaseProvider = resourceBaseProvider;
 	}
+
 	@Override
 	public Injector createInjector() {
 		SsrtWebModule webmodule = new SsrtWebModule(this.resourceBaseProvider);
+		System.out.println(this.resourceBaseProvider.getClass());
 		return Guice.createInjector(Modules2.mixin(new SsrtRuntimeModule(), new SsrtIdeModule(), webmodule));
 	}
-	
-	
+
 }

@@ -1,6 +1,7 @@
+import "scada.ciaamps"
 SolutionTree Authentication {
  
- SecurityPattern Conceptual Abstract_Authenticator {
+ SecurityPattern Conceptual Abstract_Authenticator contributesTo Authentication_Authorization_sec_obj.Authentication {
 	Element Subject ("the active entity (whether user or system) asking for access to the system by issuing a request to the Authenticator, providing a Proof of Identity.") 
 		{Relation RequestAuthentication  Authenticator 
 		Relation has ProofOfAuthentication
