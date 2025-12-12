@@ -38,6 +38,11 @@
 												$("#disable-button").click(function() {
 													xtext.removeServices(editor);
 												});
+												$("#load-files").click(function() {
+													var result = edtior.xtextServices.get("getfiles");
+													console.log("marche po");
+													console.log(result);
+												});
 											});
 										});
 									</script>

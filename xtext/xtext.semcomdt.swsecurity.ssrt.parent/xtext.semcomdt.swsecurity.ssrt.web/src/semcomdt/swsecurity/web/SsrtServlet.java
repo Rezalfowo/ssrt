@@ -3,37 +3,57 @@
  */
 package semcomdt.swsecurity.web;
 
-import com.google.inject.Injector;
-import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
-import semcomdt.swarchitecture.web.CbseWebSetup;
-import semcomdt.swsecurity.objective.web.CiaampsWebSetup;
+import java.io.IOException;
+import java.util.Objects;
+
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.xtext.resource.IResourceServiceProvider;
+import org.eclipse.xtext.util.DisposableRegistry;
+import org.eclipse.xtext.web.server.IServiceContext;
+import org.eclipse.xtext.web.server.IServiceResult;
+import org.eclipse.xtext.web.server.IUnwrappableServiceResult;
+import org.eclipse.xtext.web.server.InvalidRequestException;
 import org.eclipse.xtext.web.server.persistence.IResourceBaseProvider;
 import org.eclipse.xtext.web.server.persistence.ResourceBaseProviderImpl;
-
-import org.eclipse.xtext.util.DisposableRegistry;
+import org.eclipse.xtext.web.servlet.HttpServiceContext;
 import org.eclipse.xtext.web.servlet.XtextServlet;
+import org.eclipse.xtext.xbase.lib.Exceptions;
+
+import com.google.common.base.Strings;
+import com.google.gson.Gson;
+import com.google.inject.Injector;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import semcomdt.swarchitecture.web.CbseWebSetup;
+import semcomdt.swsecurity.objective.web.CiaampsWebSetup;
 
 /**
  * Deploy this class into a servlet container to enable DSL-specific services.
  */
 @WebServlet(name = "XtextServices", urlPatterns = "/xtext-service/*")
 public class SsrtServlet extends XtextServlet {
-	
+
 	private static final long serialVersionUID = 1L;
-	
+
 	DisposableRegistry disposableRegistry;
-	
+	private final IResourceServiceProvider.Registry serviceProviderRegistry = IResourceServiceProvider.Registry.INSTANCE;
+
+	private final Gson gson = new Gson();
+
 	public void init() throws ServletException {
 		super.init();
-		IResourceBaseProvider resourceBaseProvider = new ResourceBaseProviderImpl("./WebRoot/xtext-resources/multi-resource");
+		IResourceBaseProvider resourceBaseProvider = new ResourceBaseProviderImpl(
+				"./WebRoot/xtext-resources/multi-resource");
 		new CiaampsWebSetup(resourceBaseProvider).createInjectorAndDoEMFRegistration();
 		new CbseWebSetup(resourceBaseProvider).createInjectorAndDoEMFRegistration();
 		new SsrtWebSetup(resourceBaseProvider).createInjectorAndDoEMFRegistration();
-//		Injector injector = new SsrtWebSetup().createInjectorAndDoEMFRegistration();
+//		Injector ssrtinjector = new SsrtWebSetup(resourceBaseProvider).createInjectorAndDoEMFRegistration();
 //		this.disposableRegistry = injector.getInstance(DisposableRegistry.class);
 	}
-	
+
 	public void destroy() {
 		if (disposableRegistry != null) {
 			disposableRegistry.dispose();
@@ -41,5 +61,131 @@ public class SsrtServlet extends XtextServlet {
 		}
 		super.destroy();
 	}
-	
+
+	@Override
+	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		super.service(req, resp);
+	}
+
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		SsrtServiceDispatcher.ServiceDescriptor service = getService(req);
+		if (!service.isHasConflict() && (service.isHasSideEffects() || hasTextInput(service))) {
+			super.doGet(req, resp);
+		} else {
+			doService(service, resp);
+		}
+	}
+
+	@Override
+	protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		SsrtServiceDispatcher.ServiceDescriptor service = getService(req);
+		String type = service.getContext().getParameter(IServiceContext.SERVICE_TYPE);
+		if (!service.isHasConflict() && !Objects.equals(type, "update")) {
+			super.doPut(req, resp);
+		} else {
+			doService(service, resp);
+		}
+	}
+
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		SsrtServiceDispatcher.ServiceDescriptor service = getService(req);
+		String type = service.getContext().getParameter(IServiceContext.SERVICE_TYPE);
+		if (!service.isHasConflict()
+				&& (!service.isHasSideEffects() && !hasTextInput(service) || Objects.equals(type, "update"))) {
+			super.doPost(req, resp);
+		} else {
+			doService(service, resp);
+		}
+	}
+
+	/**
+	 * Retrieve the service metadata for the given request. This involves resolving
+	 * the Guice injector for the respective language, querying the
+	 * {@link SsrtServiceDispatcher}, and checking the permission to invoke the
+	 * service.
+	 */
+	protected SsrtServiceDispatcher.ServiceDescriptor getService(HttpServletRequest request)
+			throws InvalidRequestException {
+		HttpServiceContext serviceContext = new HttpServiceContext(request);
+		Injector injector = getInjector(serviceContext);
+		SsrtServiceDispatcher serviceDispatcher = injector.getInstance(SsrtServiceDispatcher.class);
+		SsrtServiceDispatcher.ServiceDescriptor service = serviceDispatcher.getService(serviceContext);
+		return service;
+	}
+
+	/**
+	 * Invoke the service function of the given service descriptor and write its
+	 * result to the servlet response in Json format. An exception is made for
+	 * {@link IUnwrappableServiceResult}: here the document itself is written into
+	 * the response instead of wrapping it into a Json object.
+	 */
+	protected void doService(SsrtServiceDispatcher.ServiceDescriptor service, HttpServletResponse response) {
+		try {
+			IServiceResult result = service.getService().apply();
+			response.setStatus(HttpServletResponse.SC_OK);
+			response.setCharacterEncoding(getEncoding(service, result));
+			response.setHeader("Cache-Control", "no-cache");
+			if (result instanceof IUnwrappableServiceResult
+					&& ((IUnwrappableServiceResult) result).getContent() != null) {
+				IUnwrappableServiceResult unwrapResult = ((IUnwrappableServiceResult) result);
+				String contentType = null;
+				if (unwrapResult.getContentType() != null) {
+					contentType = unwrapResult.getContentType();
+				} else {
+					contentType = "text/plain";
+				}
+				response.setContentType(contentType);
+				response.getWriter().write(unwrapResult.getContent());
+			} else {
+				response.setContentType("text/x-json");
+				gson.toJson(result, response.getWriter());
+			}
+		} catch (IOException e) {
+			throw Exceptions.sneakyThrow(e);
+		}
+	}
+
+	/**
+	 * Determine the encoding to apply to servlet responses. The default is UTF-8.
+	 */
+	protected String getEncoding(SsrtServiceDispatcher.ServiceDescriptor service, IServiceResult result) {
+		return "UTF-8";
+	}
+
+	/**
+	 * Resolve the Guice injector for the language associated with the given
+	 * context.
+	 */
+	protected Injector getInjector(HttpServiceContext serviceContext)
+			throws InvalidRequestException.UnknownLanguageException {
+		IResourceServiceProvider resourceServiceProvider = null;
+		String parameter = serviceContext.getParameter("resource");
+		if (parameter == null) {
+			parameter = "";
+		}
+		URI emfURI = URI.createURI(parameter);
+		String contentType = serviceContext.getParameter("contentType");
+		if (Strings.isNullOrEmpty(contentType)) {
+			resourceServiceProvider = serviceProviderRegistry.getResourceServiceProvider(emfURI);
+			if (resourceServiceProvider == null) {
+				if (emfURI.toString().isEmpty()) {
+					throw new InvalidRequestException.UnknownLanguageException(
+							"Unable to identify the Xtext language: missing parameter 'resource' or 'contentType'.");
+				} else {
+					throw new InvalidRequestException.UnknownLanguageException(
+							"Unable to identify the Xtext language for resource " + emfURI + ".");
+				}
+			}
+		} else {
+			resourceServiceProvider = serviceProviderRegistry.getResourceServiceProvider(emfURI, contentType);
+			if (resourceServiceProvider == null) {
+				throw new InvalidRequestException.UnknownLanguageException(
+						"Unable to identify the Xtext language for contentType " + contentType + ".");
+			}
+		}
+		return resourceServiceProvider.get(Injector.class);
+	}
+
 }

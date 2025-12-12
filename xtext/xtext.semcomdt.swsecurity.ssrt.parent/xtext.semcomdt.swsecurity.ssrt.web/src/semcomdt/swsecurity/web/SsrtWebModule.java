@@ -15,10 +15,13 @@ import semcomdt.swsecurity.web.resource.SsrtContentTypeProvider;
 import semcomdt.swsecurity.web.resource.SsrtResourceSetProvider;
 
 /**
- * Use this class to register additional components to be used within the web application.
+ * Use this class to register additional components to be used within the web
+ * application.
  */
 public class SsrtWebModule extends AbstractSsrtWebModule {
 	private IResourceBaseProvider resourceBaseProvider;
+//	private IResourceServiceProvider resourceServiceProvider;
+
 	@Override
 	public Class<? extends IContentTypeProvider> bindIContentTypeProvider() {
 		return SsrtContentTypeProvider.class;
@@ -42,5 +45,8 @@ public class SsrtWebModule extends AbstractSsrtWebModule {
 		this.resourceBaseProvider = resourceBaseProvider;
 	}
 
-	
+//	public SsrtWebModule(IResourceBaseProvider resourceBaseProvider, IResourceServiceProvider resourceServiceProvider) {
+//		this.resourceServiceProvider = resourceServiceProvider;
+//	}
+
 }

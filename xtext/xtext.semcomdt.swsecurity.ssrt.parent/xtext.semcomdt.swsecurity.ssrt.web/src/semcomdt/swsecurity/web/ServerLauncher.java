@@ -4,8 +4,6 @@
 package semcomdt.swsecurity.web;
 
 import java.net.InetSocketAddress;
-import java.sql.DriverManager;
-import java.sql.SQLException;
 
 import org.eclipse.jetty.annotations.AnnotationConfiguration;
 import org.eclipse.jetty.server.Server;
@@ -18,63 +16,26 @@ import org.eclipse.jetty.webapp.WebXmlConfiguration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import semcomdt.swsecurity.web.database.Database;
+
 /**
- * This program starts an HTTP server for testing the web integration of your DSL.
- * Just execute it and point a web browser to http://localhost:8080/
+ * This program starts an HTTP server for testing the web integration of your
+ * DSL. Just execute it and point a web browser to http://localhost:8080/
  */
 public class ServerLauncher {
-	
-	private static final Logger LOG = LoggerFactory.getLogger(ServerLauncher.class);
-	
-	public static void connect() {
-        // connection string
-        var url = "jdbc:sqlite:ssrt.db";
-		
-        try (var conn = DriverManager.getConnection(url)) {
-        	if (conn != null) {
-                var meta = conn.getMetaData();
-                System.out.println("The driver name is " + meta.getDriverName());
-                System.out.println("A new database has been created.");
-                
-               
-        	}
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
-        }
-        var sql = "SELECT *  FROM dsl_files";
-        try (var conn = DriverManager.getConnection(url);
-        		
-                var stmt = conn.createStatement();
-                var rs = stmt.executeQuery(sql)) {
 
-               while (rs.next()) {
-                   System.out.printf("%-5s%-25s%-10s%n",
-                           rs.getString("filename"),
-                           rs.getString("extension"),
-                           rs.getString("file")
-                   );
-               }
-            }
-        catch (SQLException e) {
-            System.out.println(e.getMessage());
-        }
-    }
-	
+	private static final Logger LOG = LoggerFactory.getLogger(ServerLauncher.class);
+
 	public static void main(String[] args) {
 		Server server = new Server(new InetSocketAddress("localhost", 8080));
 		WebAppContext ctx = new WebAppContext();
 		ctx.setResourceBase("WebRoot");
-		ctx.setWelcomeFiles(new String[] {"index.html"});
+		ctx.setWelcomeFiles(new String[] { "index.html" });
 		ctx.setContextPath("/");
-		ctx.setConfigurations(new Configuration[] {
-			new AnnotationConfiguration(),
-			new WebXmlConfiguration(),
-			new WebInfConfiguration(),
-			new MetaInfConfiguration(),
-			new WebAppConfiguration()
-		});
+		ctx.setConfigurations(new Configuration[] { new AnnotationConfiguration(), new WebXmlConfiguration(),
+				new WebInfConfiguration(), new MetaInfConfiguration(), new WebAppConfiguration() });
 		ctx.setAttribute(MetaInfConfiguration.CONTAINER_JAR_PATTERN,
-			".*/xtext\\.semcomdt\\.swsecurity\\.ssrt\\.web/.*,.*\\.jar");
+				".*/xtext\\.semcomdt\\.swsecurity\\.ssrt\\.web/.*,.*\\.jar");
 		ctx.setInitParameter("org.eclipse.jetty.servlet.Default.useFileMappedBuffer", "false");
 		server.setHandler(ctx);
 		try {
@@ -84,7 +45,8 @@ public class ServerLauncher {
 
 				public void run() {
 					try {
-						connect();
+						Database.setUrl("jdbc:sqlite:ssrt.db");
+						Database.connect();
 						LOG.info("Press enter to stop the server...");
 						int key = System.in.read();
 						if (key != -1) {

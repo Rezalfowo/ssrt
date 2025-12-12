@@ -1,0 +1,5 @@
+import "scada.cbse"
+propertyCategory Authentication_Authorization_sec_obj { 
+	securityProperty Authentication
+	securityProperty Authorization
+}

@@ -1,4 +1,6 @@
-package semcomdt.swsecurity;
+package semcomdt.swsecurity.web.resource;
+
+import java.io.File;
 
 /*******************************************************************************
  * Copyright (c) 2009 itemis AG (http://www.itemis.eu) and others.
@@ -43,7 +45,10 @@ import com.google.common.collect.Lists;
 import com.google.inject.Inject;
 import com.google.inject.Provider;
 
-public class SsrtScopeProvider extends AbstractGlobalScopeProvider {
+import semcomdt.swsecurity.web.database.Database;
+import semcomdt.swsecurity.web.database.DslFile;
+
+public class SsrtWebScopeProvider extends AbstractGlobalScopeProvider {
 
 	@Inject
 	private ImportUriResolver importResolver;
@@ -143,13 +148,19 @@ public class SsrtScopeProvider extends AbstractGlobalScopeProvider {
 		return cache.get(ImportUriGlobalScopeProvider.class.getName(), resource, new Provider<LinkedHashSet<URI>>() {
 			@Override
 			public LinkedHashSet<URI> get() {
-//				String resourcepath = "./WebRoot/xtext-resources/multi-resource/";
+				String resourcepath = "./WebRoot/xtext-resources/multi-resource/";
 				final LinkedHashSet<URI> uniqueImportURIs = new LinkedHashSet<URI>(5);
 				IAcceptor<String> collector = createURICollector(resource, uniqueImportURIs);
 				TreeIterator<EObject> iterator = resource.getAllContents();
 				while (iterator.hasNext()) {
 					EObject object = iterator.next();
-					collector.accept(importResolver.apply(object));
+					String importpath = importResolver.apply(object);
+					collector.accept(resourcepath + importpath);
+					if (importpath != null) {
+						DslFile dslfile = Database.loadFile(importpath);
+						if (dslfile != null)
+							dslfile.createTempFile(new File(resourcepath), dslfile.getContent());
+					}
 				}
 				Iterator<URI> uriIter = uniqueImportURIs.iterator();
 				while (uriIter.hasNext()) {

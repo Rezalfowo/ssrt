@@ -2,45 +2,93 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta http-equiv="Content-Language" content="en-us">
-	<title>Example Web Editor</title>
-	<link rel="stylesheet" type="text/css" href="xtext/2.35.0/xtext-ace.css"/>
-	<link rel="stylesheet" type="text/css" href="style.css"/>
+	<title>Xtext-Web Domainmodel Example</title>
+	<link rel="stylesheet" type="text/css" href="xtext/2.35.0/xtext-ace.css" />
+	<link rel="stylesheet" type="text/css" href="style.css" />
 	<script src="webjars/requirejs/2.3.6/require.min.js"></script>
 	<script type="text/javascript">
+		function removeOptions(selectElement) {
+			var i, L = selectElement.options.length - 1;
+			for(i = L; i >= 0; i--) {
+				selectElement.remove(i);
+			}
+		}
 		var baseUrl = window.location.pathname;
 		var fileIndex = baseUrl.indexOf("index.html");
 		if (fileIndex > 0)
-			baseUrl = baseUrl.slice(0, fileIndex);
+			baseUrl = baseUrl.slice(0, fileIndex)
 		require.config({
 			baseUrl: baseUrl,
 			paths: {
 				"jquery": "webjars/jquery/3.6.0/jquery.min",
 				"ace/ext/language_tools": "webjars/ace/1.3.3/src/ext-language_tools",
-				"xtext/xtext-ace": "xtext/2.35.0/xtext-ace"
+				"xtext/xtext-ace": "xtext/2.35.0/xtext-ace",
 			}
 		});
 		require(["webjars/ace/1.3.3/src/ace"], function() {
 			require(["xtext/xtext-ace"], function(xtext) {
 				var editor = xtext.createEditor({syntaxDefinition: "xtext-resources/generated/mode-ssrt",baseUrl: baseUrl,});
-								$("#save-button").click(function() {
-									editor.xtextServices.saveResource();
-								});
+				$("#save-button").click(function() {
+					editor.xtextServices.saveResource();
+				});
+				$("#revert-button").click(function() {
+					editor.xtextServices.revertResource();
+				});
+				$("#generate-button").click(function(e) {
+					$.get('http://' + location.host + baseUrl + 'xtext-service/generate?resource=' + editor.xtextServices.options.resourceId,function() {
+						
+					});
+					
+				});
+				$("#change-resource").change(function() {
+					var resourceId = $("#change-resource option:selected").attr("value");
+					editor.xtextServices.serviceBuilder.changeResource(resourceId);
+				});
+				$("#disable-button").click(function() {
+					xtext.removeServices(editor);
+				});
+				$("#load-files").click(function() {
+					$.get('http://' + location.host + baseUrl +'xtext-service/fileloader?resource=.ssrt', function (data) {
+						var newSelect= document.getElementById('change-resource');
+						removeOptions(newSelect);
+						data.filename.map( (element, i) =>
+						{
+							var opt= document.createElement("option");
+							opt.value= element;
+							opt.innerHTML = element;
+							newSelect.appendChild(opt);
+						}
+						
+					);
+					
+				});
 			});
+		});
 		});
 	</script>
 </head>
 <body>
 
 <div class="container">
-	<div class="header">
-		<h1>Example Ssrt Web Editor</h1>
+	<div id="xtext-editor"
+		data-editor-resource-id="scada_authentication.ssrt"
+		data-editor-dirty-element="dirty-indicator"
+		data-editor-enable-save-action="true"
+		data-editor-enable-formatting-action="true"
+		data-editor-show-error-dialogs="true"></div>
+	<div class="status-wrapper">
+		<div id="dirty-indicator">modified</div>
+		<div id="status">Welcome to Xtext-Web</div>
 	</div>
-	<div class="save"><button id="save-button">Save file</button>Hello test</div>
-	
-	<div class="content">
-		<div id="xtext-editor" data-editor-xtext-lang="ssrt"></div>
+	<div class="button-wrapper">
+		<button id="save-button">Save</button>
+		<button id="revert-button">Revert</button>
+		<button id="generate-button">Generate</button>
+		<button id="load-files">Load Files</button>
+		<select id="change-resource">
+		</select>
+		<button id="disable-button">Disable</button>
 	</div>
-
 </div>
 
 </body>
