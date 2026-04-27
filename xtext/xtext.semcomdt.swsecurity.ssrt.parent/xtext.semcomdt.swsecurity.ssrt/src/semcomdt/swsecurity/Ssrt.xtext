@@ -8,13 +8,13 @@ Model:
 	solutiontrees+=SolutionTree*;
 
 SolutionTree:
-	'SolutionTree' name=ID 
+	'SolutionTree' name=ID "contributesTo" contributesTo+=[ciaamps::SecurityProperty|QualifiedName]
 	 '{' provides+=Solution* '}'
 	;
 
 
 Solution :
-	kind=SolutionType level=Level name=ID "contributesTo" contributesTo+=[ciaamps::SecurityProperty|QualifiedName] 
+	kind=SolutionType level=Level name=ID 
 	("refines" refines+=[Solution|QualifiedName]+)? 
 	"{" solutionelements+=Element* "}"	
 ;
@@ -22,7 +22,6 @@ Solution :
 Element:
 	"Element" name=ID ("refines" refines=[Element|QualifiedName])? 
 	"(" definition=STRING ")"
-	
 	(source+=Relation*)
 	
 ;
